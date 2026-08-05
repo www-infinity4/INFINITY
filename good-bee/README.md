@@ -1,6 +1,6 @@
 # Good Bee · Infinity Living
 
-Good Bee is a development prototype for voluntary accessible travel, trial stays, relocation, support coordination, modular housing, and physical NFC benefit credentials.
+Good Bee is a development prototype for voluntary accessible travel, trial stays, relocation, support coordination, modular housing, physical NFC benefit credentials, and the connected Infinity Store Card system.
 
 ## Purpose
 
@@ -11,7 +11,8 @@ The platform is designed to help a person choose and coordinate:
 - an accessible home and transportation plan;
 - personal assistance, nursing coordination, meals, companionship, and local services;
 - a supported cross-country move with continuity of benefits and care;
-- a Good Bee Honey Coin or card that opens a secure record of approved goods and services.
+- a Good Bee Honey Coin or card that opens a secure record of approved goods and services;
+- store cards, offers, physical goods, drops, auctions, receipts, returns, and provenance through the broader Infinity commerce system.
 
 A new environment may improve quality of life for some people, but Good Bee does not present relocation as a medical cure and does not replace healthcare chosen by the person.
 
@@ -23,10 +24,14 @@ A new environment may improve quality of life for some people, but Good Bee does
 4. Trial stays include return transportation or another practical exit plan.
 5. Permanent moves require housing verification, benefits continuity, care handoff, and follow-up.
 6. A private home remains a home; support services do not create institutional control.
-7. AI may organize options and detect missing steps but cannot force a move, withdraw support, or redirect money.
-8. Health, identity, financial, and support records are never stored in a public GitHub repository.
+7. AI may organize options and detect missing steps but cannot force a move, withdraw support, redirect money, sign ownership transfers, or treat demonstration tokens as money.
+8. Health, identity, financial, ownership, and support records are never stored in a public GitHub repository.
 
-## Current website
+## Current websites
+
+### Good Bee Living
+
+Open [`index.html`](index.html).
 
 The static prototype includes:
 
@@ -39,6 +44,26 @@ The static prototype includes:
 - example goods-and-services benefit units;
 - consent, privacy, money-control, dispute, return, and audit protections.
 
+### Infinity Store Cards
+
+Open [`store-cards.html`](store-cards.html).
+
+This page consolidates the earlier Store Card conversations into one system:
+
+- Good Bee Honey Card;
+- Infinity Store Card;
+- Arrowhead Coin Card and Luxury Click–Infinity Drop;
+- Black Card Market high-value property records;
+- Infinity Relic Cards with sealed physical coins, sapphires, minerals, memorabilia, or specimens;
+- Infinity Wallet, Infinity Market, and Infinity Stage;
+- searchable offers and card compatibility;
+- Shop World demonstration mechanics for grab, accept, reject, charge, bid, and named local tokens;
+- NFC/RFID authentication, provenance, transfer, delivery, returns, and disputes;
+- Boron Vault viewing/signing separation;
+- AI-assisted scam, payout, inventory, bidding, and fulfillment monitoring.
+
+The Shop World demo preserves the earlier local browser keys `msw_tokens` and `ign_tok`. These records have no cash value and may be reset by the user.
+
 ## Run locally
 
 From the repository root:
@@ -47,13 +72,19 @@ From the repository root:
 python3 -m http.server 8080
 ```
 
-Open:
+Open Good Bee:
 
 ```text
 http://localhost:8080/good-bee/
 ```
 
-No package manager, API key, paid AI service, account, or database is required for the current prototype.
+Open Store Cards:
+
+```text
+http://localhost:8080/good-bee/store-cards.html
+```
+
+No package manager, API key, paid AI service, account, or database is required for the current prototypes.
 
 ## Files
 
@@ -62,9 +93,13 @@ good-bee/
 ├── index.html
 ├── styles.css
 ├── app.js
+├── store-cards.html
+├── store-cards.css
+├── store-cards.js
 ├── README.md
 └── data/
-    └── programs.json
+    ├── programs.json
+    └── store-cards.json
 ```
 
 ## Good Bee Honey Coin
@@ -103,6 +138,26 @@ Each unit requires scope, expiration, refund, substitution, provider, and disput
 
 If Good Bee later becomes a reloadable or broadly spendable prepaid product, banking, payments, consumer-protection, money-transmission, identity-verification, data-security, and state-law review will be required before public use.
 
+## Infinity Store Card boundary
+
+The Store Cards page demonstrates card families, public offers, search, card compatibility, public provenance, and a local Shop World wallet.
+
+Real operation requires qualified protected services for:
+
+- identity and account recovery;
+- real store value or prepaid balances;
+- payments, holds, settlement, refunds, and chargebacks;
+- private ownership and provenance;
+- real bids and auctions;
+- shipping addresses and delivery evidence;
+- merchant verification and payout controls;
+- NFC credential issuance, freeze, and replacement;
+- appraisal, custody, liens, or collateral through qualified partners;
+- disputes and fraud response;
+- signing and key management.
+
+An NFT or digital card may document or unlock a record. It does not automatically create legal title, copyright ownership, a loan, collateral, or an investment right.
+
 ## Housing system
 
 The housing concept uses standardized, replaceable, robot-readable components while retaining licensed professional control.
@@ -129,24 +184,29 @@ Final construction must be reviewed against applicable federal, state, local, zo
 
 ## Backend required for real operation
 
-The public website may remain mostly static. Real operation requires protected services for:
+The public websites may remain mostly static. Real operation requires protected services for:
 
 - passkey-first accounts and recovery;
 - consent and representative permissions;
 - private accessibility and health information;
-- provider verification;
-- package inventory and reservations;
+- provider and merchant verification;
+- package and store inventory;
+- reservations, orders, and shipping;
 - payments and refunds through qualified partners;
-- benefit-unit ledger and receipts;
+- benefit-unit, store, and receipt ledgers;
+- ownership and provenance records;
 - dispute and fraud handling;
 - travel and care coordination;
 - building permits, inspections, and warranty records;
 - security monitoring, backups, and incident response.
 
-No one AI, administrator, or NFC credential should possess enough authority to secretly change a payment destination, move a person, expose private records, or erase the audit trail.
+No one AI, administrator, merchant, NFC credential, or frontend application should possess enough authority to secretly change a payment destination, move a person, expose private records, erase provenance, or approve its own transaction.
 
 ## Launch status
 
-This is software and service-architecture work, not an operating housing provider, travel agency, healthcare provider, bank, insurer, benefit program, licensed contractor, or token offering. All destinations, capacities, prices, funding, and benefit balances displayed by the prototype are examples only.
+This is software and service-architecture work, not an operating housing provider, travel agency, healthcare provider, bank, insurer, benefit program, prepaid-card issuer, marketplace, auction house, lender, licensed contractor, or token offering. All destinations, capacities, prices, funding, balances, collateral, auctions, inventory, and benefit examples are demonstrations only.
 
-See [`../docs/GOOD_BEE_OPERATING_MODEL.md`](../docs/GOOD_BEE_OPERATING_MODEL.md) for the broader system plan.
+See:
+
+- [`../docs/GOOD_BEE_OPERATING_MODEL.md`](../docs/GOOD_BEE_OPERATING_MODEL.md)
+- [`../docs/STORE_CARD_OPERATING_MODEL.md`](../docs/STORE_CARD_OPERATING_MODEL.md)
