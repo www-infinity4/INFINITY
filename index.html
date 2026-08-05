@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Infinity root portal connecting the www-infinity4 GitHub repository network.">
+  <title>Infinity Root Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Infinity</a>
+    <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
+      <a href="#projects">Projects</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#ai">AI Gateway</a>
+      <a href="https://github.com/www-infinity4" rel="noreferrer">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">www-infinity4 connected project network</p>
+      <h1>One root. Every project discoverable.</h1>
+      <p class="hero-copy">This portal indexes the repositories without flattening them into one fragile codebase. Each project stays independent while the root provides navigation, shared standards, and future AI orchestration.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#projects">Explore projects</a>
+        <a class="button secondary" href="https://github.com/www-infinity4/INFINITY" rel="noreferrer">Open root repository</a>
+      </div>
+      <div class="metrics" aria-live="polite">
+        <article><strong id="repoCount">—</strong><span>Repositories</span></article>
+        <article><strong id="categoryCount">—</strong><span>Categories</span></article>
+        <article><strong id="updatedCount">—</strong><span>Recently updated</span></article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Live repository registry</p><h2>Project directory</h2></div>
+        <input id="searchInput" type="search" placeholder="Search repositories" aria-label="Search repositories">
+      </div>
+      <div id="filterBar" class="filter-bar" aria-label="Project categories"></div>
+      <p id="statusMessage" class="status">Loading repositories from GitHub…</p>
+      <div id="projectGrid" class="project-grid"></div>
+    </section>
+
+    <section id="architecture" class="section panel-section">
+      <p class="eyebrow">Connection model</p>
+      <h2>Hub-and-spoke architecture</h2>
+      <div class="architecture-grid">
+        <article><h3>Root portal</h3><p>Navigation, registry, shared design system, documentation, health status, and integration contracts.</p></article>
+        <article><h3>Independent repositories</h3><p>Each project keeps its own history, deployment, dependencies, and purpose. No destructive mass merge.</p></article>
+        <article><h3>Shared packages</h3><p>Reusable UI, authentication, API clients, schemas, and security policies move into versioned shared modules only after validation.</p></article>
+        <article><h3>AI gateway</h3><p>A server-side adapter routes requests to approved providers without exposing secret keys in front-end code.</p></article>
+      </div>
+    </section>
+
+    <section id="ai" class="section ai-section">
+      <p class="eyebrow">Provider-neutral intelligence</p>
+      <h2>AI services without locking the platform</h2>
+      <p>The gateway contract supports Gemini, OpenRouter-compatible models, Cloudflare Workers AI, or OpenAI when an API key and budget are available. The browser never stores provider secrets.</p>
+      <pre><code>POST /api/ai
+{
+  "task": "summarize-repository",
+  "input": { "repository": "www-infinity4/INFINITY" }
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>Infinity root portal · Generated repository registry · <span id="year"></span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
