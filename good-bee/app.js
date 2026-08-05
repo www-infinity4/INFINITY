@@ -12,6 +12,7 @@ const els = {
   packageSummary: document.querySelector('#packageSummary'),
   packageContents: document.querySelector('#packageContents'),
   homeGrid: document.querySelector('#homeGrid'),
+  supportSection: document.querySelector('#support'),
   year: document.querySelector('#year')
 }
 
@@ -147,6 +148,73 @@ function buildPackage(event) {
   // displays them only in the current page and never stores them in localStorage.
 }
 
+function integrateStoreCards() {
+  if (els.mainNav && !els.mainNav.querySelector('a[href="store-cards.html"]')) {
+    const link = document.createElement('a')
+    link.href = 'store-cards.html'
+    link.textContent = 'Store Cards'
+    const supportLink = els.mainNav.querySelector('a[href="#support"]')
+    els.mainNav.insertBefore(link, supportLink || null)
+  }
+
+  if (!els.supportSection || document.querySelector('#store-cards')) return
+
+  const section = document.createElement('section')
+  section.id = 'store-cards'
+  section.className = 'section coin-section'
+
+  const copy = document.createElement('div')
+  copy.className = 'coin-copy'
+
+  const eyebrow = document.createElement('p')
+  eyebrow.className = 'eyebrow'
+  eyebrow.textContent = 'Infinity Store Cards'
+
+  const heading = document.createElement('h2')
+  heading.textContent = 'The Honey Coin now connects to the complete store-card system.'
+
+  const description = document.createElement('p')
+  description.textContent = 'Search Good Bee benefits, Infinity Store Cards, Arrowhead drops, Black Card Market property records, physical Relic Cards, and the Shop World consumer-education demonstration through one public interface.'
+
+  const action = document.createElement('a')
+  action.className = 'button primary'
+  action.href = 'store-cards.html'
+  action.textContent = 'Open Infinity Store Cards'
+
+  copy.append(eyebrow, heading, description, action)
+
+  const visual = document.createElement('div')
+  visual.className = 'coin-card'
+
+  const ledger = document.createElement('div')
+  ledger.className = 'coin-ledger'
+
+  const title = document.createElement('p')
+  title.textContent = 'Connected card families'
+  ledger.appendChild(title)
+
+  ;[
+    ['Good Bee Honey', 'Benefits'],
+    ['Infinity Store', 'Retail'],
+    ['Arrowhead', 'Drops'],
+    ['Black Card', 'Property'],
+    ['Relic Card', 'Provenance'],
+    ['Shop World', 'Training']
+  ].forEach(([name, role]) => {
+    const row = document.createElement('div')
+    const label = document.createElement('span')
+    const value = document.createElement('strong')
+    label.textContent = name
+    value.textContent = role
+    row.append(label, value)
+    ledger.appendChild(row)
+  })
+
+  visual.appendChild(ledger)
+  section.append(copy, visual)
+  els.supportSection.before(section)
+}
+
 function bindNavigation() {
   els.menuButton?.addEventListener('click', () => {
     const open = els.mainNav.classList.toggle('open')
@@ -162,6 +230,7 @@ function bindNavigation() {
 }
 
 async function init() {
+  integrateStoreCards()
   bindNavigation()
   els.form?.addEventListener('submit', buildPackage)
   els.year.textContent = new Date().getFullYear()
