@@ -15,10 +15,11 @@ This root does not copy every repository into one oversized codebase. It provide
 - Architecture and AI-gateway documentation
 - No API secrets stored in browser code
 - **Good Bee · Infinity Living** public prototype for voluntary accessible travel, relocation, housing, support, and NFC benefit packages
+- **Infinity Store Cards** public prototype connecting cards, stores, benefits, drops, auctions, physical collectibles, provenance, and scam-resistant fulfillment
 
 ## Featured module: Good Bee
 
-Open [`good-bee/`](good-bee/) for the first Good Bee website.
+Open [`good-bee/`](good-bee/) for the Good Bee website.
 
 It includes:
 
@@ -32,10 +33,30 @@ It includes:
 
 The prototype does not currently provide housing, healthcare, travel, nursing, money, benefits, or construction. All displayed packages, balances, destinations, and availability are planning examples.
 
+## Featured module: Infinity Store Cards
+
+Open [`good-bee/store-cards.html`](good-bee/store-cards.html) for the recovered and consolidated store-card system.
+
+The website incorporates the earlier conversations around:
+
+- Good Bee Honey Card and Honey Coin;
+- Infinity Store Card;
+- Arrowhead Coin and Luxury Click–Infinity Drop;
+- Black Card Market property and collateral records;
+- Infinity Relic Cards containing real coins, sapphires, minerals, memorabilia, or specimens;
+- Infinity Wallet, Infinity Market, and Infinity Stage storefronts;
+- Shop World / Mario Shop World grab, accept, reject, charge, bid, and demo-token mechanics;
+- NFC/RFID authentication, provenance, transfer, fulfillment, receipts, returns, and disputes;
+- Boron Vault separation of viewing from real signing authority;
+- AI monitoring for payout changes, fake inventory, duplicate listings, bid manipulation, and failed fulfillment.
+
+The Store Cards prototype is static HTML, CSS, JavaScript, and JSON. Its demo tokens, balances, auctions, collateral, store value, cards, and offers are not real financial products or guaranteed inventory.
+
 See:
 
 - [`good-bee/README.md`](good-bee/README.md)
 - [`docs/GOOD_BEE_OPERATING_MODEL.md`](docs/GOOD_BEE_OPERATING_MODEL.md)
+- [`docs/STORE_CARD_OPERATING_MODEL.md`](docs/STORE_CARD_OPERATING_MODEL.md)
 
 ## Run locally
 
@@ -55,11 +76,17 @@ Open Good Bee:
 http://localhost:8080/good-bee/
 ```
 
+Open Store Cards:
+
+```text
+http://localhost:8080/good-bee/store-cards.html
+```
+
 ## Deployment
 
 The static portal can use GitHub Pages or Cloudflare Pages. AI calls must be handled by a server-side worker or function so provider keys remain private.
 
-Good Bee can remain mostly frontend for public catalogs, package demonstrations, housing designs, and explanations. Real identities, health/accessibility details, itineraries, provider records, payments, benefit balances, complaints, and construction records require protected backend services and qualified operational partners.
+Good Bee and Store Cards can remain mostly frontend for public catalogs, package demonstrations, card visualizations, public provenance, housing designs, search, Shop World demonstrations, and explanations. Real identities, health/accessibility details, ownership, itineraries, provider records, payments, bids, collateral, balances, complaints, signing, and construction records require protected backend services and qualified operational partners.
 
 ## Integration order
 
