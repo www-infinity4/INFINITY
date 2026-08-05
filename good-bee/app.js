@@ -144,74 +144,53 @@ function buildPackage(event) {
     `).join('')}
   `
 
-  // Accessibility notes can be sensitive. This front-end prototype deliberately
-  // displays them only in the current page and never stores them in localStorage.
+  // Accessibility notes can be sensitive. This prototype displays them only in
+  // the current page and deliberately does not write them to browser storage.
 }
 
-function integrateStoreCards() {
-  if (els.mainNav && !els.mainNav.querySelector('a[href="store-cards.html"]')) {
-    const link = document.createElement('a')
-    link.href = 'store-cards.html'
-    link.textContent = 'Store Cards'
-    const supportLink = els.mainNav.querySelector('a[href="#support"]')
-    els.mainNav.insertBefore(link, supportLink || null)
-  }
+function addNavigationLinks() {
+  if (!els.mainNav) return
 
-  if (!els.supportSection || document.querySelector('#store-cards')) return
+  const links = [
+    ['infinity-system.html', 'System Map'],
+    ['store-cards.html', 'Store Cards'],
+    ['reciprocal-clearing.html', 'Clearing'],
+    ['wallet-orchestrator.html', 'AI Wallet'],
+    ['coin-planner.html', 'Coin Planner']
+  ]
+
+  const supportLink = els.mainNav.querySelector('a[href="#support"]')
+  links.forEach(([href, label]) => {
+    if (els.mainNav.querySelector(`a[href="${href}"]`)) return
+    const link = document.createElement('a')
+    link.href = href
+    link.textContent = label
+    els.mainNav.insertBefore(link, supportLink || null)
+  })
+}
+
+function integratePlatform() {
+  addNavigationLinks()
+  if (!els.supportSection || document.querySelector('#infinity-platform')) return
 
   const section = document.createElement('section')
-  section.id = 'store-cards'
-  section.className = 'section coin-section'
+  section.id = 'infinity-platform'
+  section.className = 'section dark-section'
+  section.innerHTML = `
+    <div class="section-heading">
+      <div><p class="eyebrow">Complete Infinity platform</p><h2>Good Bee is connected to the economic system behind the package.</h2></div>
+      <p>Housing and travel are delivered through Store Claims, business contracts, reciprocal clearing, the AI Wallet, Coin Planner, work matching, treasury pools, and auditable receipts.</p>
+    </div>
+    <div class="home-grid">
+      <article class="home-card"><span class="home-number">01</span><span class="type">Master architecture</span><h3>Infinity System Map</h3><p>Search every module, value type, input, output, and operating rule discussed today.</p><a class="button primary" href="infinity-system.html">Open map</a></article>
+      <article class="home-card"><span class="home-number">02</span><span class="type">Cards and stores</span><h3>Infinity Store Cards</h3><p>Physical and digital cards, NFC, products, benefits, relics, drops, ownership, returns, and provenance.</p><a class="button primary" href="store-cards.html">Open cards</a></article>
+      <article class="home-card"><span class="home-number">03</span><span class="type">Conversion</span><h3>Reciprocal Clearing</h3><p>Lock and retire the source Store Claim before issuing replacement Infinity units.</p><a class="button primary" href="reciprocal-clearing.html">Open clearing</a></article>
+      <article class="home-card"><span class="home-number">04</span><span class="type">Person-facing control</span><h3>Infinity AI Wallet</h3><p>Hotels, products, metals, discounts, businesses, ads, work, rights, receipts, and approvals in one understandable interface.</p><a class="button primary" href="wallet-orchestrator.html">Open wallet</a></article>
+      <article class="home-card"><span class="home-number">05</span><span class="type">Global-local sourcing</span><h3>Coin Planner</h3><p>Find and verify businesses, source locally, negotiate bulk capacity, stage products, and close package funding gaps.</p><a class="button primary" href="coin-planner.html">Open planner</a></article>
+      <article class="home-card"><span class="home-number">06</span><span class="type">Work and opportunity</span><h3>New Hope and Livelihood</h3><p>Funded daily support, useful work matching, business tools, accepted contribution records, and appealable AI assistance.</p><a class="button primary" href="reciprocal-clearing.html#work">Open work engine</a></article>
+    </div>
+  `
 
-  const copy = document.createElement('div')
-  copy.className = 'coin-copy'
-
-  const eyebrow = document.createElement('p')
-  eyebrow.className = 'eyebrow'
-  eyebrow.textContent = 'Infinity Store Cards'
-
-  const heading = document.createElement('h2')
-  heading.textContent = 'The Honey Coin now connects to the complete store-card system.'
-
-  const description = document.createElement('p')
-  description.textContent = 'Search Good Bee benefits, Infinity Store Cards, Arrowhead drops, Black Card Market property records, physical Relic Cards, and the Shop World consumer-education demonstration through one public interface.'
-
-  const action = document.createElement('a')
-  action.className = 'button primary'
-  action.href = 'store-cards.html'
-  action.textContent = 'Open Infinity Store Cards'
-
-  copy.append(eyebrow, heading, description, action)
-
-  const visual = document.createElement('div')
-  visual.className = 'coin-card'
-
-  const ledger = document.createElement('div')
-  ledger.className = 'coin-ledger'
-
-  const title = document.createElement('p')
-  title.textContent = 'Connected card families'
-  ledger.appendChild(title)
-
-  ;[
-    ['Good Bee Honey', 'Benefits'],
-    ['Infinity Store', 'Retail'],
-    ['Arrowhead', 'Drops'],
-    ['Black Card', 'Property'],
-    ['Relic Card', 'Provenance'],
-    ['Shop World', 'Training']
-  ].forEach(([name, role]) => {
-    const row = document.createElement('div')
-    const label = document.createElement('span')
-    const value = document.createElement('strong')
-    label.textContent = name
-    value.textContent = role
-    row.append(label, value)
-    ledger.appendChild(row)
-  })
-
-  visual.appendChild(ledger)
-  section.append(copy, visual)
   els.supportSection.before(section)
 }
 
@@ -230,7 +209,7 @@ function bindNavigation() {
 }
 
 async function init() {
-  integrateStoreCards()
+  integratePlatform()
   bindNavigation()
   els.form?.addEventListener('submit', buildPackage)
   els.year.textContent = new Date().getFullYear()
