@@ -14,11 +14,27 @@ This root does not copy every repository into one oversized codebase. It provide
 - Direct links to every repository
 - Architecture and AI-gateway documentation
 - No API secrets stored in browser code
+- **Infinity Economy System Map** connecting every website, ledger, value type, input, output, and protection rule
 - **Good Bee · Infinity Living** for voluntary accessible travel, relocation, housing, support, and NFC benefit packages
 - **Infinity Store Cards** for cards, stores, benefits, drops, physical collectibles, provenance, and fulfillment
 - **Infinity Reciprocal Clearing Loop** for retiring Store Claims before issuing general Infinity units
 - **Infinity AI Wallet Orchestrator** for hotel nights, physical-metal access, NFC discounts, product claims, business coins, ads, work, and simple user decisions
 - **Infinity Coin Planner** for global business discovery, local-first sourcing, bulk contracts, destination staging, transparent package funding, and fulfillment
+
+## Master system map
+
+Open [`good-bee/infinity-system.html`](good-bee/infinity-system.html) for the complete connected system.
+
+It includes:
+
+- a searchable directory of every module;
+- each module’s inputs, outputs, purpose, and public website;
+- separate value types for program funding, Store Claims, Infinity units, metal access, ownership, contributions, and sponsored engagement;
+- the complete funding → sourcing → Store Card → wallet → approval → fulfillment/clearing → settlement → recirculation flow;
+- the $1,000 retail-equivalent / 100-unit package explanation;
+- the core anti-double-spend, full-funding, merchant-verification, privacy, capacity, and AI-governance rules.
+
+See [`docs/INFINITY_SYSTEM_WEBSITE_MAP.md`](docs/INFINITY_SYSTEM_WEBSITE_MAP.md) for the permanent file and architecture map.
 
 ## Good Bee
 
@@ -89,6 +105,7 @@ The included demonstration shows how a $1,000 retail-equivalent benchmark could 
 
 ## Documentation
 
+- [`docs/INFINITY_SYSTEM_WEBSITE_MAP.md`](docs/INFINITY_SYSTEM_WEBSITE_MAP.md)
 - [`docs/GOOD_BEE_OPERATING_MODEL.md`](docs/GOOD_BEE_OPERATING_MODEL.md)
 - [`docs/STORE_CARD_OPERATING_MODEL.md`](docs/STORE_CARD_OPERATING_MODEL.md)
 - [`docs/RECIPROCAL_CLEARING_MODEL.md`](docs/RECIPROCAL_CLEARING_MODEL.md)
@@ -106,6 +123,7 @@ Open:
 
 ```text
 http://localhost:8080/
+http://localhost:8080/good-bee/infinity-system.html
 http://localhost:8080/good-bee/
 http://localhost:8080/good-bee/store-cards.html
 http://localhost:8080/good-bee/reciprocal-clearing.html
