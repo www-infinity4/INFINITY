@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "concept-prototype",
+  "notice": "All destinations, prices, capacities, funding amounts, and availability shown by this prototype are planning examples. They are not active offers, medical treatment, legal tender, or guaranteed benefits.",
+  "destinations": [
+    {
+      "id": "florida-coast",
+      "name": "Florida Coast Trial Stay",
+      "region": "Florida Atlantic or Gulf Coast",
+      "environment": "beach",
+      "summary": "A voluntary short stay used to test climate, transportation, accessibility, medical access, community fit, and daily support before any permanent move.",
+      "features": ["Accessible lodging", "Airport or station transfer", "Local support check-ins", "Beach mobility planning", "Care-provider coordination", "Return-trip guarantee"],
+      "tokens": {"night": 14, "ride": 4, "meal": 20, "supportHour": 6}
+    },
+    {
+      "id": "mountain-renewal",
+      "name": "Mountain Renewal Trial Stay",
+      "region": "Colorado, Montana, or another chosen mountain community",
+      "environment": "mountain",
+      "summary": "A voluntary trial stay for people who prefer mountain air, smaller communities, outdoor recreation, or a different pace of life.",
+      "features": ["Accessible lodging", "Altitude and health planning", "All-weather transportation", "Community orientation", "Outdoor access review", "Return-trip guarantee"],
+      "tokens": {"night": 14, "ride": 6, "meal": 20, "supportHour": 6}
+    },
+    {
+      "id": "coastal-move",
+      "name": "Supported Coastal Move",
+      "region": "Chosen coastal community",
+      "environment": "beach",
+      "summary": "A person-directed relocation package that can coordinate housing, transportation, furnishings, benefits navigation, local care, and follow-up support.",
+      "features": ["Choice-based destination plan", "Accessible home inspection", "Moving logistics", "Benefits continuity", "Local care handoff", "90-day follow-up"],
+      "tokens": {"movePackage": 1, "ride": 8, "supportHour": 30, "homeSetup": 1}
+    },
+    {
+      "id": "mountain-move",
+      "name": "Supported Mountain Move",
+      "region": "Chosen mountain or nearby plains community",
+      "environment": "mountain",
+      "summary": "A voluntary relocation package for people who select a mountain region or an accessible nearby community after reviewing climate, services, cost, and transportation.",
+      "features": ["Choice-based destination plan", "Climate readiness", "Accessible home inspection", "Moving logistics", "Local care handoff", "90-day follow-up"],
+      "tokens": {"movePackage": 1, "ride": 10, "supportHour": 30, "homeSetup": 1}
+    },
+    {
+      "id": "sail-and-see",
+      "name": "Sail and See",
+      "region": "Accessible coastal itinerary",
+      "environment": "travel",
+      "summary": "A supported vacation package that may include adaptive sailing, coastal sightseeing, accessible lodging, and an attendant or companion chosen by the traveler.",
+      "features": ["Adaptive activity review", "Accessible transport", "Companion planning", "Medical contingency plan", "Clear cancellation terms", "No forced itinerary"],
+      "tokens": {"night": 7, "ride": 4, "meal": 14, "experience": 2, "supportHour": 8}
+    }
+  ],
+  "homes": [
+    {
+      "id": "beenest-studio",
+      "name": "BeeNest Studio",
+      "type": "Single-resident accessible studio",
+      "assembly": "Panelized snap-together shell with inspected mechanical connections",
+      "summary": "A compact permanent or transitional home designed around one resident's chosen accessibility and support technology.",
+      "features": ["Zero-step entry", "Wide circulation paths", "Roll-in wet room", "Voice and switch controls", "Adjustable storage", "Backup power-ready", "Nurse-call option", "Private outdoor space"]
+    },
+    {
+      "id": "carenest-one",
+      "name": "CareNest One",
+      "type": "One-bedroom support-ready home",
+      "assembly": "Factory-built modules joined on a permitted foundation",
+      "summary": "A private one-bedroom home with room for visiting care, adaptive equipment, and a flexible support station without making the residence feel institutional.",
+      "features": ["Accessible kitchen", "Transfer clearances", "Hands-free fixtures", "Caregiver work alcove", "Secure medication cabinet option", "Two-way support communication", "Fire and air-quality monitoring", "Guest sleeping option"]
+    },
+    {
+      "id": "hivelink-duplex",
+      "name": "HiveLink Duplex",
+      "type": "Two private homes with an optional shared support core",
+      "assembly": "Repeatable structural bays with replaceable utility cartridges",
+      "summary": "Two independent residences that can share backup power, transportation staging, laundry, or staff space while preserving privacy.",
+      "features": ["Separate entrances", "Private kitchens and baths", "Shared support room by consent", "Replaceable plumbing wall", "Heat-pump water heating", "Solar and battery-ready", "Covered mobility route", "Community garden option"]
+    },
+    {
+      "id": "honeycomb-court",
+      "name": "Honeycomb Courtyard",
+      "type": "Small mixed-support neighborhood",
+      "assembly": "Standardized home modules around a shaded accessible courtyard",
+      "summary": "A small community of private homes with optional nurses, coordinators, transportation, workshops, recreation, and shared meals.",
+      "features": ["Private homes", "Universal-design paths", "On-site support suite", "Accessible shuttle bay", "Workshop and robot maintenance space", "Community kitchen", "Respite room", "Storm and evacuation plan"]
+    }
+  ],
+  "benefitUnits": [
+    {"id": "night", "label": "Stay Night", "description": "One approved night in listed lodging."},
+    {"id": "ride", "label": "Accessible Ride", "description": "One scheduled local or transfer ride within package rules."},
+    {"id": "meal", "label": "Meal", "description": "One approved meal or grocery allocation."},
+    {"id": "supportHour", "label": "Support Hour", "description": "One hour of approved non-emergency support or coordination."},
+    {"id": "experience", "label": "Experience", "description": "One listed recreational or cultural activity."},
+    {"id": "movePackage", "label": "Move Package", "description": "One approved move plan with defined scope and limits."},
+    {"id": "homeSetup", "label": "Home Setup", "description": "One approved furnishing, utility, and accessibility setup package."}
+  ]
+}
