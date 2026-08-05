@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Infinity AI Token Studio: universal Star conversion marks, system-need ranking, Product Tokens, Star Blueprints, Avatar Coins, Store Claims, charts, versions, and connected fulfillment.">
+  <title>Infinity AI Token Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="token-studio.css">
+</head>
+<body class="token-studio-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand convertible" href="infinity-system.html" data-convert-id="infinity-token-studio" data-convert-type="system" data-convert-label="Infinity Token Studio">
+      <span class="brand-mark" aria-hidden="true">⭐</span>
+      <span><strong>Infinity Token Studio</strong><small>AI product need · creation · conversion</small></span>
+    </a>
+    <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
+      <a href="#need">Need queue</a>
+      <a href="#studio">Create token</a>
+      <a href="#lifecycle">Wiring</a>
+      <a href="#alien-radio">Alien Radio</a>
+      <a href="#ledger">Versions</a>
+      <a href="infinity-system.html">System Map</a>
+      <a href="wallet-orchestrator.html">AI Wallet</a>
+      <a href="store-cards.html">Store Cards</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="studio-hero">
+      <div>
+        <p class="eyebrow">One quiet mark across the entire platform</p>
+        <h1>Click the small ⭐ to create, change, version, or convert anything that can become a tokenized product.</h1>
+        <p class="lede">The Star mark works like a creation trademark: identical size, identical upper-right position, and low visual weight. It opens the selected object inside the AI Token Studio, where the system ranks need, defines the exact product, calculates supply, preserves versions, and wires the result into Store Cards, Wallet, Coin Planner, fulfillment, and clearing.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#need">See what Infinity needs most</a>
+          <a class="button secondary" href="#studio">Create a Product Token</a>
+        </div>
+        <p class="prototype-note"><strong>Prototype:</strong> Star Blueprints, Product Tokens, Avatar Coins, Store Claims, scores, balances, and ledgers on this page are local planning records. They are not money, cryptocurrency, securities, ownership title, guaranteed rewards, or live inventory.</p>
+      </div>
+      <div class="star-language" aria-label="Universal Star conversion language">
+        <div class="star-object convertible" data-convert-id="idea" data-convert-type="idea" data-convert-label="Human idea"><span>IDEA</span><strong>Human plan</strong></div>
+        <div class="star-arrow">→</div>
+        <div class="star-object convertible" data-convert-id="blueprint" data-convert-type="blueprint" data-convert-label="Star Blueprint"><span>⭐ BLUEPRINT</span><strong>Named version</strong></div>
+        <div class="star-arrow">→</div>
+        <div class="star-object convertible" data-convert-id="product-token" data-convert-type="product-token" data-convert-label="Product Token"><span>PRODUCT TOKEN</span><strong>Exact deliverable</strong></div>
+        <div class="star-arrow">→</div>
+        <div class="star-object convertible" data-convert-id="store-claim" data-convert-type="store-claim" data-convert-label="Store Claim"><span>STORE CLAIM</span><strong>Verified capacity</strong></div>
+      </div>
+    </section>
+
+    <section class="star-standard section">
+      <div>
+        <p class="eyebrow">Universal mark standard</p>
+        <h2>Visible everywhere. Overbearing nowhere.</h2>
+      </div>
+      <div class="standard-grid">
+        <article><strong>15 × 15 pixels</strong><span>The same compact footprint across cards, stations, products, charts, AI modules, offers, and versions.</span></article>
+        <article><strong>Upper-right corner</strong><span>A consistent location so people learn the symbol once instead of hunting through menus.</span></article>
+        <article><strong>Quiet until needed</strong><span>Partial opacity by default, brighter on hover, keyboard focus, or when a parent object is active.</span></article>
+        <article><strong>Creation, not rating</strong><span>It means create, edit, version, convert, connect, or inspect ancestry—not favorite, endorsement, or verified value.</span></article>
+      </div>
+    </section>
+
+    <section id="need" class="section need-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">AI Product Need Engine</p><h2>Build the product Infinity needs most.</h2></div>
+        <p>Transparent weighted logic ranks the current modules by system demand, scarcity, human usefulness, production readiness, and local capacity. Low readiness does not hide a useful idea; it identifies the work required before production.</p>
+      </div>
+      <div class="need-layout">
+        <div id="moduleGrid" class="module-grid" aria-live="polite"></div>
+        <div class="need-chart-card convertible" data-convert-id="need-ranking" data-convert-type="chart" data-convert-label="Product need ranking chart">
+          <div class="eyebrow">Weighted priority</div>
+          <h3>System need ranking</h3>
+          <canvas id="rankingChart" width="720" height="520" aria-label="Ranked product need chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio" class="section creation-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">AI creation stage</p><h2>Turn the selected object into the exact Product Token.</h2></div>
+      </div>
+      <div class="creation-layout">
+        <form id="tokenForm" class="token-form">
+          <label>Selected convertible object
+            <input id="selectedObject" readonly>
+          </label>
+          <label>Creation or business name
+            <input id="creationName" maxlength="100" required>
+          </label>
+          <label>Exact product or service needed
+            <textarea id="productDefinition" required></textarea>
+          </label>
+          <label>Why Infinity needs it
+            <textarea id="systemNeed" required></textarea>
+          </label>
+          <label>Planned operating identities or units
+            <input id="plannedUnits" type="number" min="1" max="1000000" value="1" required>
+          </label>
+          <label class="check-row"><input id="identityProduct" type="checkbox"> Requires a distinct operating identity and Avatar Coin</label>
+          <div id="factorControls" class="factor-controls"></div>
+          <button class="button primary" type="submit">⭐ Create named Star version</button>
+        </form>
+
+        <div class="plan-output convertible" data-convert-id="current-token-plan" data-convert-type="token-plan" data-convert-label="Current Product Token plan">
+          <p class="eyebrow">AI token plan</p>
+          <h3 id="planTitle">Select a module to begin.</h3>
+          <span id="priorityBadge" class="priority-badge"></span>
+          <div id="planRows" class="plan-rows"></div>
+          <div class="chart-grid">
+            <article><h4>Need factors</h4><canvas id="factorChart" width="520" height="240"></canvas></article>
+            <article><h4>Supply and activation</h4><canvas id="supplyChart" width="520" height="240"></canvas></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lifecycle" class="section lifecycle-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Token wiring</p><h2>Different token types perform different jobs.</h2></div>
+      </div>
+      <div class="lifecycle-flow">
+        <article class="convertible" data-convert-id="star-blueprint-stage" data-convert-type="token-type" data-convert-label="Star Blueprint"><span>01</span><h3>Star Blueprint ⭐</h3><p>Editable, named, attributable version with parent history. It preserves creation and can be changed without erasing the earlier design.</p></article>
+        <article class="convertible" data-convert-id="product-token-stage" data-convert-type="token-type" data-convert-label="Product Token"><span>02</span><h3>Product Token</h3><p>Defines the exact product, service, component, station, work role, capacity, tests, rights, and production quantity the system needs.</p></article>
+        <article class="convertible" data-convert-id="avatar-coin-stage" data-convert-type="token-type" data-convert-label="Avatar Coin"><span>03</span><h3>Avatar Coin</h3><p>Required only for distinct operating identities such as radio stations or businesses. A verified-use rule produces it; one coin locks to one active identity.</p></article>
+        <article class="convertible" data-convert-id="store-claim-stage" data-convert-type="token-type" data-convert-label="Store Claim"><span>04</span><h3>Store Claim</h3><p>Created only after capacity, funding, provider, restrictions, delivery, refund, and dispute rules are verified.</p></article>
+        <article class="convertible" data-convert-id="wallet-stage" data-convert-type="system" data-convert-label="Infinity AI Wallet"><span>05</span><h3>AI Wallet</h3><p>Shows what can be used, saved, combined, earned, converted, approved, or disputed without collapsing every value type into one number.</p></article>
+        <article class="convertible" data-convert-id="clearing-stage" data-convert-type="system" data-convert-label="Reciprocal Clearing"><span>06</span><h3>Clearing</h3><p>When permitted, locks and retires a specific Store Claim before replacement Infinity units are issued.</p></article>
+      </div>
+    </section>
+
+    <section id="alien-radio" class="section alien-section">
+      <div class="alien-copy">
+        <p class="eyebrow">First connected working example</p>
+        <h2>Alien Radio becomes a Star Blueprint that produces the Avatar Coins radio stations need to exist.</h2>
+        <p>The working Alien Radio repository already contains 12 channels, live streams, Web Audio fallback, research, user wallets, listening records, games, and GP Suite AI modules. The new branch adds the universal conversion marks, Product Need charts, named Star versions, qualified-use measurement, Avatar Coin production, and station activation ledger.</p>
+        <div class="alien-actions">
+          <a class="button primary" href="https://github.com/www-infinity4/Alien-Radio/tree/agent/star-avatar-token-stage" rel="noreferrer">Open Alien Radio Star branch</a>
+          <a class="button secondary" href="https://github.com/www-infinity4/Alien-Radio/blob/agent/star-avatar-token-stage/stage.html" rel="noreferrer">View enhanced route source</a>
+        </div>
+      </div>
+      <div class="alien-token-chain">
+        <article class="convertible" data-convert-id="alien-radio-blueprint" data-convert-type="blueprint" data-convert-label="Alien Radio Star Blueprint"><strong>⭐ Alien Radio</strong><span>Named station design</span></article>
+        <b>→</b>
+        <article class="convertible" data-convert-id="alien-radio-product" data-convert-type="product-token" data-convert-label="Alien Radio Product Token"><strong>Product Token</strong><span>Station system and capacity</span></article>
+        <b>→</b>
+        <article class="convertible" data-convert-id="alien-radio-use" data-convert-type="qualified-use" data-convert-label="24-hour qualified station use"><strong>24h qualified use</strong><span>Another verified listener</span></article>
+        <b>→</b>
+        <article class="convertible" data-convert-id="alien-radio-avatar" data-convert-type="avatar-coin" data-convert-label="Alien Radio Avatar Coin"><strong>Avatar Coin</strong><span>Locked to one station identity</span></article>
+      </div>
+    </section>
+
+    <section id="ledger" class="section ledger-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Local prototype ledger</p><h2>Every version remains traceable.</h2></div>
+        <button id="resetLedger" class="button secondary" type="button">Reset local Token Studio data</button>
+      </div>
+      <div class="ledger-layout">
+        <div><h3>Star versions</h3><div id="versionList" class="version-list"></div></div>
+        <div><h3>Events</h3><div id="eventList" class="event-list"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Infinity AI Token Studio</strong>
+    <span>⭐ Create · Version · Convert · Verify · Fulfill · Clear</span>
+    <span id="year"></span>
+  </footer>
+
+  <script src="token-studio.js" defer></script>
+</body>
+</html>
