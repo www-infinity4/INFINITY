@@ -14,49 +14,87 @@ This root does not copy every repository into one oversized codebase. It provide
 - Direct links to every repository
 - Architecture and AI-gateway documentation
 - No API secrets stored in browser code
-- **Good Bee · Infinity Living** public prototype for voluntary accessible travel, relocation, housing, support, and NFC benefit packages
-- **Infinity Store Cards** public prototype connecting cards, stores, benefits, drops, auctions, physical collectibles, provenance, and scam-resistant fulfillment
+- **Good Bee · Infinity Living** for voluntary accessible travel, relocation, housing, support, and NFC benefit packages
+- **Infinity Store Cards** for cards, stores, benefits, drops, physical collectibles, provenance, and fulfillment
+- **Infinity Reciprocal Clearing Loop** for retiring Store Claims before issuing general Infinity units
+- **Infinity AI Wallet Orchestrator** for hotel nights, physical-metal access, NFC discounts, product claims, business coins, ads, work, and simple user decisions
+- **Infinity Coin Planner** for global business discovery, local-first sourcing, bulk contracts, destination staging, transparent package funding, and fulfillment
 
-## Featured module: Good Bee
+## Good Bee
 
-Open [`good-bee/`](good-bee/) for the Good Bee website.
+Open [`good-bee/`](good-bee/) for housing, travel, accessibility, support, Honey Coin, and modular-home planning.
 
-It includes:
+## Infinity Store Cards
 
-- beach, mountain, sailing, vacation, trial-stay, permanent-move, and new-home planning;
-- accessibility, transportation, companion, personal-assistance, meal, check-in, and nursing-coordination choices;
-- four modular accessible housing models for the future Infinity robotic building network;
-- a Good Bee Honey Coin NFC access-key model;
-- goods-and-services benefit units rather than an unverified investment token;
-- person-controlled consent, return, privacy, payment, complaint, and audit protections;
-- no paid AI requirement for the current static prototype.
+Open [`good-bee/store-cards.html`](good-bee/store-cards.html) for:
 
-The prototype does not currently provide housing, healthcare, travel, nursing, money, benefits, or construction. All displayed packages, balances, destinations, and availability are planning examples.
-
-## Featured module: Infinity Store Cards
-
-Open [`good-bee/store-cards.html`](good-bee/store-cards.html) for the recovered and consolidated store-card system.
-
-The website incorporates the earlier conversations around:
-
-- Good Bee Honey Card and Honey Coin;
+- Good Bee Honey Card;
 - Infinity Store Card;
 - Arrowhead Coin and Luxury Click–Infinity Drop;
-- Black Card Market property and collateral records;
-- Infinity Relic Cards containing real coins, sapphires, minerals, memorabilia, or specimens;
-- Infinity Wallet, Infinity Market, and Infinity Stage storefronts;
-- Shop World / Mario Shop World grab, accept, reject, charge, bid, and demo-token mechanics;
-- NFC/RFID authentication, provenance, transfer, fulfillment, receipts, returns, and disputes;
-- Boron Vault separation of viewing from real signing authority;
-- AI monitoring for payout changes, fake inventory, duplicate listings, bid manipulation, and failed fulfillment.
+- Black Card Market records;
+- Infinity Relic Cards;
+- Infinity Wallet, Market, and Stage;
+- Shop World demonstration mechanics;
+- NFC/RFID identity, provenance, transfer, delivery, returns, and disputes;
+- Boron Vault viewing/signing separation.
 
-The Store Cards prototype is static HTML, CSS, JavaScript, and JSON. Its demo tokens, balances, auctions, collateral, store value, cards, and offers are not real financial products or guaranteed inventory.
+## Reciprocal Clearing
 
-See:
+Open [`good-bee/reciprocal-clearing.html`](good-bee/reciprocal-clearing.html) for the anti-double-spend conversion system:
 
-- [`good-bee/README.md`](good-bee/README.md)
+```text
+Verify funded Store Claim
+→ quote conversion
+→ lock the source claim
+→ permanently retire its spending power
+→ issue approved Infinity units
+→ preserve linked retirement and issuance receipts
+```
+
+## Infinity AI Wallet
+
+Open [`good-bee/wallet-orchestrator.html`](good-bee/wallet-orchestrator.html) for the simplified user interface over the deeper graph of:
+
+- general Infinity units;
+- hotel-night claims;
+- meals, rides, products, and vacation packages;
+- limited physical silver and gold access;
+- physical and digital NFC Store Cards;
+- baseline and in-person discounts;
+- business-plan coins;
+- sponsored visits and advertising budgets;
+- work and contribution records;
+- rights, receipts, and approvals.
+
+## Infinity Coin Planner
+
+Open [`good-bee/coin-planner.html`](good-bee/coin-planner.html) for the global-local package engine.
+
+Coin Planner:
+
+- builds country, locality, destination, and business records from permitted official, licensed, open, merchant-direct, industry, and community sources;
+- normalizes and deduplicates listings;
+- verifies merchant control, payout, capacity, accessibility, contracts, and licenses;
+- sources hotels, meals, transportation, products, activities, and support locally before importing;
+- requests bulk and off-peak contracts;
+- forecasts likely destination demand;
+- stages appropriate durable inventory;
+- combines separate Store Claims into one understandable package;
+- separates public retail-equivalent benchmark from actual contracted cost;
+- shows traveler, sponsor, program, and Infinity-pool funding separately;
+- blocks package publication while an unfunded gap remains;
+- settles each provider only after verified fulfillment.
+
+The included demonstration shows how a $1,000 retail-equivalent benchmark could be offered for 100 Infinity units only when real contracts and disclosed funding cover the actual package cost. It is not a guaranteed price or active offer.
+
+## Documentation
+
 - [`docs/GOOD_BEE_OPERATING_MODEL.md`](docs/GOOD_BEE_OPERATING_MODEL.md)
 - [`docs/STORE_CARD_OPERATING_MODEL.md`](docs/STORE_CARD_OPERATING_MODEL.md)
+- [`docs/RECIPROCAL_CLEARING_MODEL.md`](docs/RECIPROCAL_CLEARING_MODEL.md)
+- [`docs/COIN_PLANNER_MODEL.md`](docs/COIN_PLANNER_MODEL.md)
+- [`docs/SECURITY_AND_DATA_ARCHITECTURE.md`](docs/SECURITY_AND_DATA_ARCHITECTURE.md)
+- [`docs/INTEGRATION_PLAN.md`](docs/INTEGRATION_PLAN.md)
 
 ## Run locally
 
@@ -64,29 +102,20 @@ See:
 python3 -m http.server 8080
 ```
 
-Open the root portal:
+Open:
 
 ```text
 http://localhost:8080/
-```
-
-Open Good Bee:
-
-```text
 http://localhost:8080/good-bee/
-```
-
-Open Store Cards:
-
-```text
 http://localhost:8080/good-bee/store-cards.html
+http://localhost:8080/good-bee/reciprocal-clearing.html
+http://localhost:8080/good-bee/wallet-orchestrator.html
+http://localhost:8080/good-bee/coin-planner.html
 ```
 
-## Deployment
+## Prototype boundary
 
-The static portal can use GitHub Pages or Cloudflare Pages. AI calls must be handled by a server-side worker or function so provider keys remain private.
-
-Good Bee and Store Cards can remain mostly frontend for public catalogs, package demonstrations, card visualizations, public provenance, housing designs, search, Shop World demonstrations, and explanations. Real identities, health/accessibility details, ownership, itineraries, provider records, payments, bids, collateral, balances, complaints, signing, and construction records require protected backend services and qualified operational partners.
+The repository does not currently operate housing, healthcare, travel, payments, prepaid accounts, currency, metal sales, auctions, lending, government benefits, merchant settlement, or guaranteed packages. All displayed balances, prices, discounts, inventory, funding, cards, units, metals, businesses, and packages are demonstrations until verified contracts and qualified operational systems exist.
 
 ## Integration order
 
