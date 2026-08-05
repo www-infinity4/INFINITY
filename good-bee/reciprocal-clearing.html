@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Infinity Reciprocal Clearing Loop: government and institutional funding, store-card claims, Infinity units, token retirement, treasury pools, work matching, and anti-double-spend controls.">
+  <title>Infinity Reciprocal Clearing Loop</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="store-cards.css">
+  <link rel="stylesheet" href="reciprocal-clearing.css">
+</head>
+<body class="clearing-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Good Bee home">
+      <span class="brand-mark" aria-hidden="true">GB</span>
+      <span><strong>Infinity Clearing</strong><small>Good Bee · Store Cards · Infinity Units</small></span>
+    </a>
+    <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
+      <a href="#loop">Clearing loop</a>
+      <a href="#ledgers">Ledgers</a>
+      <a href="#allowance">Daily floor</a>
+      <a href="#work">Work engine</a>
+      <a href="#rules">Rules</a>
+      <a href="store-cards.html">Store Cards</a>
+      <a href="index.html">Good Bee</a>
+      <a href="../index.html">Infinity</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="clearing-hero">
+      <div>
+        <p class="eyebrow">The missing reciprocating system</p>
+        <h1>A specific store promise becomes a general Infinity unit only after the original claim is retired.</h1>
+        <p class="lede">Government, nonprofit, employer, insurer, or other institutional funding can purchase defined destinations, products, housing, health support, transportation, food, tools, and services. New Hope or Infinity Health allocates those store-card claims. A person or business may later exchange an eligible claim for general Infinity units, but the source claim is permanently locked and cancelled first.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#loop">Follow the full loop</a>
+          <a class="button secondary" href="#simulator">Run a demonstration</a>
+        </div>
+        <p class="prototype-note"><strong>Architecture prototype:</strong> Infinity does not currently issue money, government benefits, prepaid value, wages, loans, securities, or guaranteed daily support. The page defines the intended accounting and protection logic.</p>
+      </div>
+      <div class="clearing-symbol" aria-label="Store card converted into Infinity units after retirement">
+        <div class="source-card"><span>STORE CLAIM</span><strong>Specific good or service</strong><small>Funded · restricted · traceable</small></div>
+        <div class="retire-node"><span>VERIFY</span><strong>LOCK + RETIRE</strong></div>
+        <div class="unit-card"><span>INFINITY UNIT</span><strong>General transfer value</strong><small>Issued once · auditable · transferable</small></div>
+      </div>
+    </section>
+
+    <section class="definition-strip">
+      <article><strong>Store card</strong><span>A claim on a named product, service, destination, merchant group, or benefit package.</span></article>
+      <article><strong>Infinity unit</strong><span>A general internal transfer unit accepted across approved Infinity businesses and services.</span></article>
+      <article><strong>Retirement</strong><span>The store claim becomes unusable before replacement Infinity units are issued.</span></article>
+      <article><strong>Recirculation</strong><span>Units spent in the network return through merchants, workers, reserves, and public benefit pools.</span></article>
+    </section>
+
+    <section id="loop" class="section loop-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Reciprocal clearing loop</p><h2>Funding enters once. Value can circulate many times without being counted twice.</h2></div>
+        <p>The system records every stage separately so AI can automate allocation, verification, exchange, taxes, receipts, and profit sharing without inventing unsupported value.</p>
+      </div>
+
+      <div class="loop-grid">
+        <article><span>01</span><h3>Program purchases capacity</h3><p>A government agency or another funder contracts with Infinity Health, New Hope, Good Bee, or an approved provider for defined goods and services.</p><small>Example: accessible lodging nights, meals, rides, home setup, health navigation, tools, seed, or verified work.</small></article>
+        <article><span>02</span><h3>Store claims enter a program pool</h3><p>The funded inventory is represented as store-card claims with exact restrictions, quantities, expiration, providers, and refund terms.</p><small>The claim is not yet a general Infinity unit.</small></article>
+        <article><span>03</span><h3>AI allocates within policy</h3><p>New Hope or Infinity Health AI matches claims to eligible people, pay packages, destinations, support plans, or business needs.</p><small>Human appeal and correction remain available.</small></article>
+        <article><span>04</span><h3>Person chooses use or exchange</h3><p>The holder may use the promised product or service, keep the claim, reject it, or request conversion when program rules allow.</p><small>No automatic surrender of a benefit without the person’s approval.</small></article>
+        <article><span>05</span><h3>Clearinghouse verifies the claim</h3><p>Infinity confirms funding, ownership, restrictions, expiration, taxes, fraud checks, merchant status, and whether conversion is legally permitted.</p><small>Unavailable, disputed, or restricted claims cannot pass clearing.</small></article>
+        <article><span>06</span><h3>Original card is locked and retired</h3><p>The exact claim is marked converted, receives a retirement receipt, and can no longer buy the original product or service.</p><small>This is the anti-double-spend point.</small></article>
+        <article><span>07</span><h3>Infinity units are issued</h3><p>The settlement reserve issues the published exchange amount to the user’s Infinity Wallet only after retirement completes.</p><small>The issuance references the retired claim and cannot exceed approved value.</small></article>
+        <article><span>08</span><h3>Units circulate through real work</h3><p>People spend units on approved goods and services. Businesses, workers, creators, growers, builders, researchers, and caregivers earn them.</p><small>Capacity must be verified before product-backed claims are issued.</small></article>
+        <article><span>09</span><h3>Infinity buys and recirculates value</h3><p>Infinity may purchase eligible units or settlement claims through a published treasury policy, then direct verified surplus into operating, reserve, and community pools.</p><small>No hidden buyback rate or guaranteed investment return.</small></article>
+      </div>
+    </section>
+
+    <section id="ledgers" class="section ledger-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Four-ledger architecture</p><h2>Never mix funding, promises, circulating units, and profit.</h2></div>
+      </div>
+      <div class="ledger-grid">
+        <article>
+          <span class="ledger-number">A</span>
+          <h3>Program Funding Ledger</h3>
+          <p>Records money or contractual funding actually received from government agencies, grants, employers, insurers, donations, customers, or other approved sources.</p>
+          <ul><li>Pledged</li><li>Awarded</li><li>Received</li><li>Restricted</li><li>Committed</li><li>Spent</li><li>Refunded</li></ul>
+        </article>
+        <article>
+          <span class="ledger-number">B</span>
+          <h3>Store Claim Ledger</h3>
+          <p>Records the specific product, service, destination, inventory, support, or merchant value represented by every store card.</p>
+          <ul><li>Issued</li><li>Allocated</li><li>Used</li><li>Exchanged</li><li>Expired</li><li>Cancelled</li><li>Retired</li></ul>
+        </article>
+        <article>
+          <span class="ledger-number">C</span>
+          <h3>Infinity Unit Ledger</h3>
+          <p>Records general transferable units after valid issuance, including ownership, payments, earnings, holds, disputes, taxes, and retirement.</p>
+          <ul><li>Available</li><li>Held</li><li>Transferred</li><li>Earned</li><li>Spent</li><li>Disputed</li><li>Retired</li></ul>
+        </article>
+        <article>
+          <span class="ledger-number">D</span>
+          <h3>Treasury and Profit Pool</h3>
+          <p>Records audited reserves, operating revenue, verified surplus, public-benefit allocations, business investment, losses, and distributions.</p>
+          <ul><li>Settlement reserve</li><li>Operations</li><li>Community pool</li><li>Business seed pool</li><li>Loss reserve</li><li>Profit distribution</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="simulator" class="section simulator-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Demonstration clearing receipt</p><h2>See why the source claim must disappear.</h2></div>
+        <p>This calculator is an accounting illustration only. It does not quote a real exchange rate or create value.</p>
+      </div>
+      <div class="simulator-grid">
+        <form id="clearingForm" class="clearing-form">
+          <label>Verified store-claim units
+            <input id="claimValue" type="number" min="0" step="1" value="100">
+          </label>
+          <label>Published exchange rate
+            <input id="exchangeRate" type="number" min="0" step="0.01" value="1">
+          </label>
+          <label>Required reserve percentage
+            <input id="reserveRate" type="number" min="0" max="100" step="0.1" value="0">
+          </label>
+          <label>Community pool percentage
+            <input id="communityRate" type="number" min="0" max="100" step="0.1" value="0">
+          </label>
+          <label>Operating/tax percentage
+            <input id="operationsRate" type="number" min="0" max="100" step="0.1" value="0">
+          </label>
+          <button class="button primary" type="submit">Generate demonstration receipt</button>
+        </form>
+        <div class="clearing-receipt" aria-live="polite">
+          <p class="eyebrow">Retirement receipt</p>
+          <h3 id="receiptStatus">Enter a demonstration claim.</h3>
+          <div id="receiptRows"></div>
+          <p id="receiptWarning">The combined reserve, community, and operating percentages cannot exceed 100%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="allowance" class="section allowance-section">
+      <div>
+        <p class="eyebrow">Basic participation allowance</p>
+        <h2>Up to 100 Infinity units per day as a funded safety ceiling—not an unsupported mint.</h2>
+        <p>The AI does not wait for a person with no current product or service to fail. When a designated public-benefit or community pool has available funding, the wallet may authorize up to 100 units per day for approved necessities such as food, seed, tools, transportation, communication, hygiene, and steps toward producing a good or service.</p>
+      </div>
+      <div class="allowance-rules">
+        <article><strong>Funded first</strong><span>The allowance draws from received and designated resources, not imaginary revenue.</span></article>
+        <article><strong>Daily ceiling</strong><span>“100” is a maximum authorization, not a requirement to spend or an investment promise.</span></article>
+        <article><strong>No debt trap</strong><span>Unused support does not become high-interest debt or a negative wallet.</span></article>
+        <article><strong>Path to earning</strong><span>AI offers training, tools, work, production, and business opportunities suited to the person.</span></article>
+        <article><strong>Appeal</strong><span>A person can challenge an AI denial, classification, provider, or calculation.</span></article>
+        <article><strong>Privacy</strong><span>The public blockchain or GitHub record never exposes the person’s health, hardship, or detailed purchases.</span></article>
+      </div>
+    </section>
+
+    <section id="work" class="section work-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">AI work and business engine</p><h2>The wallet looks for useful work before declaring someone unproductive.</h2></div>
+      </div>
+      <div class="work-grid">
+        <article><h3>Interest becomes a role</h3><p>A person who watches many movies could index stories, verify cast and release details, create accessibility notes, write structured summaries, compare editions, flag errors, or curate themed channels.</p></article>
+        <article><h3>Conversation becomes documented work</h3><p>People who develop Infinity through serious planning with AI can receive attributed project records, task receipts, contribution history, and policy-defined compensation after human-reviewable verification.</p></article>
+        <article><h3>Capacity controls issuance</h3><p>A barber’s available appointments, a grower’s eggs, a builder’s units, a designer’s deliverables, or a caregiver’s hours must be verified before product or service claims are issued.</p></article>
+        <article><h3>AI handles the hard administration</h3><p>The system can organize invoices, taxes, receipts, inventory, schedules, contracts, customer communication, and compliance tasks while showing the human what was done.</p></article>
+        <article><h3>Seed businesses</h3><p>The daily allowance and business pool can provide food seed, materials, tools, software access, transportation, training, or a first customer rather than only distributing passive support.</p></article>
+        <article><h3>Profit returns through rules</h3><p>Verified network surplus can support reserves, public services, business expansion, contributor compensation, and broad distributions according to a published formula that no single AI can secretly change.</p></article>
+      </div>
+    </section>
+
+    <section id="rules" class="section rules-section">
+      <div>
+        <p class="eyebrow">Rules that make the loop real</p>
+        <h2>Infinity can aim to become a reliable transfer system, but strength comes from verification—not a claim that it is automatically stronger than the dollar.</h2>
+      </div>
+      <div class="rule-grid">
+        <article><strong>One source, one replacement</strong><span>No Infinity issuance until the specific store claim is locked. No reactivation after conversion except a recorded reversal that also removes the replacement units.</span></article>
+        <article><strong>Published exchange policy</strong><span>The rate, deductions, eligibility, timing, and dispute rules are visible before exchange.</span></article>
+        <article><strong>Government restrictions remain attached</strong><span>Publicly funded benefits cannot be converted or spent outside their legal program merely because Infinity software can technically do it.</span></article>
+        <article><strong>Voluntary wallet choice</strong><span>A person does not have to exchange a card or accept a government-benefit card when applicable alternatives are required.</span></article>
+        <article><strong>No guaranteed appreciation</strong><span>Buyback, profit distribution, and network growth cannot be marketed as certain investment returns.</span></article>
+        <article><strong>Tax and reporting records</strong><span>Payments for work, digital-asset transactions, sales, and business income require proper records and may create tax obligations.</span></article>
+        <article><strong>Qualified financial partners</strong><span>Real general-purpose transferable value may require banking, prepaid, money-transmission, consumer-protection, and state licensing partners.</span></article>
+        <article><strong>Human governance</strong><span>AI proposes, verifies, reconciles, and monitors. People and independent controls govern policy, appeals, treasury changes, and irreversible actions.</span></article>
+      </div>
+      <div class="authority-links">
+        <strong>Current U.S. regulatory starting points</strong>
+        <a href="https://www.fincen.gov/resources/statutes-regulations/guidance/final-rule-definitions-and-other-regulations-relating" rel="noreferrer">FinCEN prepaid-access guidance</a>
+        <a href="https://www.consumerfinance.gov/rules-policy/regulations/1005/15/" rel="noreferrer">CFPB government-benefit accounts</a>
+        <a href="https://www.consumerfinance.gov/rules-policy/regulations/1005/18/" rel="noreferrer">CFPB prepaid accounts</a>
+        <a href="https://www.sec.gov/rules-regulations/2026/03/s7-2026-09" rel="noreferrer">SEC 2026 crypto-asset interpretation</a>
+        <a href="https://www.irs.gov/filing/digital-assets" rel="noreferrer">IRS digital-asset tax information</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Infinity Reciprocal Clearing Loop</strong>
+    <span>Store claims retire. Infinity units issue once. Work and value recirculate.</span>
+    <span id="year"></span>
+  </footer>
+
+  <script src="reciprocal-clearing.js" defer></script>
+</body>
+</html>
