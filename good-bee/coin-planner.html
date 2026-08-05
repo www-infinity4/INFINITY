@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Infinity Coin Planner: global business registry, local-first sourcing, bulk contracts, destination staging, vacation package optimization, funding-gap accounting, and AI wallet integration.">
+  <title>Infinity Coin Planner</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="coin-planner.css">
+</head>
+<body class="coin-planner-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="wallet-orchestrator.html" aria-label="Infinity Wallet">
+      <span class="brand-mark" aria-hidden="true">CP</span>
+      <span><strong>Coin Planner</strong><small>Global businesses · local packages</small></span>
+    </a>
+    <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
+      <a href="#registry">Registry</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#optimizer">Package optimizer</a>
+      <a href="#destinations">Destination staging</a>
+      <a href="#controls">Protection</a>
+      <a href="wallet-orchestrator.html">AI Wallet</a>
+      <a href="reciprocal-clearing.html">Clearing</a>
+      <a href="store-cards.html">Store Cards</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="planner-hero">
+      <div>
+        <p class="eyebrow">Local-first global sourcing</p>
+        <h1>Find the cheapest real capacity, buy it in bulk, and turn it into a complete package people will actually use.</h1>
+        <p class="lede">Coin Planner builds a verified registry of businesses by country and locality, requests direct bulk offers, predicts likely destinations, stages appropriate products and service capacity, and combines every item into one clear Store Card package inside Infinity Wallet.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#optimizer">Plan a package</a>
+          <a class="button secondary" href="#registry">See how businesses enter</a>
+        </div>
+        <p class="prototype-note"><strong>Target, not guarantee:</strong> A package with a $1,000 published retail-equivalent can cost a traveler 100 Infinity units only when real bulk contracts, off-peak inventory, public benefits, sponsorships, donations, merchant promotions, or Infinity funding cover the remaining cost. The planner always shows the funding gap.</p>
+      </div>
+      <div class="planner-visual" aria-label="Coin Planner sourcing network">
+        <div class="planner-core"><span>COIN PLANNER</span><strong>LOCAL → BULK → PACKAGE</strong><small>Verified capacity only</small></div>
+        <div class="planner-node node-source">Sources</div>
+        <div class="planner-node node-local">Local</div>
+        <div class="planner-node node-bulk">Bulk</div>
+        <div class="planner-node node-stage">Stage</div>
+        <div class="planner-node node-package">Package</div>
+        <div class="planner-node node-wallet">Wallet</div>
+      </div>
+    </section>
+
+    <section class="planner-principles">
+      <article><strong>Every listing has provenance</strong><span>Source, license, retrieval date, owner verification, corrections, and permitted use.</span></article>
+      <article><strong>Local first</strong><span>Hotels, meals, rides, products, and experiences are sourced near the destination before importing them.</span></article>
+      <article><strong>Retail is not cost</strong><span>The system separates public benchmark, negotiated cost, subsidy, sponsor contribution, and user contribution.</span></article>
+      <article><strong>No unfunded package</strong><span>A package cannot publish as available until contracts and funding close the entire gap.</span></article>
+    </section>
+
+    <section id="registry" class="section registry-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Global business registry</p><h2>Scan broadly, verify narrowly.</h2></div>
+        <p>No single database contains every current business in every country. Coin Planner builds coverage from multiple permitted sources and requires stronger verification before a business can receive money or enter a package.</p>
+      </div>
+      <div id="sourceGrid" class="source-grid" aria-live="polite"></div>
+      <div class="registry-flow">
+        <article><span>01</span><h3>Country and locality index</h3><p>Use country and subdivision codes, currencies, languages, time zones, tax regions, and destination boundaries.</p></article>
+        <article><span>02</span><h3>Discover businesses</h3><p>Query official registries, licensed place services, open map data, destination feeds, and merchant-direct applications.</p></article>
+        <article><span>03</span><h3>Normalize and deduplicate</h3><p>Resolve names, aliases, branches, chains, addresses, moved businesses, duplicate place IDs, and conflicting records.</p></article>
+        <article><span>04</span><h3>Verify control</h3><p>Confirm that the applicant controls the business, payout account, inventory, prices, contracts, and required licenses.</p></article>
+        <article><span>05</span><h3>Measure package capacity</h3><p>Record rooms, meals, rides, hours, products, accessibility, dates, minimum volume, cancellations, delivery, and service limits.</p></article>
+        <article><span>06</span><h3>Continuously correct</h3><p>AI, merchants, customers, local contributors, receipts, and public records update status without erasing prior history.</p></article>
+      </div>
+    </section>
+
+    <section id="pipeline" class="section pipeline-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Coin Planner pipeline</p><h2>Every branch has a stage and an owner.</h2></div>
+      </div>
+      <div id="stageGrid" class="stage-grid"></div>
+    </section>
+
+    <section id="optimizer" class="section optimizer-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Vacation package optimizer</p><h2>Test the $1,000 package for 100 Infinity units.</h2></div>
+        <p>The calculator distinguishes retail-equivalent value from actual contracted cost and shows exactly who funds the difference.</p>
+      </div>
+      <div class="optimizer-layout">
+        <form id="optimizerForm" class="optimizer-form">
+          <label>Published retail-equivalent benchmark
+            <input id="retailBenchmark" type="number" min="0" step="1" value="1000">
+          </label>
+          <label>Direct contracted package cost
+            <input id="contractCost" type="number" min="0" step="1" value="400">
+          </label>
+          <label>User price in Infinity units
+            <input id="userUnits" type="number" min="0" step="1" value="100">
+          </label>
+          <label>Settlement value per Infinity unit
+            <input id="unitSettlement" type="number" min="0" step="0.01" value="1">
+          </label>
+          <label>Sponsor or advertiser funding
+            <input id="sponsorFunding" type="number" min="0" step="1" value="100">
+          </label>
+          <label>Government, nonprofit, or benefit funding
+            <input id="programFunding" type="number" min="0" step="1" value="100">
+          </label>
+          <label>Infinity community or profit-pool funding
+            <input id="infinityFunding" type="number" min="0" step="1" value="100">
+          </label>
+          <button class="button primary" type="submit">Recalculate package</button>
+        </form>
+
+        <section class="optimizer-result" aria-live="polite">
+          <p class="eyebrow">Package funding receipt</p>
+          <h3 id="fundingStatus">Checking package...</h3>
+          <div id="fundingRows"></div>
+          <div id="fundingMeter" class="funding-meter"><span></span></div>
+          <p id="fundingExplanation"></p>
+        </section>
+      </div>
+
+      <div class="sample-package">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Illustrative local package</p><h2>Four local contracts become one vacation.</h2></div>
+        </div>
+        <div id="offerGrid" class="offer-grid"></div>
+      </div>
+    </section>
+
+    <section id="destinations" class="section destination-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Destination staging</p><h2>Move the right inventory—not random inventory.</h2></div>
+      </div>
+      <div class="destination-grid">
+        <article><h3>Demand signal</h3><p>Aggregate destination interest, travel dates, length of stay, accessibility needs, cancellations, weather season, events, and historical package use without exposing personal identities.</p></article>
+        <article><h3>Local capacity first</h3><p>Reserve rooms, meals, transport, experiences, support, rentals, and supplies already located near the destination.</p></article>
+        <article><h3>Durable product staging</h3><p>Move only predictable nonperishable products such as accessible equipment, luggage support, mobility accessories, basic clothing, tools, or package materials.</p></article>
+        <article><h3>Perishable and personal items</h3><p>Purchase food, medicine, fitted equipment, and sensitive personal goods closer to actual use and only with proper consent and rules.</p></article>
+        <article><h3>Reverse logistics</h3><p>Plan unused inventory, returns, repairs, redistribution, donations, resale, recycling, and warranty handling before stock moves.</p></article>
+        <article><h3>Local economic share</h3><p>Show what percentage of package spending remains with destination businesses, workers, producers, and community programs.</p></article>
+      </div>
+    </section>
+
+    <section id="controls" class="section controls-section">
+      <div>
+        <p class="eyebrow">Protection and fairness</p>
+        <h2>Cheap packages cannot depend on hidden losses or fake retail prices.</h2>
+        <p>AI can search, negotiate, forecast, bundle, and reconcile, but the package must remain understandable to the traveler, merchant, funder, and auditor.</p>
+      </div>
+      <div class="control-grid">
+        <article><strong>Benchmark evidence</strong><span>Retail-equivalent claims include dates, comparable public offers, inclusions, exclusions, and source.</span></article>
+        <article><strong>Contract evidence</strong><span>Every discount comes from a signed merchant offer, bulk rule, off-peak rate, promotion, or funding agreement.</span></article>
+        <article><strong>Merchant consent</strong><span>No business is enrolled, priced, or paid through scraped information alone.</span></article>
+        <article><strong>Funding-gap lock</strong><span>The package remains planning-only until user contribution plus all verified funding equals or exceeds contracted cost.</span></article>
+        <article><strong>No below-cost coercion</strong><span>AI cannot pressure small businesses into unsustainable pricing or conceal service-worker compensation.</span></article>
+        <article><strong>Accessibility truth</strong><span>Accessibility claims require structured details and user feedback, not a generic “accessible” label.</span></article>
+        <article><strong>Currency and tax clarity</strong><span>Local currency, exchange basis, taxes, fees, and Infinity settlement terms remain visible.</span></article>
+        <article><strong>Package exit</strong><span>Cancellation, substitution, refund, failure, emergency, and return-home rules exist before purchase.</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Infinity Coin Planner</strong>
+    <span>Discover · Verify · Negotiate · Stage · Package · Fund · Fulfill</span>
+    <span id="year"></span>
+  </footer>
+
+  <script src="coin-planner.js" defer></script>
+</body>
+</html>
