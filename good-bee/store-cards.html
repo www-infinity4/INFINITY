@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Infinity Store Cards: NFC benefit cards, collectible relic cards, merchant storefronts, drops, auctions, provenance, and scam-resistant fulfillment.">
+  <meta name="description" content="Infinity Store Cards: NFC benefit cards, collectible relic cards, merchant storefronts, drops, auctions, provenance, reciprocal clearing, and scam-resistant fulfillment.">
   <title>Infinity Store Cards · Good Bee</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="store-cards.css">
@@ -19,6 +19,7 @@
     <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
       <a href="#cards">Cards</a>
       <a href="#market">Store search</a>
+      <a href="reciprocal-clearing.html">Clearing Loop</a>
       <a href="#shop-world">Shop World</a>
       <a href="#relic">Relic cards</a>
       <a href="#system">System</a>
@@ -35,6 +36,7 @@
         <p class="lede">Infinity Store Cards join a physical or digital card to a protected record of the offer, owner, benefit, object, merchant, receipt, return, delivery, and provenance. The public website explains and searches the system; private accounts and signing remain behind the Infinity protection layer.</p>
         <div class="hero-actions">
           <a class="button primary" href="#market">Search the store system</a>
+          <a class="button secondary" href="reciprocal-clearing.html">Open reciprocal clearing</a>
           <a class="button secondary" href="#cards">See every card family</a>
         </div>
         <p class="prototype-note"><strong>Prototype only:</strong> displayed cards, balances, auctions, collateral, store value, tokens, and inventory are demonstrations—not active credit, deposits, legal tender, investments, loans, prepaid accounts, or guaranteed products.</p>
@@ -47,7 +49,7 @@
     </section>
 
     <section class="system-strip" aria-label="Store card operating flow">
-      <span>Physical or digital card</span><b>→</b><span>NFC/RFID or secure account</span><b>→</b><span>Infinity Wallet</span><b>→</b><span>Market or storefront</span><b>→</b><span>Confirm delivery</span><b>→</b><span>Receipt and provenance</span>
+      <span>Physical or digital card</span><b>→</b><span>NFC/RFID or secure account</span><b>→</b><span>Infinity Wallet</span><b>→</b><span>Market or storefront</span><b>→</b><span>Confirm delivery or clearing</span><b>→</b><span>Receipt and provenance</span>
     </section>
 
     <section id="cards" class="section card-family-section">
@@ -76,6 +78,28 @@
       </div>
       <p id="marketStatus" class="status" aria-live="polite"></p>
       <div id="offerGrid" class="offer-grid"></div>
+    </section>
+
+    <section class="section coin-section">
+      <div class="coin-copy">
+        <p class="eyebrow">Infinity Reciprocal Clearing Loop</p>
+        <h2>Convert an eligible store claim without leaving two spendable copies.</h2>
+        <p>A store card represents a specific product, service, destination, merchant group, or benefit. When conversion is permitted, Infinity verifies the funding and ownership, locks the source claim, permanently retires it, and only then issues the approved general Infinity units.</p>
+        <div class="flow" aria-label="Reciprocal clearing flow">
+          <span>Verify funding</span><b>→</b><span>Quote conversion</span><b>→</b><span>Lock claim</span><b>→</b><span>Retire card</span><b>→</b><span>Issue Infinity units</span>
+        </div>
+        <a class="button primary" href="reciprocal-clearing.html">See the full clearing, treasury, daily allowance, and work system</a>
+      </div>
+      <div class="coin-card">
+        <div class="coin-ledger">
+          <p>Four separate ledgers</p>
+          <div><span>Program funding</span><strong>Actual resources</strong></div>
+          <div><span>Store claims</span><strong>Specific promises</strong></div>
+          <div><span>Infinity units</span><strong>General transfer</strong></div>
+          <div><span>Treasury pool</span><strong>Reserve + profit</strong></div>
+          <small>Separation prevents unsupported issuance and double counting.</small>
+        </div>
+      </div>
     </section>
 
     <section id="shop-world" class="section shop-world-section">
@@ -139,17 +163,17 @@
       </div>
       <div id="moduleGrid" class="module-grid"></div>
       <div class="security-contract">
-        <div><strong>Frontend</strong><span>Catalog, search, offers, card visualization, demo wallet, public provenance, receipts, tutorials, and accessibility.</span></div>
-        <div><strong>Protected backend</strong><span>Accounts, real balances, private ownership, payments, holds, disputes, provider verification, shipping, signing, and fraud response.</span></div>
+        <div><strong>Frontend</strong><span>Catalog, search, offers, card visualization, demo wallet, public provenance, receipts, tutorials, clearing explanations, and accessibility.</span></div>
+        <div><strong>Protected backend</strong><span>Accounts, real balances, private ownership, payments, holds, clearing, retirement, disputes, provider verification, shipping, signing, and fraud response.</span></div>
         <div><strong>Boron Vault</strong><span>Viewing stays separate from signing. Real keys use audited cryptography, hardware-backed storage, transaction simulation, and multisignature approval.</span></div>
-        <div><strong>AI guardian</strong><span>Flags changed payout details, fake inventory, duplicate listings, conflicting provenance, suspicious bids, hidden fees, and broken fulfillment promises.</span></div>
+        <div><strong>AI guardian</strong><span>Flags changed payout details, fake inventory, duplicate listings, conflicting provenance, suspicious bids, double-spend attempts, hidden fees, and broken fulfillment promises.</span></div>
       </div>
     </section>
   </main>
 
   <footer>
     <strong>Infinity Store Cards · Good Bee</strong>
-    <span>Cards, benefits, stores, physical goods, provenance, and protected fulfillment.</span>
+    <span>Cards, benefits, stores, clearing, physical goods, provenance, and protected fulfillment.</span>
     <span id="year"></span>
   </footer>
 
