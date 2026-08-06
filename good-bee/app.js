@@ -153,6 +153,7 @@ function addNavigationLinks() {
 
   const links = [
     ['infinity-system.html', 'System Map'],
+    ['token-studio.html', '⭐ Token Studio'],
     ['store-cards.html', 'Store Cards'],
     ['reciprocal-clearing.html', 'Clearing'],
     ['wallet-orchestrator.html', 'AI Wallet'],
@@ -178,16 +179,17 @@ function integratePlatform() {
   section.className = 'section dark-section'
   section.innerHTML = `
     <div class="section-heading">
-      <div><p class="eyebrow">Complete Infinity platform</p><h2>Good Bee is connected to the economic system behind the package.</h2></div>
-      <p>Housing and travel are delivered through Store Claims, business contracts, reciprocal clearing, the AI Wallet, Coin Planner, work matching, treasury pools, and auditable receipts.</p>
+      <div><p class="eyebrow">Complete Infinity platform</p><h2>Good Bee is connected to creation, product supply, and the economic system behind every package.</h2></div>
+      <p>The Token Studio defines the exact products Infinity needs. Coin Planner verifies suppliers and capacity. Store Cards issue specific claims. The AI Wallet organizes them. Clearing retires eligible claims before issuing general units.</p>
     </div>
     <div class="home-grid">
-      <article class="home-card"><span class="home-number">01</span><span class="type">Master architecture</span><h3>Infinity System Map</h3><p>Search every module, value type, input, output, and operating rule discussed today.</p><a class="button primary" href="infinity-system.html">Open map</a></article>
-      <article class="home-card"><span class="home-number">02</span><span class="type">Cards and stores</span><h3>Infinity Store Cards</h3><p>Physical and digital cards, NFC, products, benefits, relics, drops, ownership, returns, and provenance.</p><a class="button primary" href="store-cards.html">Open cards</a></article>
-      <article class="home-card"><span class="home-number">03</span><span class="type">Conversion</span><h3>Reciprocal Clearing</h3><p>Lock and retire the source Store Claim before issuing replacement Infinity units.</p><a class="button primary" href="reciprocal-clearing.html">Open clearing</a></article>
-      <article class="home-card"><span class="home-number">04</span><span class="type">Person-facing control</span><h3>Infinity AI Wallet</h3><p>Hotels, products, metals, discounts, businesses, ads, work, rights, receipts, and approvals in one understandable interface.</p><a class="button primary" href="wallet-orchestrator.html">Open wallet</a></article>
-      <article class="home-card"><span class="home-number">05</span><span class="type">Global-local sourcing</span><h3>Coin Planner</h3><p>Find and verify businesses, source locally, negotiate bulk capacity, stage products, and close package funding gaps.</p><a class="button primary" href="coin-planner.html">Open planner</a></article>
-      <article class="home-card"><span class="home-number">06</span><span class="type">Work and opportunity</span><h3>New Hope and Livelihood</h3><p>Funded daily support, useful work matching, business tools, accepted contribution records, and appealable AI assistance.</p><a class="button primary" href="reciprocal-clearing.html#work">Open work engine</a></article>
+      <article class="home-card"><span class="home-number">01</span><span class="type">Master architecture</span><h3>Infinity System Map</h3><p>Search every module, value type, input, output, creation path, and operating rule.</p><a class="button primary" href="infinity-system.html">Open map</a></article>
+      <article class="home-card"><span class="home-number">02</span><span class="type">Creation and product need</span><h3>⭐ AI Token Studio</h3><p>Click the universal small Star mark to create a named version, define the Product Token, rank system need, calculate supply, and identify Avatar Coin requirements.</p><a class="button primary" href="token-studio.html">Open Token Studio</a></article>
+      <article class="home-card"><span class="home-number">03</span><span class="type">Cards and stores</span><h3>Infinity Store Cards</h3><p>Physical and digital cards, NFC, products, benefits, relics, drops, ownership, returns, and provenance.</p><a class="button primary" href="store-cards.html">Open cards</a></article>
+      <article class="home-card"><span class="home-number">04</span><span class="type">Conversion</span><h3>Reciprocal Clearing</h3><p>Lock and retire the source Store Claim before issuing replacement Infinity units.</p><a class="button primary" href="reciprocal-clearing.html">Open clearing</a></article>
+      <article class="home-card"><span class="home-number">05</span><span class="type">Person-facing control</span><h3>Infinity AI Wallet</h3><p>Star Blueprints, Product Tokens, Avatar Coins, hotels, products, metals, discounts, businesses, ads, work, rights, receipts, and approvals in one understandable interface.</p><a class="button primary" href="wallet-orchestrator.html">Open wallet</a></article>
+      <article class="home-card"><span class="home-number">06</span><span class="type">Global-local sourcing</span><h3>Coin Planner</h3><p>Find and verify businesses, source locally, negotiate bulk capacity, stage products, and close package funding gaps.</p><a class="button primary" href="coin-planner.html">Open planner</a></article>
+      <article class="home-card"><span class="home-number">07</span><span class="type">Work and opportunity</span><h3>New Hope and Livelihood</h3><p>Funded daily support, useful work matching, business tools, accepted contribution records, and appealable AI assistance.</p><a class="button primary" href="reciprocal-clearing.html#work">Open work engine</a></article>
     </div>
   `
 
