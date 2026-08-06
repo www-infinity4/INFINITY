@@ -68,7 +68,46 @@ function buildPackage(event) {
   els.packageRows.innerHTML = rows.map(([label, value]) => `
     <div class="package-row"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>
   `).join('')
-  els.packageExplanation.textContent = 'AI presents one package, but every hotel night, ride, meal, discount, product, provider, expiration, and receipt remains a separate typed claim underneath.'
+  els.packageExplanation.textContent = 'AI presents one package, but every Star version, Product Token, Avatar identity, hotel night, ride, meal, discount, product, provider, expiration, and receipt remains a separate typed record underneath.'
+}
+
+function integrateTokenStudio() {
+  if (els.mainNav && !els.mainNav.querySelector('a[href="token-studio.html"]')) {
+    const link = document.createElement('a')
+    link.href = 'token-studio.html'
+    link.textContent = '⭐ Token Studio'
+    const plannerLink = els.mainNav.querySelector('a[href="coin-planner.html"]')
+    els.mainNav.insertBefore(link, plannerLink || null)
+  }
+
+  if (!els.graphSection || document.querySelector('#token-studio')) return
+
+  const section = document.createElement('section')
+  section.id = 'token-studio'
+  section.className = 'section business-section'
+  section.innerHTML = `
+    <div class="section-heading">
+      <div><p class="eyebrow">Infinity AI Token Studio</p><h2>The wallet now understands creation before commerce.</h2></div>
+      <p>Click the same subtle upper-right ⭐ on any convertible object to create a named version, define the Product Token the system needs, calculate supply, and determine whether the product requires an Avatar Coin identity.</p>
+    </div>
+    <div class="business-layout">
+      <div class="business-coin">
+        <span>UNIVERSAL CREATION MARK</span>
+        <strong>⭐ STAR → PRODUCT → AVATAR</strong>
+        <small>Versioned · typed · attributable</small>
+      </div>
+      <div class="business-spec">
+        <article><h3>Star Blueprint</h3><p>Named, editable child version with parent ancestry. Earlier work remains visible.</p></article>
+        <article><h3>Product Token</h3><p>The exact product, service, station, component, package, offer, or work role Infinity needs produced.</p></article>
+        <article><h3>Avatar Coin</h3><p>Identity activation for products such as radio stations or businesses. One coin locks to one active identity.</p></article>
+        <article><h3>Store Claim</h3><p>Created only after provider, capacity, funding, restrictions, fulfillment, refund, and rights verification.</p></article>
+        <article><h3>Need charts</h3><p>System demand, scarcity, human usefulness, production readiness, and local capacity remain visible.</p></article>
+        <article><h3>Open Studio</h3><p><a class="button primary" href="token-studio.html">⭐ Create or convert a token</a></p></article>
+      </div>
+    </div>
+  `
+
+  els.graphSection.before(section)
 }
 
 function integrateCoinPlanner() {
@@ -88,7 +127,7 @@ function integrateCoinPlanner() {
   section.innerHTML = `
     <div class="section-heading">
       <div><p class="eyebrow">Infinity Coin Planner</p><h2>Search globally, buy locally and in bulk, then close the package funding gap.</h2></div>
-      <p>Coin Planner discovers businesses through permitted sources, verifies merchant control and live capacity, negotiates local contracts, forecasts destination demand, stages appropriate products, and combines the results into Store Card packages.</p>
+      <p>Coin Planner consumes Product Token needs, discovers businesses through permitted sources, verifies merchant control and live capacity, negotiates local contracts, forecasts destination demand, stages appropriate products, and combines the results into Store Card packages.</p>
     </div>
     <div class="package-builder">
       <div class="package-form">
@@ -98,7 +137,7 @@ function integrateCoinPlanner() {
       </div>
       <div class="package-output">
         <p class="eyebrow">Planner chain</p>
-        <h3>Discover → verify → negotiate → stage → package → fund → fulfill</h3>
+        <h3>Product need → discover → verify → negotiate → stage → package → fund → fulfill</h3>
         <div class="package-row"><span>Business coverage</span><strong>Multiple official, licensed, open, and merchant-direct sources</strong></div>
         <div class="package-row"><span>Source order</span><strong>Local destination businesses first</strong></div>
         <div class="package-row"><span>Publication rule</span><strong>No package while a funding gap remains</strong></div>
@@ -124,6 +163,7 @@ function bindNavigation() {
 }
 
 function init() {
+  integrateTokenStudio()
   integrateCoinPlanner()
   bindNavigation()
   els.form?.addEventListener('submit', buildPackage)
