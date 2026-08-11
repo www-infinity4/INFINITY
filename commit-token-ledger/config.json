@@ -1,0 +1,29 @@
+{
+  "owner": "www-infinity4",
+  "poll_interval_seconds": 300,
+  "recent_commits_per_repo": 30,
+  "classification": {
+    "space_x_threshold": 4,
+    "term_weights": {
+      "space": 2,
+      "spacecraft": 4,
+      "aerospace": 4,
+      "propulsion": 3,
+      "orbital": 3,
+      "rocket": 4,
+      "plasma shield": 3,
+      "nuclear propulsion": 4,
+      "starship": 3,
+      "satellite": 3
+    },
+    "manual_space_x_repositories": [
+      "www-infinity4/Solid-State-Nuclear-Propulsion"
+    ],
+    "manual_non_space_x_repositories": [],
+    "administrative_message_prefixes": [
+      "ledger:",
+      "token-ledger:",
+      "watcher:"
+    ]
+  }
+}
