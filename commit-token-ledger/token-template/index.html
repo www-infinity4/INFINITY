@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Infinity Living Token</title>
+<style>
+:root{--bg:#060713;--panel:#11142b;--line:#2c315c;--text:#f5f7ff;--muted:#aeb5d7;--accent:#8c7cff;--state:#36d399;--evidence:#f4c95d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#17183a,var(--bg) 48%);color:var(--text);font:15px/1.55 system-ui,sans-serif}.wrap{max-width:1180px;margin:auto;padding:24px}.top,.grid{display:grid;gap:16px}.top{grid-template-columns:1fr auto;align-items:start}.grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:18px}.card{background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 18px 55px #0005}.token{border-top:5px solid var(--accent)}h1,h2{margin:0 0 10px}h1{font-size:clamp(26px,5vw,48px)}h2{font-size:18px}.muted{color:var(--muted)}.badges{display:flex;gap:8px;flex-wrap:wrap}.badge{padding:5px 9px;border:1px solid var(--line);border-radius:999px;font-size:12px}.state{border-color:var(--state);color:var(--state)}.evidence{border-color:var(--evidence);color:var(--evidence)}button{background:var(--accent);color:white;border:0;border-radius:12px;padding:11px 14px;font-weight:700;cursor:pointer}.secondary{background:transparent;border:1px solid var(--line)}pre{white-space:pre-wrap;word-break:break-word;color:var(--muted)}.prompt{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#090b1b;color:var(--text)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.score{font-size:28px;font-weight:800}.why{border-left:3px solid var(--accent);padding-left:12px}</style>
+</head>
+<body>
+<main class="wrap">
+<section class="card token">
+<div class="top"><div><div class="muted" id="repo">owner/repository</div><h1 id="title">Living Commit Token</h1><div class="badges"><span class="badge" id="tokenId">ICT</span><span class="badge state" id="state">DORMANT</span><span class="badge evidence" id="evidence">OBSERVED</span><span class="badge" id="subsystem">UNCLASSIFIED</span></div></div><button id="continueBtn">Continue / Revive</button></div>
+<p class="muted" id="summary">A personalized view of an immutable commit-backed Infinity project token.</p>
+<div class="why"><strong>Why this is in your wallet</strong><div id="matchReason" class="muted">No personalized reason loaded yet.</div></div>
+</section>
+
+<div class="grid">
+<section class="card"><h2>Build readiness</h2><div class="score" id="buildScore">0%</div><p id="nextStep" class="muted">Awaiting scoring package.</p></section>
+<section class="card"><h2>Project research</h2><div id="projectResearch" class="muted">No project research loaded.</div></section>
+<section class="card"><h2>Infinity random work</h2><div id="randomWork" class="muted">No exploratory link loaded.</div></section>
+<section class="card"><h2>Lineage</h2><pre id="lineage">No lineage loaded.</pre></section>
+<section class="card"><h2>Related tokens for you</h2><div id="related" class="muted">No personalized related-token ranking loaded.</div></section>
+<section class="card"><h2>Robot AI workspace</h2><textarea id="query" class="prompt" rows="4" placeholder="Ask this token what to build, compare, research, revive, or connect..."></textarea><div class="actions"><button id="ask">Ask token</button><button class="secondary" id="research">Research next</button><button class="secondary" id="connect">Find compatible tokens</button></div><pre id="answer">The renderer is a static shell. Connect this panel to the token AI/query service.</pre></section>
+</div>
+</main>
+<script>
+// Canonical facts and personalized rendering are deliberately separate.
+const fallback={canonical:{title:'Living Commit Token',repo:'owner/repository',token_id:'ICT-pending',state:'DORMANT',subsystem:'UNCLASSIFIED',evidence:'OBSERVED',summary:'A personalized view of an immutable commit-backed Infinity project token.',build_readiness:0,lineage:[]},view:{accent:'#8c7cff',match_reason:'This token has not yet been matched to a user profile.',next_step:'Awaiting scoring package.',project_research:'No project research loaded.',random_work:'No exploratory link loaded.',related:[]}};
+const data=window.INFINITY_TOKEN||fallback;
+const c=data.canonical||fallback.canonical,v=data.view||fallback.view;
+document.documentElement.style.setProperty('--accent',v.accent||'#8c7cff');
+const set=(id,val)=>document.getElementById(id).textContent=val;
+set('repo',c.repo);set('title',c.title);set('tokenId',c.token_id);set('state',c.state);set('subsystem',c.subsystem);set('evidence',c.evidence);set('summary',c.summary);set('buildScore',`${c.build_readiness||0}%`);set('matchReason',v.match_reason);set('nextStep',v.next_step);set('projectResearch',v.project_research);set('randomWork',v.random_work);set('lineage',JSON.stringify(c.lineage||[],null,2));set('related',(v.related||[]).join('\n')||'No personalized related-token ranking loaded.');
+</script>
+</body>
+</html>
