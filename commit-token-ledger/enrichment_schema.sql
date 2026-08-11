@@ -17,12 +17,9 @@ CREATE TABLE IF NOT EXISTS token_relationships (
     FOREIGN KEY(target_token_id) REFERENCES tokens(token_id)
 );
 
-CREATE INDEX IF NOT EXISTS idx_token_relationships_source
-ON token_relationships(source_token_id);
-CREATE INDEX IF NOT EXISTS idx_token_relationships_target
-ON token_relationships(target_token_id);
-CREATE INDEX IF NOT EXISTS idx_token_relationships_type
-ON token_relationships(relationship_type);
+CREATE INDEX IF NOT EXISTS idx_token_relationships_source ON token_relationships(source_token_id);
+CREATE INDEX IF NOT EXISTS idx_token_relationships_target ON token_relationships(target_token_id);
+CREATE INDEX IF NOT EXISTS idx_token_relationships_type ON token_relationships(relationship_type);
 
 CREATE TABLE IF NOT EXISTS token_annotations (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -43,10 +40,8 @@ CREATE TABLE IF NOT EXISTS token_annotations (
     FOREIGN KEY(supersedes_annotation_id) REFERENCES token_annotations(id)
 );
 
-CREATE INDEX IF NOT EXISTS idx_token_annotations_token
-ON token_annotations(token_id);
-CREATE INDEX IF NOT EXISTS idx_token_annotations_type
-ON token_annotations(annotation_type);
+CREATE INDEX IF NOT EXISTS idx_token_annotations_token ON token_annotations(token_id);
+CREATE INDEX IF NOT EXISTS idx_token_annotations_type ON token_annotations(annotation_type);
 
 CREATE TABLE IF NOT EXISTS token_categories (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -61,10 +56,8 @@ CREATE TABLE IF NOT EXISTS token_categories (
     FOREIGN KEY(token_id) REFERENCES tokens(token_id)
 );
 
-CREATE INDEX IF NOT EXISTS idx_token_categories_token
-ON token_categories(token_id);
-CREATE INDEX IF NOT EXISTS idx_token_categories_category
-ON token_categories(category);
+CREATE INDEX IF NOT EXISTS idx_token_categories_token ON token_categories(token_id);
+CREATE INDEX IF NOT EXISTS idx_token_categories_category ON token_categories(category);
 
 CREATE TABLE IF NOT EXISTS research_queue (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -97,12 +90,18 @@ CREATE TABLE IF NOT EXISTS recursive_events (
     FOREIGN KEY(caused_by_token_id) REFERENCES tokens(token_id)
 );
 
-CREATE INDEX IF NOT EXISTS idx_recursive_events_token
-ON recursive_events(token_id);
-CREATE INDEX IF NOT EXISTS idx_recursive_events_cause
-ON recursive_events(caused_by_token_id);
+CREATE INDEX IF NOT EXISTS idx_recursive_events_token ON recursive_events(token_id);
+CREATE INDEX IF NOT EXISTS idx_recursive_events_cause ON recursive_events(caused_by_token_id);
 
--- Every token should be eligible for research enrichment. INSERT OR IGNORE
--- lets this statement be run repeatedly by the watcher.
+-- Backfill every token that already exists.
 INSERT OR IGNORE INTO research_queue (token_id, job_type, priority)
 SELECT token_id, 'COMMIT_RESEARCH', 50 FROM tokens;
+
+-- Then guarantee that every future ledgered commit automatically becomes
+-- research work. This is the account-wide token -> research handoff.
+CREATE TRIGGER IF NOT EXISTS trg_token_enqueue_research
+AFTER INSERT ON tokens
+BEGIN
+    INSERT OR IGNORE INTO research_queue (token_id, job_type, priority, status)
+    VALUES (NEW.token_id, 'COMMIT_RESEARCH', 50, 'PENDING');
+END;
