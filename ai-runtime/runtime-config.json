@@ -2,6 +2,15 @@
   "schema": "infinity/ai-runtime/v1",
   "mode": "LOCAL_FIRST",
   "localBaseUrl": "http://127.0.0.1:11435",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 11435,
+    "maxRequestBytes": 10485760
+  },
+  "localInference": {
+    "baseUrl": "http://127.0.0.1:8080/v1",
+    "timeoutSeconds": 60
+  },
   "roles": {
     "REASONER": {
       "provider": "local-gemma",
@@ -37,6 +46,18 @@
     "credentialEnv": null
   },
   "toolExecution": {
+    "allowedTools": [
+      "research.search",
+      "research.expand_token",
+      "wallet.get_balance",
+      "token.open",
+      "token.engineer",
+      "token.import",
+      "token.route",
+      "avatar.create",
+      "mint.prepare",
+      "media.share"
+    ],
     "allowlistOnly": true,
     "requireSchemaValidation": true,
     "requirePermissionCheck": true,
