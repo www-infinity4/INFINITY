@@ -379,13 +379,32 @@ class InfinityAIHandler(BaseHTTPRequestHandler):
         if os.environ.get("INFINITY_AI_QUIET") != "1":
             super().log_message(fmt, *args)
 
+    def headers_cors(self) -> None:
+        """Grant only the configured web origin access to this loopback service."""
+        allowed_origin = os.environ.get("INFINITY_AI_ALLOW_ORIGIN", "*")
+        request_origin = self.headers.get("Origin")
+        origin_allowed = allowed_origin == "*" or request_origin == allowed_origin
+        if origin_allowed:
+            self.send_header("Access-Control-Allow-Origin", allowed_origin)
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Vary", "Origin, Access-Control-Request-Private-Network")
+        private_network_requested = (
+            self.headers.get("Access-Control-Request-Private-Network", "").lower() == "true"
+        )
+        if (
+            private_network_requested
+            and os.environ.get("INFINITY_AI_ALLOW_PRIVATE_NETWORK") == "1"
+            and allowed_origin != "*"
+            and request_origin == allowed_origin
+        ):
+            self.send_header("Access-Control-Allow-Private-Network", "true")
+
     def headers_json(self, status: int) -> None:
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Cache-Control", "no-store")
-        self.send_header("Access-Control-Allow-Origin", os.environ.get("INFINITY_AI_ALLOW_ORIGIN", "*"))
-        self.send_header("Access-Control-Allow-Headers", "Content-Type")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.headers_cors()
         self.end_headers()
 
     def write_json(self, status: int, payload: dict[str, Any]) -> None:
@@ -394,9 +413,7 @@ class InfinityAIHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
-        self.send_header("Access-Control-Allow-Origin", os.environ.get("INFINITY_AI_ALLOW_ORIGIN", "*"))
-        self.send_header("Access-Control-Allow-Headers", "Content-Type")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.headers_cors()
         self.end_headers()
         self.wfile.write(body)
 
