@@ -103,3 +103,33 @@ All generated content carries one of the existing evidence states:
 - `USER_DEFINED` — terminology, taxonomy, goals or project theory supplied by the user.
 
 A research writer must never turn `INFERRED` or `USER_DEFINED` content into `EXTERNALLY_VERIFIED` merely by rewriting it.
+
+## Complete token package
+
+The commit SHA is the immutable identity, but it is not the whole user-facing product. `token_package.py` builds a hashed manifest around that identity containing:
+
+- canonical commit URL, message, parent SHAs and repository;
+- every associated pull request's title, body, branch relationship, merge SHA, changed-file counts, reviews and check results;
+- a required active `PROJECT_RESEARCH` entry and the discovery entry when another token exists;
+- explicit user keywords plus suggestions derived from the commit, PR, consented history and cross-input text;
+- provenance for every keyword, including a source type and source reference;
+- Internet Archive movie/audio candidates discovered through its official search and item-metadata APIs;
+- playable-file availability, license URL, rights statement and a hash of the captured source metadata;
+- utility components and a deterministic package hash.
+
+Media discovery is not permission. An Archive item contributes usable package utility only when the metadata has an approved reuse statement and a playable file. Anything ambiguous remains `REVIEW_REQUIRED`.
+
+The package stores the project's `1.000000 INFINITY` baseline target as a `USER_DEFINED_REFERENCE`. It separately keeps `market_value_microunits` null until an actual market or redemption event supplies evidence. This prevents an internal target from being presented as guaranteed cash value.
+
+Reference values currently encode the project's requested utility scale:
+
+| Component | Infinity reference |
+| --- | ---: |
+| Commit context | 0.10 |
+| PR context | 0.20 |
+| Project research | 1.00 |
+| Discovery research | 0.20 |
+| Rights-verified playable old movie | 1.00 |
+| Rights-verified playable song | 0.10 |
+
+These components measure package completeness under the user-defined system. They are not a cash appraisal, exchange guarantee or statement that an Archive item is owned by the token holder.
