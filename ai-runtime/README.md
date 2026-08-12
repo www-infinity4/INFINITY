@@ -139,3 +139,84 @@ The runtime must preserve the existing evidence distinction:
 - `USER_DEFINED`: user taxonomy/business rules.
 
 A Gemma response by itself is never `EXTERNALLY_VERIFIED`.
+
+## Working gateway
+
+`server.py` now implements the role contract as a standard-library-only loopback service. It sits between Infinity applications and one or more OpenAI-compatible local inference processes such as the `llama-server` launcher already provided by `Gemma4-AI-`.
+
+Start a local model first:
+
+```sh
+cd Gemma4-AI-
+./start-gemma.sh
+```
+
+Then start the shared Infinity gateway:
+
+```sh
+cd INFINITY/ai-runtime
+chmod +x start-runtime.sh
+./start-runtime.sh
+```
+
+No pip installation or API key is required. Confirm the gateway and every configured role:
+
+```sh
+curl http://127.0.0.1:11435/v1/health
+```
+
+The health response is `READY` only when every role's configured local endpoint answers. If the general model is running but a ShieldGemma role is unavailable, health is `DEGRADED` and `publicationAllowed` remains false.
+
+### Requests
+
+Reasoning:
+
+```sh
+curl -X POST http://127.0.0.1:11435/v1/reason \
+  -H 'Content-Type: application/json' \
+  -d '{"input":"Plan a new Bitcoin Crusher research assignment."}'
+```
+
+Tool proposal:
+
+```sh
+curl -X POST http://127.0.0.1:11435/v1/tools \
+  -H 'Content-Type: application/json' \
+  -d '{"input":"Research hydrogen","tools":[{"name":"research.search","description":"Search captured sources"}]}'
+```
+
+The response contains `executed: false`. The calling application must still validate permissions, schemas, rate limits, confirmation requirements, and idempotency before running anything.
+
+Text moderation:
+
+```sh
+curl -X POST http://127.0.0.1:11435/v1/moderate/text \
+  -H 'Content-Type: application/json' \
+  -d '{"input":"Public caption to review"}'
+```
+
+Image moderation accepts an image data URL or another reference that the configured local multimodal server can read. Embeddings use `POST /v1/embed`.
+
+### Multiple local model processes
+
+A single `llama-server` normally serves one loaded model. Run separate local processes for specialized roles, then set role-specific environment variables:
+
+```sh
+INFINITY_REASONER_BASE_URL=http://127.0.0.1:8080/v1 \
+INFINITY_TOOL_ROUTER_BASE_URL=http://127.0.0.1:8081/v1 \
+INFINITY_IMAGE_SAFETY_BASE_URL=http://127.0.0.1:8082/v1 \
+INFINITY_TEXT_SAFETY_BASE_URL=http://127.0.0.1:8083/v1 \
+INFINITY_EMBEDDINGS_BASE_URL=http://127.0.0.1:8084/v1 \
+./start-runtime.sh
+```
+
+Hosted fallback remains disabled. The service refuses a non-loopback network bind unless the operator explicitly sets `INFINITY_AI_ALLOW_REMOTE=1`.
+
+### Verification
+
+```sh
+python3 -m unittest -v test_server.py
+```
+
+The integration test starts a fake local inference process and verifies health, reasoning, tool allowlisting, text/image moderation, embeddings, and fail-closed publication behavior.
+
