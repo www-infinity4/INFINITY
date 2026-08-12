@@ -42,6 +42,33 @@ CREATE TABLE IF NOT EXISTS research_sources (
     FOREIGN KEY(entry_id) REFERENCES research_stream_entries(entry_id) ON DELETE CASCADE
 );
 
+-- Hashes are stored separately so existing databases migrate additively.
+CREATE TABLE IF NOT EXISTS research_novelty_fingerprints (
+    entry_id INTEGER PRIMARY KEY,
+    token_id TEXT NOT NULL,
+    stream_type TEXT NOT NULL CHECK(stream_type IN (
+        'PROJECT_RESEARCH','INFINITY_DISCOVERY_RESEARCH'
+    )),
+    query_hash TEXT NOT NULL,
+    source_set_hash TEXT,
+    article_hash TEXT NOT NULL,
+    token_lineage_hash TEXT NOT NULL,
+    user_path_hash TEXT,
+    novelty_status TEXT NOT NULL CHECK(novelty_status IN ('UNIQUE','DUPLICATE')),
+    duplicate_of_entry_id INTEGER,
+    matched_on TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(entry_id) REFERENCES research_stream_entries(entry_id) ON DELETE CASCADE,
+    FOREIGN KEY(duplicate_of_entry_id) REFERENCES research_stream_entries(entry_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_research_novelty_query
+ON research_novelty_fingerprints(token_id, stream_type, query_hash);
+CREATE INDEX IF NOT EXISTS idx_research_novelty_sources
+ON research_novelty_fingerprints(token_id, stream_type, source_set_hash);
+CREATE INDEX IF NOT EXISTS idx_research_novelty_article
+ON research_novelty_fingerprints(token_id, stream_type, article_hash);
+
 CREATE TABLE IF NOT EXISTS discovery_links (
     discovery_id INTEGER PRIMARY KEY AUTOINCREMENT,
     source_token_id TEXT NOT NULL,
