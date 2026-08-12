@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import os
 import tempfile
 import threading
 import unittest
@@ -7,6 +8,7 @@ import urllib.error
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from unittest.mock import patch
 
 from server import build_server
 
@@ -164,6 +166,37 @@ class RuntimeIntegrationTest(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(body["role"], "EMBEDDINGS")
         self.assertEqual(body["data"][0]["embedding"], [0.1, 0.2, 0.3])
+
+
+    def private_network_preflight(self, allow_origin):
+        request = urllib.request.Request(
+            self.base + "/v1/health",
+            method="OPTIONS",
+            headers={
+                "Origin": "https://example.test",
+                "Access-Control-Request-Method": "POST",
+                "Access-Control-Request-Private-Network": "true",
+            },
+        )
+        with patch.dict(os.environ, {
+            "INFINITY_AI_ALLOW_ORIGIN": allow_origin,
+            "INFINITY_AI_ALLOW_PRIVATE_NETWORK": "1",
+            "INFINITY_AI_QUIET": "1",
+        }, clear=False):
+            with urllib.request.urlopen(request, timeout=3) as response:
+                return response.status, response.headers
+
+    def test_exact_origin_may_receive_private_network_grant(self):
+        status, headers = self.private_network_preflight("https://example.test")
+        self.assertEqual(status, 204)
+        self.assertEqual(headers["Access-Control-Allow-Origin"], "https://example.test")
+        self.assertEqual(headers["Access-Control-Allow-Private-Network"], "true")
+
+    def test_wildcard_origin_never_receives_private_network_grant(self):
+        status, headers = self.private_network_preflight("*")
+        self.assertEqual(status, 204)
+        self.assertEqual(headers["Access-Control-Allow-Origin"], "*")
+        self.assertIsNone(headers["Access-Control-Allow-Private-Network"])
 
     def test_moderation_fails_closed_when_provider_is_offline(self):
         stopped_port = self.fake.server_port
