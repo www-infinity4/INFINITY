@@ -73,6 +73,25 @@ class LocalGemmaRuntime:
             config.get("upstreamBaseUrl", self.default_base),
         ).rstrip("/")
 
+    def available_models(self, role: str, timeout: float | None = None) -> list[str]:
+        result = self.upstream_json(role, "GET", "/models", timeout=timeout)
+        return [
+            str(item.get("id"))
+            for item in result.get("data", [])
+            if isinstance(item, dict) and item.get("id")
+        ]
+
+    def upstream_model(self, role: str) -> str:
+        config = self.role_config(role)
+        env_name = "INFINITY_" + role + "_MODEL"
+        explicit = os.environ.get(env_name, config.get("upstreamModel", "AUTO"))
+        if explicit and str(explicit).upper() != "AUTO":
+            return str(explicit)
+        available = self.available_models(role, timeout=min(self.timeout, 3))
+        if not available:
+            raise RuntimeErrorResponse(503, f"Local provider for {role} has no loaded model.")
+        return available[0]
+
     def upstream_json(
         self,
         role: str,
@@ -107,16 +126,16 @@ class LocalGemmaRuntime:
         role_states: dict[str, Any] = {}
         for role, config in self.roles.items():
             try:
-                models = self.upstream_json(role, "GET", "/models", timeout=min(self.timeout, 3))
-                available = [
-                    item.get("id")
-                    for item in models.get("data", [])
-                    if isinstance(item, dict) and item.get("id")
-                ]
+                available = self.available_models(role, timeout=min(self.timeout, 3))
+                if not available:
+                    raise RuntimeErrorResponse(503, f"Local provider for {role} has no loaded model.")
+                explicit = config.get("upstreamModel", "AUTO")
+                resolved = available[0] if str(explicit).upper() == "AUTO" else str(explicit)
                 role_states[role] = {
-                    "ready": True,
+                    "ready": resolved in available,
                     "provider": config.get("provider"),
                     "configuredModel": config.get("model"),
+                    "resolvedModel": resolved,
                     "availableModels": available,
                     "baseUrl": self.role_base(role),
                 }
@@ -160,7 +179,7 @@ class LocalGemmaRuntime:
     ) -> tuple[str, dict[str, Any]]:
         config = self.role_config(role)
         body: dict[str, Any] = {
-            "model": config.get("model", "local-gemma"),
+            "model": self.upstream_model(role),
             "messages": messages,
             "temperature": temperature,
             "stream": False,
@@ -329,7 +348,7 @@ class LocalGemmaRuntime:
             "EMBEDDINGS",
             "POST",
             "/embeddings",
-            {"model": config.get("model", "embeddinggemma-local"), "input": input_value},
+            {"model": self.upstream_model("EMBEDDINGS"), "input": input_value},
         )
         return {
             "schema": "infinity/embedding-result/v1",
