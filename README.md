@@ -247,3 +247,31 @@ The repository does not currently operate housing, healthcare, travel, payments,
 9. Migrate projects in small tested batches rather than a destructive mass merge.
 
 See [`docs/INTEGRATION_PLAN.md`](docs/INTEGRATION_PLAN.md) for the detailed plan.
+## Local AI runtime
+
+The repository also includes a local, standard-library AI runtime for the wider Infinity research system.
+
+Start the standard-library runtime with:
+
+```bash
+python ai-runtime/server.py
+```
+
+Browser access to the loopback runtime is deliberately opt-in. Configure one exact HTTPS
+application origin; the wildcard default will never receive a private-network grant:
+
+```bash
+INFINITY_AI_ALLOW_ORIGIN=https://your-app.example \
+INFINITY_AI_ALLOW_PRIVATE_NETWORK=1 \
+python ai-runtime/server.py
+```
+
+Modern browsers may also ask the user for local-network permission. The response header is only
+one part of that browser security flow; it does not bypass the user's permission choice. Keep the
+service bound to loopback unless remote access is intentionally secured.
+
+Run the header contract tests with:
+
+```bash
+python ai-runtime/test_server.py
+```
