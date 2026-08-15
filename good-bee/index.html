@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Good Bee by Infinity: voluntary accessible housing, travel, relocation, support coordination, NFC benefits, and modular home planning.">
+  <title>Good Bee · Infinity Living</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Good Bee home">
+      <span class="brand-mark" aria-hidden="true">GB</span>
+      <span><strong>Good Bee</strong><small>Powered by Infinity</small></span>
+    </a>
+    <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
+      <a href="#choose">Choose a path</a>
+      <a href="#homes">Homes</a>
+      <a href="#coin">Honey Coin</a>
+      <a href="#support">Support</a>
+      <a href="#governance">Protection</a>
+      <a href="../index.html">Infinity</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Housing, travel, care, and a genuine change of environment</p>
+        <h1>A better place should be a real option—not an empty suggestion.</h1>
+        <p class="lede">Good Bee helps a person plan an accessible vacation, trial stay, supported move, or new home near the beach, in the mountains, or in another community they freely choose. Infinity coordinates the package, tracks every promised benefit, and protects the person’s consent.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#choose">Build a support package</a>
+          <a class="button secondary" href="#homes">Explore homes</a>
+        </div>
+        <p class="prototype-note"><strong>Development prototype:</strong> This site does not currently offer housing, travel, nursing, money, or medical treatment. Example packages demonstrate the intended operating system.</p>
+      </div>
+      <div class="hero-visual" aria-label="Good Bee service network diagram">
+        <div class="hive-core"><span>Good Bee</span><strong>Person-directed plan</strong></div>
+        <div class="orbit orbit-one">Home</div>
+        <div class="orbit orbit-two">Travel</div>
+        <div class="orbit orbit-three">Support</div>
+        <div class="orbit orbit-four">NFC</div>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="Program principles">
+      <article><strong>Choice first</strong><span>No forced destination, itinerary, roommate, or service.</span></article>
+      <article><strong>Accessible by design</strong><span>Homes and websites are designed around disability access from the start.</span></article>
+      <article><strong>Private home</strong><span>Support should come to the person without turning a home into an institution.</span></article>
+      <article><strong>Every promise tracked</strong><span>Packages list exactly what is included, used, remaining, changed, or refunded.</span></article>
+    </section>
+
+    <section id="choose" class="section planner-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Good Bee package studio</p><h2>Choose the experience that fits the person</h2></div>
+        <p>Start with a reversible trial stay whenever a permanent move is uncertain. A change of environment can help some people, but it is not presented as a cure and does not replace chosen healthcare.</p>
+      </div>
+
+      <div class="planner-grid">
+        <form id="packageForm" class="planner-card">
+          <label>
+            What kind of plan?
+            <select id="planType" name="planType">
+              <option value="trial">Trial stay</option>
+              <option value="vacation">Vacation</option>
+              <option value="move">Supported move</option>
+              <option value="home">New accessible home</option>
+            </select>
+          </label>
+          <label>
+            Preferred environment
+            <select id="environment" name="environment">
+              <option value="beach">Beach or coast</option>
+              <option value="mountain">Mountain community</option>
+              <option value="travel">Sailing or multi-stop travel</option>
+              <option value="open">Show every option</option>
+            </select>
+          </label>
+          <label>
+            Length of stay
+            <select id="stayLength" name="stayLength">
+              <option value="7">7 days</option>
+              <option value="14" selected>14 days</option>
+              <option value="30">30 days</option>
+              <option value="90">90-day transition</option>
+            </select>
+          </label>
+          <fieldset>
+            <legend>Support to include</legend>
+            <label class="check"><input type="checkbox" name="support" value="accessible-transport" checked> Accessible transportation</label>
+            <label class="check"><input type="checkbox" name="support" value="daily-checkin"> Daily check-in</label>
+            <label class="check"><input type="checkbox" name="support" value="personal-assistance"> Personal assistance</label>
+            <label class="check"><input type="checkbox" name="support" value="nursing"> Nursing coordination</label>
+            <label class="check"><input type="checkbox" name="support" value="meal"> Meals or groceries</label>
+            <label class="check"><input type="checkbox" name="support" value="companion"> Chosen companion</label>
+          </fieldset>
+          <label>
+            Accessibility notes
+            <textarea id="accessNotes" rows="4" placeholder="Examples: no-step entry, upper-limb assistance, voice controls, roll-in shower, power-chair charging"></textarea>
+          </label>
+          <button class="button primary" type="submit">Create example package</button>
+        </form>
+
+        <section class="package-output" aria-live="polite" aria-labelledby="packageTitle">
+          <p class="eyebrow">Person-controlled package</p>
+          <h3 id="packageTitle">Your package will appear here</h3>
+          <p id="packageSummary">Choose the plan, environment, and support that should travel with the person.</p>
+          <div id="packageContents" class="package-contents"></div>
+          <div class="consent-box">
+            <strong>Consent checkpoints</strong>
+            <span>Approve destination</span>
+            <span>Approve provider list</span>
+            <span>Approve costs and benefit units</span>
+            <span>Keep a guaranteed return or exit plan</span>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="homes" class="section dark-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Infinity robotic building network</p><h2>Snap-together homes that remain real homes</h2></div>
+        <p>Robots can cut, move, fasten, inspect, and document repeatable components. Licensed professionals still approve structural, electrical, plumbing, fire, accessibility, and local-code work.</p>
+      </div>
+      <div id="homeGrid" class="home-grid" aria-live="polite"></div>
+      <div class="systems-row">
+        <article><span>01</span><h3>Replaceable utility wall</h3><p>Plumbing, valves, filters, wiring, and controls remain accessible for repair instead of being buried throughout the house.</p></article>
+        <article><span>02</span><h3>Heat-pump hot water</h3><p>Efficient water heating with accessible controls, leak detection, safe temperature limits, and documented maintenance.</p></article>
+        <article><span>03</span><h3>Robot-readable assembly</h3><p>Every part receives an identifier, installation record, inspection result, service history, and safe replacement procedure.</p></article>
+        <article><span>04</span><h3>Universal personalization</h3><p>Controls can be configured for touch, voice, switch, eye-gaze, caregiver assistance, or another chosen access method.</p></article>
+      </div>
+    </section>
+
+    <section id="coin" class="section coin-section">
+      <div class="coin-copy">
+        <p class="eyebrow">Good Bee Honey Coin</p>
+        <h2>A physical NFC key to real goods and services</h2>
+        <p>The coin does not need to carry private records or a spendable balance. Its NFC tag opens a secure Infinity record that shows the person’s approved package and remaining benefit units.</p>
+        <div class="flow" aria-label="NFC benefit flow">
+          <span>Tap coin or card</span><b>→</b><span>Verify rotating credential</span><b>→</b><span>Show approved benefit</span><b>→</b><span>Confirm with the person</span><b>→</b><span>Record fulfillment</span>
+        </div>
+        <ul class="safety-list">
+          <li>No medical history, identity documents, bank keys, or secret balance stored on the NFC tag.</li>
+          <li>A lost coin can be frozen and replaced without losing the underlying package.</li>
+          <li>High-value actions require an additional approval—not a tap alone.</li>
+          <li>Every fulfillment creates a receipt visible to the person and authorized coordinator.</li>
+        </ul>
+      </div>
+      <div class="coin-card" aria-label="Good Bee Honey Coin concept">
+        <div class="coin-face"><span>GOOD BEE</span><strong>HONEY</strong><small>NFC ACCESS KEY</small></div>
+        <div class="coin-ledger">
+          <p>Example package wallet</p>
+          <div><span>Stay nights</span><strong>14</strong></div>
+          <div><span>Accessible rides</span><strong>4</strong></div>
+          <div><span>Meals</span><strong>20</strong></div>
+          <div><span>Support hours</span><strong>6</strong></div>
+          <small>Demonstration only · no actual balance</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="section support-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Support that respects independence</p><h2>Help when needed, privacy when not</h2></div>
+      </div>
+      <div class="support-grid">
+        <article><h3>Chosen support circle</h3><p>The resident selects family, friends, nurses, attendants, coordinators, or advocates who may be contacted and what each person can see or do.</p></article>
+        <article><h3>Accessible communication</h3><p>Voice calling, messaging, switch access, eye-gaze access, scheduled check-ins, and emergency calling can be configured around the resident.</p></article>
+        <article><h3>Care handoff</h3><p>A move plan verifies that prescriptions, equipment, benefits, physicians, home-health providers, and emergency contacts continue across the transition.</p></article>
+        <article><h3>Human decisions</h3><p>AI may organize choices and detect missing steps, but it does not decide whether a person must move, receive care, or lose a benefit.</p></article>
+      </div>
+    </section>
+
+    <section id="governance" class="section governance-section">
+      <div>
+        <p class="eyebrow">Infinity protection layer</p>
+        <h2>No hidden package, hidden fee, or silent change</h2>
+        <p>Each approved plan is versioned. A change to destination, provider, cost, support level, payment destination, or housing specification must be shown before acceptance.</p>
+      </div>
+      <div class="governance-grid">
+        <article><strong>Public catalog</strong><span>Services, limits, accessibility features, cancellation rules, and conflicts of interest.</span></article>
+        <article><strong>Private vault</strong><span>Identity, health, support, travel, and financial data remain outside public GitHub repositories.</span></article>
+        <article><strong>Two-person money control</strong><span>No AI or single operator can redirect funds or approve its own payment change.</span></article>
+        <article><strong>Independent complaints</strong><span>People can dispute a charge, provider, denial, accessibility failure, or unsafe condition.</span></article>
+        <article><strong>Exit and return</strong><span>Trial stays include a practical way home; permanent moves include a transition and recovery plan.</span></article>
+        <article><strong>Evidence ledger</strong><span>Receipts document what was promised, delivered, inspected, changed, and refunded.</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Good Bee · Powered by Infinity</strong>
+    <span>Voluntary housing, travel, support, and accessible construction planning.</span>
+    <span id="year"></span>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

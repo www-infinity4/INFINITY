@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "concept-prototype",
+  "notice": "All businesses, prices, discounts, retail comparisons, inventory, subsidies, token values, and packages shown by this file are demonstrations. A package is not purchasable until every provider, contract, capacity, funding source, tax, right, and fulfillment term is verified.",
+  "registrySources": [
+    {
+      "id": "official-register",
+      "name": "Official business registers",
+      "role": "Legal entity, registration, status, jurisdiction, and official identifiers where public or licensed access is available.",
+      "trust": "primary"
+    },
+    {
+      "id": "licensed-places",
+      "name": "Licensed place and business APIs",
+      "role": "Business locations, categories, contacts, hours, accessibility indicators, photos, and place identifiers under provider terms.",
+      "trust": "discovery"
+    },
+    {
+      "id": "open-map",
+      "name": "Open map data",
+      "role": "Geographic discovery of hotels, restaurants, stores, attractions, services, and transportation using permitted open-data access.",
+      "trust": "discovery"
+    },
+    {
+      "id": "merchant-direct",
+      "name": "Merchant-direct enrollment",
+      "role": "Signed offers, live inventory, bulk pricing, settlement terms, accessibility, refund rules, and Store Card acceptance.",
+      "trust": "contract"
+    },
+    {
+      "id": "industry-feed",
+      "name": "Industry and destination feeds",
+      "role": "Hotel, tourism, transport, event, product, shipping, and wholesale availability from licensed partners.",
+      "trust": "contract"
+    },
+    {
+      "id": "community-verification",
+      "name": "Community and field verification",
+      "role": "Current accessibility, service quality, local conditions, photos, receipts, and corrections from verified contributors.",
+      "trust": "evidence"
+    }
+  ],
+  "businessTypes": [
+    "Hotels and accessible lodging",
+    "Restaurants, groceries, and food producers",
+    "Local transportation and accessible vehicles",
+    "Attractions, museums, parks, tours, and adaptive recreation",
+    "Medical, nursing, pharmacy, and support providers",
+    "Housing, construction, repairs, utilities, and furnishings",
+    "Retail stores, product makers, wholesalers, and shippers",
+    "Creators, entertainment, education, research, and professional services"
+  ],
+  "sampleOffers": [
+    {
+      "id": "hotel-offpeak",
+      "business": "Local Hotel Cooperative",
+      "category": "Lodging",
+      "locality": "Destination city",
+      "retailBenchmark": 560,
+      "contractCost": 210,
+      "quantity": 7,
+      "unit": "nights",
+      "reason": "Off-peak block purchase and direct settlement",
+      "verified": false
+    },
+    {
+      "id": "meal-local",
+      "business": "Local Restaurant and Grocery Network",
+      "category": "Food",
+      "locality": "Destination city",
+      "retailBenchmark": 210,
+      "contractCost": 95,
+      "quantity": 14,
+      "unit": "meals",
+      "reason": "Prepaid local volume and limited menu",
+      "verified": false
+    },
+    {
+      "id": "transport-pass",
+      "business": "Local Accessible Transport Pool",
+      "category": "Transportation",
+      "locality": "Destination city",
+      "retailBenchmark": 120,
+      "contractCost": 55,
+      "quantity": 4,
+      "unit": "rides",
+      "reason": "Shared routing and advance scheduling",
+      "verified": false
+    },
+    {
+      "id": "experience-bundle",
+      "business": "Destination Activity Cooperative",
+      "category": "Experiences",
+      "locality": "Destination city",
+      "retailBenchmark": 110,
+      "contractCost": 40,
+      "quantity": 2,
+      "unit": "experiences",
+      "reason": "Unused capacity and local promotion budget",
+      "verified": false
+    }
+  ],
+  "packageStages": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "description": "Find businesses from permitted public, licensed, official, and merchant-direct sources."
+    },
+    {
+      "id": "normalize",
+      "name": "Normalize",
+      "description": "Map names, categories, addresses, currencies, languages, rights, and country codes into one schema."
+    },
+    {
+      "id": "deduplicate",
+      "name": "Deduplicate",
+      "description": "Resolve duplicate branches, aliases, moved businesses, chains, franchises, and copied listings."
+    },
+    {
+      "id": "verify",
+      "name": "Verify",
+      "description": "Confirm legal identity, provider control, capacity, accessibility, pricing authority, licenses, insurance, and payout destination."
+    },
+    {
+      "id": "source-local",
+      "name": "Source locally first",
+      "description": "Build the package around businesses near the destination to reduce shipping, transport, leakage, and complexity."
+    },
+    {
+      "id": "negotiate",
+      "name": "Negotiate bulk capacity",
+      "description": "Request direct prices for room blocks, meals, rides, attractions, products, and support with exact dates and cancellation terms."
+    },
+    {
+      "id": "forecast",
+      "name": "Forecast demand",
+      "description": "Predict likely destinations, dates, accessibility needs, package sizes, product use, and cancellation risk without exposing personal data."
+    },
+    {
+      "id": "stage",
+      "name": "Stage inventory",
+      "description": "Move durable products or reserve service capacity near likely destinations while avoiding unsafe speculative stockpiles."
+    },
+    {
+      "id": "package",
+      "name": "Assemble package",
+      "description": "Combine typed Store Claims into one vacation, move, housing, health, work, or product package."
+    },
+    {
+      "id": "fund",
+      "name": "Close the funding gap",
+      "description": "Use contracted discounts, public programs, sponsor budgets, merchant promotion, donations, or Infinity profit pools with every source disclosed."
+    },
+    {
+      "id": "fulfill",
+      "name": "Fulfill and settle",
+      "description": "Reserve claims, confirm delivery through NFC, QR, passkey, receipt, or provider evidence, then settle each provider."
+    },
+    {
+      "id": "learn",
+      "name": "Learn and recirculate",
+      "description": "Measure actual use, satisfaction, refunds, accessibility, local economic impact, fraud, and unused capacity for the next package."
+    }
+  ]
+}

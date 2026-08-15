@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "concept-prototype",
+  "notice": "The Token Studio creates planning records and local demonstration ledgers. It does not issue money, cryptocurrency, securities, deposits, ownership title, government benefits, guaranteed rewards, or active merchant inventory.",
+  "universalMark": {
+    "symbol": "⭐",
+    "meaning": "Create, edit, version, convert, inspect ancestry, or connect the selected item to another Infinity value type.",
+    "presentation": "A subtle 15 by 15 pixel mark in the upper-right corner of every convertible object, using the same position and behavior across the platform.",
+    "notMeaning": "The mark is not a favorite, rating, endorsement, verified badge, or promise of value."
+  },
+  "needWeights": {
+    "systemDemand": 35,
+    "scarcity": 25,
+    "humanUsefulness": 20,
+    "productionReadiness": 10,
+    "localCapacity": 10
+  },
+  "modules": [
+    {
+      "id": "alien-radio",
+      "name": "Alien Radio",
+      "category": "Media and radio stations",
+      "productToken": "AI-assisted radio-station identity, channels, research, creator tools, Store Card offers, and station activation.",
+      "systemNeed": "Radio stations need a complete attributable product, a versioned design, verified use, and one locked Avatar Coin per active station identity.",
+      "identityProduct": true,
+      "plannedIdentities": 1,
+      "scores": {"systemDemand": 92, "scarcity": 84, "humanUsefulness": 88, "productionReadiness": 78, "localCapacity": 65},
+      "connections": ["Infinity AI Wallet", "Infinity Store Cards", "Business Coins", "Research contributions", "Advertising budgets"],
+      "sourceRepository": "www-infinity4/Alien-Radio",
+      "sourceBranch": "agent/star-avatar-token-stage",
+      "sourceRoute": "stage.html"
+    },
+    {
+      "id": "hotel-night",
+      "name": "Hotel Night",
+      "category": "Travel and lodging",
+      "productToken": "One verified night at a named hotel, room class, date window, accessibility configuration, tax treatment, cancellation rule, and fulfillment method.",
+      "systemNeed": "Coin Planner and Good Bee need exact hotel capacity before a vacation package can publish.",
+      "identityProduct": false,
+      "plannedIdentities": 7,
+      "scores": {"systemDemand": 95, "scarcity": 72, "humanUsefulness": 94, "productionReadiness": 82, "localCapacity": 70},
+      "connections": ["Coin Planner", "Good Bee", "Store Cards", "Reciprocal Clearing", "AI Wallet"],
+      "sourceRoute": "coin-planner.html"
+    },
+    {
+      "id": "accessible-home-component",
+      "name": "Accessible Home Component",
+      "category": "Housing and construction",
+      "productToken": "A robot-readable, inspectable and replaceable housing component with dimensions, materials, connections, installation steps, tests, rights, warranty, and local-code status.",
+      "systemNeed": "Infinity Robotic Housing needs standardized verified components before homes can be assembled or repaired safely.",
+      "identityProduct": false,
+      "plannedIdentities": 12,
+      "scores": {"systemDemand": 90, "scarcity": 82, "humanUsefulness": 96, "productionReadiness": 62, "localCapacity": 55},
+      "connections": ["Good Bee homes", "Robot construction", "Store Cards", "Coin Planner", "Inspection ledger"],
+      "sourceRoute": "index.html#homes"
+    },
+    {
+      "id": "destination-package",
+      "name": "Good Bee Destination Package",
+      "category": "Travel, support, and relocation",
+      "productToken": "A funded combination of hotel nights, transportation, meals, products, accessibility, support, activities, return travel, and person approvals.",
+      "systemNeed": "People need complete understandable packages rather than disconnected claims and surprise costs.",
+      "identityProduct": false,
+      "plannedIdentities": 1,
+      "scores": {"systemDemand": 88, "scarcity": 68, "humanUsefulness": 97, "productionReadiness": 72, "localCapacity": 60},
+      "connections": ["Good Bee", "Coin Planner", "Store Cards", "AI Wallet", "New Hope"],
+      "sourceRoute": "index.html#choose"
+    },
+    {
+      "id": "business-plan-coin",
+      "name": "Business Plan Coin",
+      "category": "Business creation",
+      "productToken": "A living business record containing the problem, product, capacity, storefront, rights, costs, milestones, contributions, advertising budget, and child branches.",
+      "systemNeed": "People need AI-assisted businesses that can become verified products and services rather than remaining undocumented ideas.",
+      "identityProduct": true,
+      "plannedIdentities": 1,
+      "scores": {"systemDemand": 85, "scarcity": 74, "humanUsefulness": 91, "productionReadiness": 70, "localCapacity": 75},
+      "connections": ["AI Wallet", "Store Cards", "Coin Planner", "Contribution records", "Sponsored engagement"],
+      "sourceRoute": "wallet-orchestrator.html#business"
+    },
+    {
+      "id": "work-role",
+      "name": "AI-Matched Work Role",
+      "category": "Work and contribution",
+      "productToken": "A defined work role with deliverable, quality test, required tools, accessibility, time expectation, rights, reviewer, and compensation rule.",
+      "systemNeed": "New Hope needs real paid roles generated from interests and abilities rather than labeling people unproductive.",
+      "identityProduct": false,
+      "plannedIdentities": 10,
+      "scores": {"systemDemand": 93, "scarcity": 70, "humanUsefulness": 98, "productionReadiness": 76, "localCapacity": 80},
+      "connections": ["New Hope", "AI Livelihood Engine", "Contribution records", "Infinity Wallet", "Businesses"],
+      "sourceRoute": "reciprocal-clearing.html#work"
+    },
+    {
+      "id": "store-card-offer",
+      "name": "Store Card Offer",
+      "category": "Commerce and fulfillment",
+      "productToken": "A signed product or service offer with provider, quantity, price, funding, inventory, restrictions, expiration, delivery, return, dispute, and NFC fulfillment rules.",
+      "systemNeed": "Store Cards need exact claims that can be used, bundled, fulfilled, converted, retired, corrected, and audited.",
+      "identityProduct": false,
+      "plannedIdentities": 25,
+      "scores": {"systemDemand": 96, "scarcity": 78, "humanUsefulness": 92, "productionReadiness": 84, "localCapacity": 78},
+      "connections": ["Store Cards", "Coin Planner", "AI Wallet", "Reciprocal Clearing", "Merchant ledger"],
+      "sourceRoute": "store-cards.html"
+    }
+  ],
+  "tokenTypes": [
+    {"id": "star-blueprint", "name": "Star Blueprint", "symbol": "⭐", "meaning": "Named, versioned, attributable and reversible creation record."},
+    {"id": "product-token", "name": "Product Token", "meaning": "Typed production plan or capacity record for the exact product or service the system needs."},
+    {"id": "avatar-coin", "name": "Avatar Coin", "meaning": "Identity activation unit produced under a verified-use rule and locked to one active identity product."},
+    {"id": "store-claim", "name": "Store Claim", "meaning": "Specific funded and verified promise that can be fulfilled or cleared under its restrictions."},
+    {"id": "infinity-unit", "name": "Infinity Unit", "meaning": "General settlement and transfer unit created only through the wider clearing and treasury rules."}
+  ]
+}

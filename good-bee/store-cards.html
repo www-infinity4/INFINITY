@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Infinity Store Cards: NFC benefit cards, collectible relic cards, merchant storefronts, drops, auctions, provenance, reciprocal clearing, and scam-resistant fulfillment.">
+  <title>Infinity Store Cards · Good Bee</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="store-cards.css">
+</head>
+<body class="store-card-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Good Bee home">
+      <span class="brand-mark" aria-hidden="true">GB</span>
+      <span><strong>Good Bee</strong><small>Infinity Store Cards</small></span>
+    </a>
+    <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
+      <a href="#cards">Cards</a>
+      <a href="#market">Store search</a>
+      <a href="reciprocal-clearing.html">Clearing Loop</a>
+      <a href="#shop-world">Shop World</a>
+      <a href="#relic">Relic cards</a>
+      <a href="#system">System</a>
+      <a href="index.html">Good Bee</a>
+      <a href="../index.html">Infinity</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="store-hero">
+      <div>
+        <p class="eyebrow">Recovered from the earlier Infinity store-card conversations</p>
+        <h1>One card system for stores, benefits, drops, travel, housing, and physical collectibles.</h1>
+        <p class="lede">Infinity Store Cards join a physical or digital card to a protected record of the offer, owner, benefit, object, merchant, receipt, return, delivery, and provenance. The public website explains and searches the system; private accounts and signing remain behind the Infinity protection layer.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#market">Search the store system</a>
+          <a class="button secondary" href="reciprocal-clearing.html">Open reciprocal clearing</a>
+          <a class="button secondary" href="#cards">See every card family</a>
+        </div>
+        <p class="prototype-note"><strong>Prototype only:</strong> displayed cards, balances, auctions, collateral, store value, tokens, and inventory are demonstrations—not active credit, deposits, legal tender, investments, loans, prepaid accounts, or guaranteed products.</p>
+      </div>
+      <div class="card-stack" aria-label="Infinity Store Card family concept">
+        <article class="stack-card honey"><span>GOOD BEE</span><strong>HONEY CARD</strong><small>NFC BENEFIT ACCESS</small></article>
+        <article class="stack-card black"><span>BLACK CARD MARKET</span><strong>PROPERTY RECORD</strong><small>PROVENANCE · CUSTODY</small></article>
+        <article class="stack-card arrow"><span>ARROWHEAD</span><strong>INFINITY DROP</strong><small>COLLECT · BID · FULFILL</small></article>
+      </div>
+    </section>
+
+    <section class="system-strip" aria-label="Store card operating flow">
+      <span>Physical or digital card</span><b>→</b><span>NFC/RFID or secure account</span><b>→</b><span>Infinity Wallet</span><b>→</b><span>Market or storefront</span><b>→</b><span>Confirm delivery or clearing</span><b>→</b><span>Receipt and provenance</span>
+    </section>
+
+    <section id="cards" class="section card-family-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Card families</p><h2>The entire earlier system, organized</h2></div>
+        <p>Each card has a different purpose, but they use the same identity, offer, fulfillment, receipt, dispute, and security contracts.</p>
+      </div>
+      <div id="cardGrid" class="store-card-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="market" class="section market-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Infinity Market search</p><h2>Find cards, stores, offers, and benefits</h2></div>
+        <p>The search works entirely in the browser against the public prototype catalog. A real version would query approved merchants and inventory through protected APIs.</p>
+      </div>
+      <div class="market-controls">
+        <label>Search
+          <input id="marketSearch" type="search" placeholder="Try housing, vacation, relic, gift card, research, or token">
+        </label>
+        <label>Category
+          <select id="marketCategory"><option value="all">All categories</option></select>
+        </label>
+        <label>Card
+          <select id="marketCard"><option value="all">Every card family</option></select>
+        </label>
+      </div>
+      <p id="marketStatus" class="status" aria-live="polite"></p>
+      <div id="offerGrid" class="offer-grid"></div>
+    </section>
+
+    <section class="section coin-section">
+      <div class="coin-copy">
+        <p class="eyebrow">Infinity Reciprocal Clearing Loop</p>
+        <h2>Convert an eligible store claim without leaving two spendable copies.</h2>
+        <p>A store card represents a specific product, service, destination, merchant group, or benefit. When conversion is permitted, Infinity verifies the funding and ownership, locks the source claim, permanently retires it, and only then issues the approved general Infinity units.</p>
+        <div class="flow" aria-label="Reciprocal clearing flow">
+          <span>Verify funding</span><b>→</b><span>Quote conversion</span><b>→</b><span>Lock claim</span><b>→</b><span>Retire card</span><b>→</b><span>Issue Infinity units</span>
+        </div>
+        <a class="button primary" href="reciprocal-clearing.html">See the full clearing, treasury, daily allowance, and work system</a>
+      </div>
+      <div class="coin-card">
+        <div class="coin-ledger">
+          <p>Four separate ledgers</p>
+          <div><span>Program funding</span><strong>Actual resources</strong></div>
+          <div><span>Store claims</span><strong>Specific promises</strong></div>
+          <div><span>Infinity units</span><strong>General transfer</strong></div>
+          <div><span>Treasury pool</span><strong>Reserve + profit</strong></div>
+          <small>Separation prevents unsupported issuance and double counting.</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop-world" class="section shop-world-section">
+      <div class="shop-world-copy">
+        <p class="eyebrow">Earlier Mario Shop World mechanics, preserved as Shop World</p>
+        <h2>Learn to inspect a deal before spending anything.</h2>
+        <p>The earlier system treated auctions like levels: grab an item, mint a demonstration token, charge the bid capacitor, accept or reject the offer, and build combinations. This page keeps those mechanics as consumer education and a front-end demonstration.</p>
+        <ul>
+          <li><strong>Grab:</strong> adds the selected offer to the demonstration cart and mints a named demo token.</li>
+          <li><strong>Accept:</strong> records the offer as accepted and adds 5 demo coins.</li>
+          <li><strong>Reject:</strong> records the offer as rejected and adds 3 demo coins for identifying a bad deal.</li>
+          <li><strong>Bid:</strong> requires at least 0.2 capacitor charge and consumes 0.3 charge.</li>
+          <li><strong>Combos:</strong> Collector Flip, Tech Combo, Triple World Grind, and Retro Chain remain named achievements.</li>
+        </ul>
+      </div>
+      <div class="shop-console">
+        <div class="console-readout">
+          <div><span>Demo coins</span><strong id="demoCoins">0</strong></div>
+          <div><span>Demo tokens</span><strong id="demoTokens">0</strong></div>
+          <div><span>Capacitor</span><strong id="demoCapacitor">0.5</strong></div>
+        </div>
+        <label>Training offer
+          <select id="trainingOffer"></select>
+        </label>
+        <div class="console-actions">
+          <button type="button" data-action="grab">Grab</button>
+          <button type="button" data-action="accept">Accept</button>
+          <button type="button" data-action="reject">Reject</button>
+          <button type="button" data-action="charge">Charge +0.2</button>
+          <button type="button" data-action="bid">Bid</button>
+          <button type="button" data-action="reset">Reset</button>
+        </div>
+        <div id="consoleLog" class="console-log" aria-live="polite">Choose an offer and inspect it.</div>
+        <div id="tokenTray" class="token-tray"></div>
+      </div>
+    </section>
+
+    <section id="relic" class="section relic-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Infinity Relic Card</p><h2>The physical object and the digital record stay together</h2></div>
+        <p>Real coins, sapphires, minerals, memorabilia, or expedition specimens can be sealed into a numbered card and tied to an NFC/RFID identity and provenance history.</p>
+      </div>
+      <div class="relic-layout">
+        <div class="relic-card-visual">
+          <div class="relic-window"><span>PHYSICAL OBJECT</span></div>
+          <strong>INFINITY RELIC</strong>
+          <small>1/1 · SERIAL · NFC/RFID</small>
+        </div>
+        <div class="relic-steps">
+          <article><span>01</span><h3>Print and foil</h3><p>Create the front, back, serial, rights notice, object description, and clear ownership terms.</p></article>
+          <article><span>02</span><h3>Die-cut and encapsulate</h3><p>Use a rigid spacer, archival window or capsule, tamper evidence, and measured object containment.</p></article>
+          <article><span>03</span><h3>Encode and register</h3><p>Match chip, card serial, photos, weight, dimensions, source, condition, and production record.</p></article>
+          <article><span>04</span><h3>Transfer with provenance</h3><p>Record ownership changes, custody, shipping, sale terms, disputes, and known alterations without rewriting history.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="system" class="section system-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">Infinity commerce architecture</p><h2>Stores are surfaces. The control system protects the transaction.</h2></div>
+      </div>
+      <div id="moduleGrid" class="module-grid"></div>
+      <div class="security-contract">
+        <div><strong>Frontend</strong><span>Catalog, search, offers, card visualization, demo wallet, public provenance, receipts, tutorials, clearing explanations, and accessibility.</span></div>
+        <div><strong>Protected backend</strong><span>Accounts, real balances, private ownership, payments, holds, clearing, retirement, disputes, provider verification, shipping, signing, and fraud response.</span></div>
+        <div><strong>Boron Vault</strong><span>Viewing stays separate from signing. Real keys use audited cryptography, hardware-backed storage, transaction simulation, and multisignature approval.</span></div>
+        <div><strong>AI guardian</strong><span>Flags changed payout details, fake inventory, duplicate listings, conflicting provenance, suspicious bids, double-spend attempts, hidden fees, and broken fulfillment promises.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Infinity Store Cards · Good Bee</strong>
+    <span>Cards, benefits, stores, clearing, physical goods, provenance, and protected fulfillment.</span>
+    <span id="year"></span>
+  </footer>
+
+  <script src="store-cards.js" defer></script>
+</body>
+</html>

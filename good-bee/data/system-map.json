@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "1.1.0",
+  "status": "concept-prototype",
+  "systemName": "Infinity Economy and Living Network",
+  "notice": "This map describes connected software and operating concepts. It does not represent active government funding, legal tender, banking, benefits, hotel inventory, metal redemption, healthcare, housing, cryptocurrency, securities, Avatar Coin value, or guaranteed products.",
+  "modules": [
+    {
+      "id": "token-studio",
+      "name": "Infinity AI Token Studio",
+      "url": "token-studio.html",
+      "category": "Creation, product need, and conversion",
+      "purpose": "Applies one subtle universal Star mark to convertible objects, ranks the products Infinity needs most, creates named Star Blueprint versions, calculates Product Token supply and Avatar Coin identity requirements, and wires verified results into Store Cards, Wallet, Coin Planner, fulfillment, and clearing.",
+      "inputs": ["Selected object", "Human idea", "Existing project", "System demand", "Scarcity", "Human usefulness", "Production readiness", "Local capacity"],
+      "outputs": ["Star Blueprint", "Product Token plan", "Need score", "Supply chart", "Avatar Coin requirement", "Version ancestry"]
+    },
+    {
+      "id": "good-bee",
+      "name": "Good Bee Living",
+      "url": "index.html",
+      "category": "Housing, travel, and support",
+      "purpose": "Voluntary vacations, trial stays, supported moves, accessible housing, nursing coordination, transportation, return planning, and robot-assisted construction.",
+      "inputs": ["Person goals", "Destination preferences", "Accessibility needs", "Support choices", "Available funding"],
+      "outputs": ["Travel package", "Move plan", "Housing plan", "Support plan", "Honey Card claims"]
+    },
+    {
+      "id": "store-cards",
+      "name": "Infinity Store Cards",
+      "url": "store-cards.html",
+      "category": "Cards, stores, and physical goods",
+      "purpose": "Physical and digital cards, NFC/RFID access, merchant offers, drops, auctions, relic cards, receipts, returns, warranties, ownership, and provenance.",
+      "inputs": ["Verified merchant", "Verified Product Token", "Offer", "Product or service", "Card credential", "Rights and restrictions"],
+      "outputs": ["Store Claim", "Order", "Receipt", "Ownership event", "Dispute event"]
+    },
+    {
+      "id": "clearing",
+      "name": "Reciprocal Clearing",
+      "url": "reciprocal-clearing.html",
+      "category": "Conversion and settlement",
+      "purpose": "Converts eligible Store Claims into general Infinity units only after the source claim is locked and permanently retired.",
+      "inputs": ["Funded Store Claim", "Exchange policy", "User approval", "Program restrictions", "Settlement reserve"],
+      "outputs": ["Retirement receipt", "Infinity issuance", "Reserve allocation", "Community allocation", "Audit event"]
+    },
+    {
+      "id": "wallet",
+      "name": "Infinity AI Wallet",
+      "url": "wallet-orchestrator.html",
+      "category": "User control and orchestration",
+      "purpose": "Turns a complex graph of Star Blueprints, Product Tokens, Avatar Coins, units, claims, products, hotels, metals, discounts, work, ads, rights, and approvals into understandable choices.",
+      "inputs": ["Wallet graph", "User priorities", "Star Blueprints", "Product Tokens", "Avatar Coins", "Claims", "Units", "Offers", "Approvals"],
+      "outputs": ["Use now", "Save", "Earn", "Travel", "Create", "Version", "Exchange", "Approve or dispute"]
+    },
+    {
+      "id": "coin-planner",
+      "name": "Infinity Coin Planner",
+      "url": "coin-planner.html",
+      "category": "Global sourcing and packages",
+      "purpose": "Discovers and verifies businesses, negotiates local and bulk capacity, predicts destination demand, stages products, closes funding gaps, and assembles packages.",
+      "inputs": ["Business sources", "Product Token needs", "Merchant contracts", "Destination demand", "Sponsor and program funding", "Infinity pools"],
+      "outputs": ["Funded package", "Verified capacity", "Store Claims", "Provider settlement plan", "Local economic share", "Inventory plan"]
+    },
+    {
+      "id": "alien-radio",
+      "name": "Alien Radio Star and Avatar System",
+      "url": "https://github.com/www-infinity4/Alien-Radio/tree/agent/star-avatar-token-stage",
+      "category": "Media identity and qualified use",
+      "purpose": "Uses the working Alien Radio platform as the first connected example: universal Star marks create station versions and Product Token plans; another verified user's 24 continuous qualified hours produce one Avatar Coin; one Avatar Coin locks to one active radio-station identity.",
+      "inputs": ["Working Alien Radio", "Star Blueprint", "Station Product Token", "Verified other user", "24 continuous qualified hours"],
+      "outputs": ["Named station version", "Product Token supply", "Avatar Coin", "Station activation event", "Use ledger"]
+    },
+    {
+      "id": "new-hope",
+      "name": "New Hope Program Layer",
+      "url": "index.html#choose",
+      "category": "Allocation and opportunity",
+      "purpose": "Uses voluntary, appealable AI assistance to match people with destinations, support, necessities, training, work, business tools, and funded daily participation support.",
+      "inputs": ["Program funding", "Person choices", "Eligibility rules", "Available packages", "Work and business opportunities"],
+      "outputs": ["Benefit allocation", "Daily support", "Work match", "Business seed package", "Appeal record"]
+    },
+    {
+      "id": "robot-housing",
+      "name": "Infinity Robotic Housing",
+      "url": "index.html#homes",
+      "category": "Construction and infrastructure",
+      "purpose": "Creates accessible, repairable, modular homes using standardized components, robot-assisted production, licensed review, permits, inspections, and component records.",
+      "inputs": ["Resident design", "Component Product Tokens", "Site", "Permits", "Materials", "Robot-readable plans", "Licensed review"],
+      "outputs": ["Accessible home", "Verified component capacity", "Inspection record", "Warranty", "Replaceable component history"]
+    },
+    {
+      "id": "business-coins",
+      "name": "Infinity Business Coins",
+      "url": "wallet-orchestrator.html#business",
+      "category": "Business creation and contribution",
+      "purpose": "Stores a living business plan, storefront, products, capacity, advertising budget, contribution history, milestones, rights, Avatar identity where required, and linked growth branches.",
+      "inputs": ["Human idea", "Star Blueprint", "AI assistance", "Business plan", "Products or services", "Advertising budget", "Accepted work"],
+      "outputs": ["Business record", "Product Tokens", "Avatar requirement", "Storefront", "Offer", "Contribution receipt", "Child projects"]
+    },
+    {
+      "id": "metal-access",
+      "name": "Physical Metal Access",
+      "url": "wallet-orchestrator.html#metals",
+      "category": "Physical reserve access",
+      "purpose": "Separates general digital Infinity units from limited, audited weekly access to specifically described silver or gold products.",
+      "inputs": ["Physical inventory", "Metal Product Token", "Program funding", "Weekly eligibility", "Identity and custody controls"],
+      "outputs": ["Pickup eligibility", "Store Claim", "Custody receipt", "Inventory reduction", "Next eligibility date"]
+    },
+    {
+      "id": "ai-livelihood",
+      "name": "AI Livelihood Engine",
+      "url": "reciprocal-clearing.html#work",
+      "category": "Work and productive opportunity",
+      "purpose": "Finds useful paid work from interests, abilities, local need, business capacity, research, reviewing, building, care, production, and accepted AI-assisted contributions.",
+      "inputs": ["Interests", "Skills", "Accessibility", "Work-role Product Tokens", "Available work", "Accepted deliverables", "Business needs"],
+      "outputs": ["Work match", "Training", "Tools", "Contribution record", "Compensation event"]
+    }
+  ],
+  "valueTypes": [
+    {"id": "star-blueprint", "name": "Star Blueprint", "meaning": "A named, attributable, versioned and reversible creation record opened by the universal small Star mark."},
+    {"id": "product-token", "name": "Product Token", "meaning": "The exact product, service, capacity, component, identity system, or work deliverable Infinity needs produced."},
+    {"id": "avatar-coin", "name": "Avatar Coin", "meaning": "An identity-activation record produced under a verified-use rule and locked to one active operating identity."},
+    {"id": "funding", "name": "Program Funding", "meaning": "Actual external money, grants, contracts, donations, customer payments, or other received resources."},
+    {"id": "store-claim", "name": "Store Claim", "meaning": "A specific promise for a product, service, destination, benefit, capacity, or merchant value."},
+    {"id": "infinity-unit", "name": "Infinity Unit", "meaning": "A general internal transfer and accounting unit issued under the clearing and treasury rules."},
+    {"id": "metal-access", "name": "Metal Access", "meaning": "A limited eligibility to receive a specifically described physical silver or gold product."},
+    {"id": "ownership", "name": "Ownership Record", "meaning": "Evidence about a physical card, relic, object, digital record, custody, rights, and transfer history."},
+    {"id": "contribution", "name": "Contribution Record", "meaning": "A reviewable record of accepted human and AI-assisted work, rights, approval, and compensation."},
+    {"id": "ad-reward", "name": "Sponsored Engagement", "meaning": "A funded advertising or promotional reward with budget, anti-fraud controls, and measurable event."}
+  ],
+  "coreRules": [
+    "The universal small Star mark means create, edit, version, convert, connect, or inspect ancestry; it does not mean favorite, endorsement, verification, or guaranteed value.",
+    "A Product Token is a typed production plan and cannot become a Store Claim until provider, capacity, funding, restrictions, fulfillment, refund, and rights evidence are verified.",
+    "A production Avatar Coin cannot be created by creator self-use, bots, hidden or idle pages, or clearly labeled demonstration time.",
+    "One Avatar Coin locks to one active operating identity when that identity type requires an Avatar Coin.",
+    "A specific Store Claim and its replacement Infinity units cannot remain spendable at the same time.",
+    "No package publishes while its actual contracted cost has an unfunded gap.",
+    "A public business listing does not enroll a merchant or authorize payment.",
+    "The person controls destination, support, conversion, travel, work, creation versions, and irreversible approvals.",
+    "AI may discover, compare, calculate, organize, monitor, and explain but cannot secretly redirect money, fabricate capacity or use, or approve its own transaction.",
+    "Physical metal inventory, hotel nights, products, support hours, work roles, station identities, and business capacity are verified before claims are issued.",
+    "Health, identity, ownership, financial, travel, support, activity, and merchant payout information remain outside public GitHub repositories.",
+    "Corrections and new Star versions append events instead of silently rewriting history."
+  ]
+}

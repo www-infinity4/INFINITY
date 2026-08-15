@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "concept-prototype",
+  "notice": "All cards, balances, values, collateral, merchant offers, auctions, rewards, and inventory shown here are demonstrations. They are not active credit, legal tender, deposits, securities, loans, prepaid accounts, or guaranteed goods.",
+  "cards": [
+    {
+      "id": "good-bee-honey",
+      "name": "Good Bee Honey Card",
+      "family": "Support and benefits",
+      "surface": "Gold-honey physical card or coin with revocable NFC credential",
+      "purpose": "Opens an approved package of lodging, transportation, meals, support hours, moving services, home setup, and other defined goods or services.",
+      "stores": ["Good Bee Travel", "Good Bee Housing", "Verified support providers"],
+      "protections": ["No private records on tag", "Freeze and replace", "Person confirms fulfillment", "Receipt for every use"]
+    },
+    {
+      "id": "infinity-store",
+      "name": "Infinity Store Card",
+      "family": "General retail",
+      "surface": "Physical or digital store card connected to Infinity Wallet",
+      "purpose": "Presents approved merchant offers, owned benefit units, purchased store value, receipts, returns, warranties, and delivery status through one user-controlled interface.",
+      "stores": ["Infinity Market", "Infinity Stage", "Participating merchant storefronts"],
+      "protections": ["Merchant allowlist", "Price-change warning", "Return visibility", "No silent payment redirect"]
+    },
+    {
+      "id": "arrowhead",
+      "name": "Arrowhead Coin Card",
+      "family": "Drops and collectibles",
+      "surface": "Arrowhead-themed NFC card linked to a digital collectible and purchase record",
+      "purpose": "Connects the earlier Arrowhead Coin and Luxury Click–Infinity Drop concept to limited products, auctions, collectibles, creator releases, and verified physical fulfillment.",
+      "stores": ["Luxury Click–Infinity Drop", "Infinity Market", "Creator storefronts"],
+      "protections": ["Drop terms fixed before sale", "Inventory proof", "Shipping receipt", "Refund and failed-drop rules"]
+    },
+    {
+      "id": "black-card",
+      "name": "Black Card Market Record",
+      "family": "High-value authenticated property",
+      "surface": "Restricted-access digital and physical credential",
+      "purpose": "Records authenticated ownership, provenance, appraisal evidence, custody, and optional qualified third-party collateral review for high-value collectibles or property.",
+      "stores": ["Black Card Market", "Verified auction partners", "Qualified custody or lending partners"],
+      "protections": ["No automatic loan", "Independent appraisal", "Owner approval", "Custody and lien status visible"]
+    },
+    {
+      "id": "relic",
+      "name": "Infinity Relic Card",
+      "family": "Physical artifact and provenance",
+      "surface": "Two-piece printed card with die-cut core, clear archival window or capsule, physical relic, and NFC/RFID inlay",
+      "purpose": "Seals a real coin, sapphire, mineral, memorabilia piece, expedition specimen, or other documented object into a numbered card tied to its digital record.",
+      "stores": ["Infinity Museum", "Infinity Market", "Authorized card and coin dealers"],
+      "protections": ["Tamper evidence", "Object photos and measurements", "Serial and chip match", "Ownership history"]
+    },
+    {
+      "id": "shop-world",
+      "name": "Shop World Play Card",
+      "family": "Gamified shopping demonstration",
+      "surface": "Digital card and demo wallet",
+      "purpose": "Preserves the Mario Shop World prototype mechanics: grab items, review offers, accept or reject deals, charge bids, mint demonstration tokens, and build shopping combinations.",
+      "stores": ["Shop World demonstration", "Auction training", "Consumer education"],
+      "protections": ["Demo only", "Bad-deal warnings", "No real payment", "Resettable local wallet"]
+    }
+  ],
+  "offers": [
+    {
+      "id": "vacation-pack",
+      "name": "Accessible Coastal Trial Stay",
+      "store": "Good Bee Travel",
+      "category": "Travel",
+      "priceLabel": "14 Stay Nights + 4 Ride Units + 20 Meal Units",
+      "cardFamilies": ["good-bee-honey", "infinity-store"],
+      "status": "planning example",
+      "risk": "Package must identify lodging, accessibility, return travel, cancellations, and provider responsibility."
+    },
+    {
+      "id": "home-kit",
+      "name": "BeeNest Accessible Home Setup",
+      "store": "Good Bee Housing",
+      "category": "Housing",
+      "priceLabel": "1 Home Setup Unit",
+      "cardFamilies": ["good-bee-honey", "infinity-store"],
+      "status": "planning example",
+      "risk": "Construction requires site, contract, permit, inspection, warranty, and licensed professional review."
+    },
+    {
+      "id": "relic-coin",
+      "name": "Serialized Coin Relic Card",
+      "store": "Infinity Museum",
+      "category": "Collectibles",
+      "priceLabel": "Verified offer required",
+      "cardFamilies": ["relic", "arrowhead", "black-card"],
+      "status": "catalog example",
+      "risk": "Object identity, authenticity, ownership, weight, condition, and return terms must be independently documented."
+    },
+    {
+      "id": "research-pass",
+      "name": "Research Article Access Pass",
+      "store": "Infinity Market",
+      "category": "Digital access",
+      "priceLabel": "1 Access Unit",
+      "cardFamilies": ["infinity-store", "shop-world"],
+      "status": "demonstration",
+      "risk": "License and access period must be clear; the pass does not transfer copyright ownership."
+    },
+    {
+      "id": "token-bundle",
+      "name": "Shop World Demo Token Bundle × 10",
+      "store": "Shop World",
+      "category": "Game demonstration",
+      "priceLabel": "Demo wallet only",
+      "cardFamilies": ["shop-world"],
+      "status": "demonstration",
+      "risk": "No cash value, withdrawal, investment return, or external transfer."
+    },
+    {
+      "id": "expired-card",
+      "name": "Expired Gift Card Review",
+      "store": "Shop World",
+      "category": "Consumer education",
+      "priceLabel": "Accept or reject exercise",
+      "cardFamilies": ["shop-world", "infinity-store"],
+      "status": "demonstration",
+      "risk": "Clearly flag expiration, unusable value, fees, and bad-deal conditions before acceptance."
+    }
+  ],
+  "modules": [
+    {"name": "Infinity Wallet", "role": "Shows cards, approved units, store value, receipts, holds, returns, and ownership records."},
+    {"name": "Infinity Market", "role": "Buy, sell, trade, auction, or redeem verified goods and digital access through documented offers."},
+    {"name": "Infinity Stage", "role": "Three-dimensional or visual storefronts for merchants, creators, properties, destinations, and collections."},
+    {"name": "Luxury Click–Infinity Drop", "role": "Limited releases, auctions, creator drops, and Arrowhead Coin card experiences."},
+    {"name": "Black Card Market", "role": "Restricted high-value property records, provenance, custody, and qualified collateral review."},
+    {"name": "Shop World", "role": "Gamified consumer education and shopping demonstration based on grab, accept, reject, bid, and combo mechanics."},
+    {"name": "Boron Vault", "role": "Separates viewing from signing and protects real credentials through audited cryptography and hardware-backed controls."}
+  ]
+}
