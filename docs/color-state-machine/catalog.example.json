@@ -1,0 +1,85 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-08-29T00:00:00Z",
+  "blocks": [
+    {
+      "id": "color-language-specification",
+      "title": "Color-coded navigation language",
+      "color": "purple",
+      "project": "www-infinity4/INFINITY",
+      "source_refs": [
+        { "type": "conversation", "value": "color-framework discussion", "private": true }
+      ],
+      "destination": "docs/color-state-machine/",
+      "evidence": [
+        "The seven operational definitions are established.",
+        "The definitions are being assimilated into one human and machine-readable contract."
+      ],
+      "status": "review",
+      "confidence": "high",
+      "next_color": "green",
+      "verification": [
+        "Schema validates.",
+        "Example records validate.",
+        "Human review approves the definitions."
+      ],
+      "history": [],
+      "notes": "Yellow remains exact extraction only; it cannot contain interpretation or code.",
+      "updated_at": "2026-08-29T00:00:00Z"
+    },
+    {
+      "id": "starquest-playback-ledger",
+      "title": "StarQuest playback and StarCoin ledger",
+      "color": "pink",
+      "project": "www-infinity4/TV-Database",
+      "source_refs": [
+        { "type": "pull_request", "value": "www-infinity4/TV-Database#106", "private": false },
+        { "type": "pull_request", "value": "www-infinity4/TV-Database#107", "private": false }
+      ],
+      "destination": "www-infinity4/TV-Database",
+      "evidence": [
+        "Engineering and deployment were previously reported.",
+        "Live playback, overlay removal, share progression, and watch persistence still require verification."
+      ],
+      "status": "review",
+      "confidence": "medium",
+      "next_color": "green",
+      "verification": [
+        "Opening title rotates.",
+        "Internet Archive overlays do not cover YouTube playback.",
+        "Broken titles are excluded.",
+        "A share advances 5/10 to 6/10.",
+        "Playback longer than ten seconds persists."
+      ],
+      "history": [],
+      "notes": "Mark Green only after current live checks pass.",
+      "updated_at": "2026-08-29T00:00:00Z"
+    },
+    {
+      "id": "conversation-classification-import",
+      "title": "Conversation classification import",
+      "color": "blue",
+      "project": "www-infinity4/INFINITY",
+      "source_refs": [
+        { "type": "conversation", "value": "approved connected conversation sources", "private": true }
+      ],
+      "destination": "private catalog service and approved repository summaries",
+      "evidence": [
+        "The destination and import contract are now defined.",
+        "Authenticated conversation access and the first reviewable label queue are not yet verified."
+      ],
+      "status": "queued",
+      "confidence": "high",
+      "next_color": "purple",
+      "verification": [
+        "Authenticated access succeeds.",
+        "Proposed labels are reviewable before writing.",
+        "Private text is not exported to public GitHub.",
+        "Every approved import records a commit receipt."
+      ],
+      "history": [],
+      "notes": "Do not claim access to all Gemini or ChatGPT conversations until the connector or authenticated browser proves it.",
+      "updated_at": "2026-08-29T00:00:00Z"
+    }
+  ]
+}
