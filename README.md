@@ -202,6 +202,9 @@ The included demonstration shows how a $1,000 retail-equivalent benchmark could 
 
 ## Documentation
 
+- [`docs/color-state-machine/README.md`](docs/color-state-machine/README.md) — color-coded conversation, project-state, and robot-routing standard
+- [`docs/color-state-machine/schema.json`](docs/color-state-machine/schema.json) — machine-readable catalog contract
+- [`docs/color-state-machine/catalog.example.json`](docs/color-state-machine/catalog.example.json) — initial classified catalog example
 - [`docs/TOKEN_STUDIO_MODEL.md`](docs/TOKEN_STUDIO_MODEL.md)
 - [`docs/INFINITY_SYSTEM_WEBSITE_MAP.md`](docs/INFINITY_SYSTEM_WEBSITE_MAP.md)
 - [`docs/GOOD_BEE_OPERATING_MODEL.md`](docs/GOOD_BEE_OPERATING_MODEL.md)
