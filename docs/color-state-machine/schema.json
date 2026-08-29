@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/www-infinity4/INFINITY/blob/main/docs/color-state-machine/schema.json",
+  "title": "Infinity Color State Catalog",
+  "type": "object",
+  "required": ["version", "updated_at", "blocks"],
+  "properties": {
+    "version": { "type": "string", "const": "1.0.0" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "blocks": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/block" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "color": {
+      "type": "string",
+      "enum": ["yellow", "blue", "green", "red", "orange", "purple", "pink"]
+    },
+    "reference": {
+      "type": "object",
+      "required": ["type", "value"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["conversation", "file", "url", "issue", "pull_request", "commit", "artifact"]
+        },
+        "value": { "type": "string", "minLength": 1 },
+        "private": { "type": "boolean", "default": false }
+      },
+      "additionalProperties": false
+    },
+    "transition": {
+      "type": "object",
+      "required": ["from", "to", "at", "reason"],
+      "properties": {
+        "from": { "$ref": "#/$defs/color" },
+        "to": { "$ref": "#/$defs/color" },
+        "at": { "type": "string", "format": "date-time" },
+        "reason": { "type": "string", "minLength": 1 },
+        "approved_by": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "id", "title", "color", "project", "source_refs", "evidence",
+        "status", "confidence", "verification", "updated_at"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "color": { "$ref": "#/$defs/color" },
+        "project": { "type": "string", "minLength": 1 },
+        "source_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reference" }
+        },
+        "destination": { "type": ["string", "null"] },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": ["queued", "active", "blocked", "review", "complete"]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "next_color": {
+          "oneOf": [
+            { "$ref": "#/$defs/color" },
+            { "type": "null" }
+          ]
+        },
+        "verification": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "history": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/transition" },
+          "default": []
+        },
+        "notes": { "type": "string" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  }
+}
