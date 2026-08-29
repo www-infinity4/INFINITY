@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/www-infinity4/INFINITY/blob/main/docs/color-state-machine/paragraph-action.schema.json",
+  "title": "Infinity Paragraph Gear Action",
+  "type": "object",
+  "required": ["action_id", "source", "action", "actor", "requested_at", "status"],
+  "properties": {
+    "action_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "source": {
+      "type": "object",
+      "required": ["block_id", "conversation_ref", "content_integrity"],
+      "properties": {
+        "block_id": { "type": "string", "minLength": 1 },
+        "conversation_ref": { "type": "string", "minLength": 1 },
+        "position_ref": { "type": ["string", "null"] },
+        "content_integrity": {
+          "type": "object",
+          "required": ["mode"],
+          "properties": {
+            "mode": { "type": "string", "enum": ["exact-private-reference", "exact-approved-text", "approved-summary"] },
+            "hash": { "type": ["string", "null"] }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "action": {
+      "type": "string",
+      "enum": ["discuss-here", "start-conversation", "add-to-conversation", "add-to-project", "fold-section", "inspect-source"]
+    },
+    "actor": {
+      "type": "object",
+      "required": ["type", "id"],
+      "properties": {
+        "type": { "type": "string", "enum": ["human", "robot"] },
+        "id": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "destination": {
+      "type": ["object", "null"],
+      "properties": {
+        "type": { "type": "string", "enum": ["conversation", "project", "repository", "document", "issue", "card"] },
+        "ref": { "type": "string", "minLength": 1 }
+      },
+      "required": ["type", "ref"],
+      "additionalProperties": false
+    },
+    "color_route": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["yellow", "blue", "green", "red", "orange", "purple", "pink"]
+      }
+    },
+    "actor_authorized": { "type": "boolean" },
+    "privacy_reviewed": { "type": "boolean" },
+    "requested_at": { "type": "string", "format": "date-time" },
+    "status": { "type": "string", "enum": ["proposed", "approved", "executing", "complete", "blocked", "rejected"] },
+    "receipt": {
+      "type": ["object", "null"],
+      "properties": {
+        "source_preserved": { "type": "boolean" },
+        "destination_ref": { "type": "string" },
+        "created_ref": { "type": ["string", "null"] },
+        "commit_sha": { "type": ["string", "null"] },
+        "completed_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["source_preserved", "destination_ref", "completed_at"],
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": { "enum": ["start-conversation", "add-to-conversation", "add-to-project"] }
+        }
+      },
+      "then": { "required": ["destination", "color_route", "actor_authorized", "privacy_reviewed"] }
+    },
+    {
+      "if": { "properties": { "status": { "const": "complete" } } },
+      "then": { "required": ["receipt"] }
+    }
+  ],
+  "additionalProperties": false
+}
