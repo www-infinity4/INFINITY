@@ -81,7 +81,13 @@ Required fields:
 | `verification` | Checks required before completion |
 | `updated_at` | ISO-8601 timestamp |
 
-See [schema.json](schema.json) for the machine-readable contract and [catalog.example.json](catalog.example.json) for the initial example.
+See [schema.json](schema.json) for the machine-readable catalog contract and [catalog.example.json](catalog.example.json) for the initial example.
+
+## Paragraph-level routing
+
+The [Paragraph Gear and Swipe Router](PARAGRAPH_GEAR.md) makes each text block addressable without deleting or rewriting its source. Its actions and receipts follow [paragraph-action.schema.json](paragraph-action.schema.json). The [Quantum Color Mapping](QUANTUM_COLOR_MAPPING.md) records the nested red–blue–yellow information model, its proposed physical analogy, and the established-physics boundary.
+
+![Paragraph Gear and nested color routing](paragraph-gear-quantum-routing.svg)
 
 ## Robot routing rules
 
