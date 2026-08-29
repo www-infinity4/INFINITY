@@ -1,0 +1,4 @@
+interface:
+  display_name: "Infinity Paragraph Router"
+  short_description: "Route linked paragraphs across conversations"
+  default_prompt: "Use $infinity-paragraph-router to route this paragraph without losing its source ancestry."

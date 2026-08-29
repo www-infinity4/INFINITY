@@ -1,0 +1,4 @@
+interface:
+  display_name: "Infinity Color Catalog"
+  short_description: "Classify and route conversation work by color"
+  default_prompt: "Use $infinity-color-catalog to classify these conversation blocks and surface what needs attention."
