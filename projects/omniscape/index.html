@@ -1,0 +1,247 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Omniscape</title><meta name="description" content="Project blueprint: A phone-first intelligent browser concept connecting the web and your knowledge.">
+<link rel="canonical" href="https://www-infinity4.github.io/INFINITY/projects/omniscape/">
+<meta property="og:type" content="website"><meta property="og:title" content="Omniscape"><meta property="og:description" content="Project blueprint: A phone-first intelligent browser concept connecting the web and your knowledge."><meta property="og:url" content="https://www-infinity4.github.io/INFINITY/projects/omniscape/"><meta property="og:image" content="https://www-infinity4.github.io/INFINITY/projects/omniscape/assets/share-preview-v1.png"><meta property="og:image:secure_url" content="https://www-infinity4.github.io/INFINITY/projects/omniscape/assets/share-preview-v1.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1731"><meta property="og:image:height" content="909"><meta property="og:image:alt" content="Omniscape website preview">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Omniscape"><meta name="twitter:description" content="Project blueprint: A phone-first intelligent browser concept connecting the web and your knowledge."><meta name="twitter:image" content="https://www-infinity4.github.io/INFINITY/projects/omniscape/assets/share-preview-v1.png"><meta name="twitter:image:alt" content="Omniscape website preview"><style>*{box-sizing:border-box}body{margin:0;background:#080f1c;color:#f7f1df;font:17px/1.6 system-ui,sans-serif}main{max-width:1040px;margin:auto;padding:32px 24px 80px}h1{font-size:clamp(36px,7vw,68px);line-height:1.08;letter-spacing:-.04em}h2{margin-top:2em}a{color:#aee8ff}img.hero{display:block;width:100%;height:auto;border-radius:16px;margin:24px 0}p{max-width:75ch}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#ffd68a}.button{display:inline-block;border:1px solid #7c99ad;border-radius:8px;padding:12px 20px;text-decoration:none;background:#162a3c;color:#fff;margin:5px 8px 5px 0}.note{border-left:3px solid #ffd68a;background:#142031;padding:16px 20px}.doc{border-top:1px solid #324055;margin-top:48px;overflow-wrap:anywhere}.doc pre{overflow:auto;background:#121d2b;padding:18px;border-radius:8px}.doc table{display:block;overflow:auto;border-collapse:collapse}.doc td,.doc th{border:1px solid #44556b;padding:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{padding:22px;border:1px solid #324055;border-radius:14px;background:#101d2c}.card h2{margin:0}</style></head><body><main><a href="https://www-infinity4.github.io/INFINITY/projects/">← Infinity project launchpad</a><p class="eyebrow">Project blueprint</p><h1>Omniscape</h1><p>Project blueprint: A phone-first intelligent browser concept connecting the web and your knowledge.</p><p class="note"><strong>This is the project design, not an implemented application.</strong> The original specification is preserved below. Features described in it are planned; no AI generation, browser engine, or publishing service runs on this page.</p><a class="button" href="#blueprint">Read the blueprint ↓</a><a class="button" href="https://github.com/www-infinity4/Omniscape">View source on GitHub ↗</a><img class="hero" src="assets/share-preview-v1.png" alt="Omniscape — Project blueprint"><article class="doc" id="blueprint" aria-label="Original project specification"><h1>Omniscape</h1>
+<p><strong>A phone-first intelligent browser for exploring the web, the Infinity ecosystem, and your own connected knowledge.</strong></p>
+<p>Omniscape is our modern counterpart to the early all-in-one browsers such as Netscape: a single doorway for browsing, searching, communicating, building, saving, and working with AI. It is not intended to be another skin placed over a search box. Omniscape treats every page, message, file, media item, application, and AI conversation as part of one navigable information landscape.</p>
+<p>The name combines <strong>omni</strong>—many directions and connected spaces—with <strong>scape</strong>—a visible landscape that can be explored.</p>
+<h2>Vision</h2>
+<p>Early browsers made the internet understandable by gathering navigation, documents, bookmarks, downloads, and communication into one application. Omniscape extends that idea for the AI era.</p>
+<p>The browser should be able to:</p>
+<ul>
+<li>open ordinary websites;</li>
+<li>search the public web and the user's saved knowledge;</li>
+<li>converse with AI beside any page;</li>
+<li>collect related pages into visual workspaces;</li>
+<li>connect Infinity applications through one consistent launcher;</li>
+<li>continue essential work offline;</li>
+<li>explain unfamiliar content in clear language;</li>
+<li>preserve the user's history and projects without turning that history into an advertising product;</li>
+<li>run comfortably on an Android phone before requiring a desktop computer.</li>
+</ul>
+<h2>Core experience</h2>
+<h3>One address and command field</h3>
+<p>The main field accepts a URL, search request, question, command, project name, or saved destination. Omniscape determines the intended action and shows it before carrying out anything sensitive.</p>
+<p>Examples:</p>
+<pre><code class="language-text">starquest
+open my machining game
+https://example.com
+find the explanation of hydrogen portals
+compare these three pages
+resume yesterday's research
+</code></pre>
+<h3>Landscapes instead of tab clutter</h3>
+<p>Tabs remain available, but related tabs can be collected into a <strong>Landscape</strong>. A Landscape is a resumable workspace containing pages, notes, conversations, media, files, and app states.</p>
+<p>Example Landscapes might include:</p>
+<ul>
+<li>StarQuest development;</li>
+<li>Disney Academia cards;</li>
+<li>electronics simulators;</li>
+<li>machining education;</li>
+<li>hydrogen research;</li>
+<li>Infinity wallet and mint operations.</li>
+</ul>
+<h3>AI beside the page</h3>
+<p>An optional assistant drawer can summarize, explain, compare, translate, extract structured information, or help operate the current page. The assistant must distinguish page content from trusted user instructions. A website can supply information, but it cannot silently instruct the browser's AI to expose data or perform unrelated actions.</p>
+<h3>Foldable conversation</h3>
+<p>Notes and AI discussions can attach directly to the relevant paragraph, image, video time, form, or code section. Older discussion can fold away without being deleted, allowing the newest conclusion to remain readable beside its source.</p>
+<h3>Phone-first controls</h3>
+<p>Omniscape is designed around one-handed Android use:</p>
+<ul>
+<li>large readable text and touch targets;</li>
+<li>bottom navigation within thumb reach;</li>
+<li>voice input;</li>
+<li>swipeable cards and tab groups;</li>
+<li>adjustable reading mode;</li>
+<li>picture-in-picture media;</li>
+<li>offline reading and queued actions;</li>
+<li>no essential hardware-keyboard commands.</li>
+</ul>
+<h2>Main surfaces</h2>
+<table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td>Launcher, prompt, recent Landscapes, and pinned Infinity apps</td>
+</tr>
+<tr>
+<td>Browse</td>
+<td>Normal web navigation with reading and accessibility controls</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>Combined web, history, saved pages, files, and project search</td>
+</tr>
+<tr>
+<td>Landscapes</td>
+<td>Visual groups of connected tabs, media, notes, and tasks</td>
+</tr>
+<tr>
+<td>Messages</td>
+<td>AI conversations and later person-to-person communication</td>
+</tr>
+<tr>
+<td>Library</td>
+<td>Saved pages, downloads, cards, documents, and offline material</td>
+</tr>
+<tr>
+<td>Builder</td>
+<td>Page inspection, code assistance, app creation, and publishing tools</td>
+</tr>
+<tr>
+<td>Settings</td>
+<td>Privacy, permissions, storage, accessibility, accounts, and AI routing</td>
+</tr>
+</tbody>
+</table>
+<h2>Infinity ecosystem</h2>
+<p>Omniscape can serve as the front door to the wider Infinity system while keeping every application independently usable.</p>
+<p>Planned connections include:</p>
+<ul>
+<li>StarQuest and Cosmo;</li>
+<li>Infinity Wallet and Mint;</li>
+<li>Infinity Builder;</li>
+<li>Idea Cloud;</li>
+<li>Infinity Market;</li>
+<li>Rogers Voice;</li>
+<li>Infinity Stage and Movie Hub;</li>
+<li>Infinity Times and Science Journal;</li>
+<li>Instrument Lab;</li>
+<li>Verse Engine;</li>
+<li>Infinity Clock;</li>
+<li>Mongoose.OS and approved agent tools.</li>
+</ul>
+<p>Applications appear as signed capability cards. Each card states what it can read, what it can change, whether it requires network access, and whether the action leaves the device.</p>
+<h2>Privacy and security</h2>
+<p>Omniscape follows a local-first and least-authority model.</p>
+<ul>
+<li>Browsing history, notes, and Landscape state remain on the device by default.</li>
+<li>Sync is optional, encrypted, and clearly separated from local storage.</li>
+<li>The browser never requests wallet seed phrases, recovery words, or private keys.</li>
+<li>Apps and AI tools receive only the capability required for the current action.</li>
+<li>Page content is treated as untrusted input, not as system instruction.</li>
+<li>External messages, purchases, publishing, account changes, and permission changes require visible confirmation.</li>
+<li>Private browsing creates no durable history after its session closes.</li>
+<li>Releases should be signed and accompanied by checksums.</li>
+<li>A restrictive content-security policy and dependency-light build reduce unnecessary attack surface.</li>
+<li>Physical-device controls are never exposed directly to public websites.</li>
+</ul>
+<h2>Search and AI routing</h2>
+<p>Omniscape separates four jobs that ordinary browsers often mix together:</p>
+<ol>
+<li><strong>Navigation</strong> opens an exact address or known destination.</li>
+<li><strong>Retrieval</strong> finds public pages or local saved material.</li>
+<li><strong>Reasoning</strong> compares, explains, plans, or derives an answer.</li>
+<li><strong>Action</strong> changes an application or external service with user authority.</li>
+</ol>
+<p>Local processing is preferred for history, organization, basic summaries, and private material. More capable remote models may be selected for difficult research or generation, but Omniscape displays which service will receive which information before transmission.</p>
+<h2>Technical direction</h2>
+<h3>Prototype</h3>
+<p>The initial version can remain a dependency-light progressive web application:</p>
+<ul>
+<li>semantic HTML, CSS, and JavaScript;</li>
+<li>fragment-based routes for Home, Search, Landscapes, and Settings;</li>
+<li>IndexedDB for tabs, Landscapes, notes, history, and offline queues;</li>
+<li>service worker for an offline application shell and saved reading;</li>
+<li>web application manifest for Android installation;</li>
+<li>import/export using documented JSON schemas;</li>
+<li>no required cloud account for local use.</li>
+</ul>
+<h3>Android application</h3>
+<p>The production Android build should use a maintained browser engine rather than inventing a new HTML renderer. A native shell can provide:</p>
+<ul>
+<li>secure web views and process isolation;</li>
+<li>Android share-target support;</li>
+<li>downloads and file handling;</li>
+<li>picture-in-picture;</li>
+<li>voice input;</li>
+<li>notifications;</li>
+<li>biometric protection for sensitive local areas;</li>
+<li>offline background queues;</li>
+<li>application links into Infinity projects.</li>
+</ul>
+<h3>Core data model</h3>
+<pre><code class="language-text">Landscape
+  ├── Page references
+  ├── Conversation threads
+  ├── Notes and annotations
+  ├── Media positions
+  ├── Files and generated artifacts
+  ├── Application states
+  └── Permission receipts
+</code></pre>
+<p>Every saved object receives a stable local identifier, creation and update times, source information, integrity metadata, and optional encrypted sync state.</p>
+<h2>Proposed repository structure</h2>
+<pre><code class="language-text">omniscape/
+├── README.md
+├── SECURITY.md
+├── LICENSE
+├── docs/
+│   ├── architecture.md
+│   ├── privacy-model.md
+│   ├── landscape-format.md
+│   └── android-roadmap.md
+├── web/
+│   ├── index.html
+│   ├── app.js
+│   ├── style.css
+│   ├── manifest.webmanifest
+│   └── service-worker.js
+├── android/
+├── packages/
+│   ├── landscape-core/
+│   ├── search-router/
+│   ├── permission-engine/
+│   └── infinity-connectors/
+└── tests/
+</code></pre>
+<h2>Development roadmap</h2>
+<h3>Phase 1 — Navigable prototype</h3>
+<ul>
+<li>Home launcher and unified command field</li>
+<li>browser view and readable mobile controls</li>
+<li>tabs and persistent Landscapes</li>
+<li>local bookmarks, history, and downloads</li>
+<li>offline application shell</li>
+<li>installable Android PWA</li>
+</ul>
+<h3>Phase 2 — Intelligent workspace</h3>
+<ul>
+<li>AI drawer beside pages</li>
+<li>page summaries and comparisons</li>
+<li>attached and foldable conversations</li>
+<li>unified local search</li>
+<li>voice navigation</li>
+<li>structured import and export</li>
+</ul>
+<h3>Phase 3 — Infinity browser</h3>
+<ul>
+<li>signed Infinity application cards</li>
+<li>StarQuest, Wallet, Builder, and Idea Cloud launchers</li>
+<li>capability-based app permissions</li>
+<li>optional encrypted account sync</li>
+<li>user-controlled AI routing</li>
+</ul>
+<h3>Phase 4 — Native Android release</h3>
+<ul>
+<li>packaged Android application</li>
+<li>isolated browser processes</li>
+<li>share targets, picture-in-picture, downloads, and notifications</li>
+<li>accessibility and low-memory testing on inexpensive phones</li>
+<li>signed release artifacts and reproducible build documentation</li>
+</ul>
+<h2>Definition of success</h2>
+<p>Omniscape succeeds when a person can open one application on an ordinary Android phone, reach the public web and their Infinity projects, understand what the AI is doing, keep important work organized, continue useful tasks offline, and remain in control of their history, permissions, and identity.</p>
+<h2>Status</h2>
+<p><strong>Concept and architecture stage.</strong> An earlier phone-first PWA starter established the offline shell, routes, local storage direction, manifest, and service-worker approach. This README is the product contract for the next implementation.</p>
+<h2>Working principle</h2>
+<blockquote>
+<p>The web should feel like a landscape you can understand, organize, and build upon—not an endless pile of disconnected pages.</p>
+</blockquote></article></main><script defer src="https://www-infinity4.github.io/Mint-For-Infinity/unified-wallet.js?v=20260831-game-rewards1"></script>
+<script defer src="https://www-infinity4.github.io/Mint-For-Infinity/site-community.js?v=20260831-storage2" data-site-id="OMNISCAPE" data-site-title="Omniscape" data-share-url="https://www-infinity4.github.io/INFINITY/projects/omniscape/share.html"></script></body></html>

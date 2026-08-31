@@ -1,0 +1,438 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StarLens</title><meta name="description" content="Project blueprint: A living media database connecting structured records with creator timelines.">
+<link rel="canonical" href="https://www-infinity4.github.io/INFINITY/projects/starlens/">
+<meta property="og:type" content="website"><meta property="og:title" content="StarLens"><meta property="og:description" content="Project blueprint: A living media database connecting structured records with creator timelines."><meta property="og:url" content="https://www-infinity4.github.io/INFINITY/projects/starlens/"><meta property="og:image" content="https://www-infinity4.github.io/INFINITY/projects/starlens/assets/share-preview-v1.png"><meta property="og:image:secure_url" content="https://www-infinity4.github.io/INFINITY/projects/starlens/assets/share-preview-v1.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1731"><meta property="og:image:height" content="909"><meta property="og:image:alt" content="StarLens website preview">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="StarLens"><meta name="twitter:description" content="Project blueprint: A living media database connecting structured records with creator timelines."><meta name="twitter:image" content="https://www-infinity4.github.io/INFINITY/projects/starlens/assets/share-preview-v1.png"><meta name="twitter:image:alt" content="StarLens website preview"><style>*{box-sizing:border-box}body{margin:0;background:#080f1c;color:#f7f1df;font:17px/1.6 system-ui,sans-serif}main{max-width:1040px;margin:auto;padding:32px 24px 80px}h1{font-size:clamp(36px,7vw,68px);line-height:1.08;letter-spacing:-.04em}h2{margin-top:2em}a{color:#aee8ff}img.hero{display:block;width:100%;height:auto;border-radius:16px;margin:24px 0}p{max-width:75ch}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#ffd68a}.button{display:inline-block;border:1px solid #7c99ad;border-radius:8px;padding:12px 20px;text-decoration:none;background:#162a3c;color:#fff;margin:5px 8px 5px 0}.note{border-left:3px solid #ffd68a;background:#142031;padding:16px 20px}.doc{border-top:1px solid #324055;margin-top:48px;overflow-wrap:anywhere}.doc pre{overflow:auto;background:#121d2b;padding:18px;border-radius:8px}.doc table{display:block;overflow:auto;border-collapse:collapse}.doc td,.doc th{border:1px solid #44556b;padding:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{padding:22px;border:1px solid #324055;border-radius:14px;background:#101d2c}.card h2{margin:0}</style></head><body><main><a href="https://www-infinity4.github.io/INFINITY/projects/">← Infinity project launchpad</a><p class="eyebrow">Project blueprint</p><h1>StarLens</h1><p>Project blueprint: A living media database connecting structured records with creator timelines.</p><p class="note"><strong>This is the project design, not an implemented application.</strong> The original specification is preserved below. Features described in it are planned; no AI generation, browser engine, or publishing service runs on this page.</p><a class="button" href="#blueprint">Read the blueprint ↓</a><a class="button" href="https://github.com/www-infinity4/StarLens">View source on GitHub ↗</a><img class="hero" src="assets/share-preview-v1.png" alt="StarLens — Project blueprint"><article class="doc" id="blueprint" aria-label="Original project specification"><h1>StarLens</h1>
+<p><strong>Infinity's living media, creator, character, and project database—where every page also has an attributable public timeline.</strong></p>
+<p>StarLens combines the durable reference value of IMDb with the immediacy of a social update feed. Movies, shows, episodes, songs, games, books, creators, performers, characters, inventions, studios, and Infinity projects receive structured pages. New trailers, credits, production notes, release updates, reviews, images, cards, corrections, and creator posts appear on the relevant page and in its chronological <strong>Lens Feed</strong>.</p>
+<p>StarLens is not simply “IMDb plus Twitter.” The database and the feed are connected but distinct:</p>
+<ul>
+<li><strong>The Record</strong> stores structured facts, credits, relationships, identifiers, rights, and provenance.</li>
+<li><strong>The Lens Feed</strong> stores time-ordered posts, additions, corrections, discussions, and release events.</li>
+<li><strong>The Lens</strong> combines both into one understandable page.</li>
+</ul>
+<p>This distinction prevents a popular post from silently becoming an official credit while still allowing every meaningful addition to remain visible and discussable.</p>
+<h2>Example</h2>
+<p>A StarQuest title page may contain:</p>
+<ul>
+<li>title, year, runtime, rating, genres, and synopsis;</li>
+<li>cast and crew credits;</li>
+<li>episode and season relationships;</li>
+<li>playable StarQuest source and availability state;</li>
+<li>soundtrack, cards, and related projects;</li>
+<li>rights and provenance status;</li>
+<li>reviews and audience reactions;</li>
+<li>a Lens Feed showing a new trailer, corrected credit, creator note, card-set release, HI-FI mix, or cartoon adaptation.</li>
+</ul>
+<p>If an authorized creator adds a production image, that image appears in the page gallery and creates a feed event. If a community member proposes a credit correction, it appears as a labeled proposal until verified. If StarQuest publishes a new playable source, the availability record changes and a release event appears in the feed.</p>
+<h2>Product principles</h2>
+<h3>Living pages</h3>
+<p>A StarLens page is not a frozen encyclopedia entry. It is a versioned identity that develops through attributable events.</p>
+<h3>Facts and posts remain distinguishable</h3>
+<p>Structured credits, user opinions, creator announcements, AI-generated summaries, and disputed claims use different record types and visible labels.</p>
+<h3>Provenance before popularity</h3>
+<p>Every important fact records its source, submitter, verification state, creation time, and revision history. Likes or reposts do not verify a claim.</p>
+<h3>Creator control without historical erasure</h3>
+<p>Verified page owners can publish updates and manage their presentation, but they cannot quietly remove legitimate sourced history. Corrections supersede prior records while preserving the audit trail.</p>
+<h3>StarQuest first, Infinity-wide later</h3>
+<p>StarQuest is the first major consumer. StarLens later supports Auto Built Cartoon Deployer, Infinity HI-FI, digital cards, games, books, research, music, and creator portfolios.</p>
+<h3>Phone first</h3>
+<p>Pages, feeds, credits, editing, verification, and playback links must remain readable and operable on an Android phone with large controls and no hardware-keyboard requirement.</p>
+<h2>What receives a Lens</h2>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>Movie, series, short, episode, music video, broadcast</td>
+</tr>
+<tr>
+<td>Person</td>
+<td>Performer, director, writer, musician, engineer, creator</td>
+</tr>
+<tr>
+<td>Character</td>
+<td>Fictional or original character with rights-aware relationships</td>
+</tr>
+<tr>
+<td>Organization</td>
+<td>Studio, label, production company, school, Infinity project</td>
+</tr>
+<tr>
+<td>Work</td>
+<td>Song, album, book, game, card set, cartoon, research publication</td>
+</tr>
+<tr>
+<td>Asset</td>
+<td>Trailer, poster, approved image, audio mix, subtitle track</td>
+</tr>
+<tr>
+<td>Release</td>
+<td>Theater, broadcast, streaming, physical, StarQuest, HI-FI version</td>
+</tr>
+<tr>
+<td>Collection</td>
+<td>Franchise, season, playlist, 350-card set, museum exhibit</td>
+</tr>
+</tbody>
+</table>
+<p>Each entity receives a stable StarLens ID independent of its display name or current URL.</p>
+<h2>Lens page anatomy</h2>
+<h3>Header</h3>
+<ul>
+<li>canonical name and alternate names;</li>
+<li>verified badge and entity type;</li>
+<li>primary artwork;</li>
+<li>short description;</li>
+<li>availability and rights status;</li>
+<li>Follow, Save, Share, Watch, and Edit/Propose actions.</li>
+</ul>
+<h3>Record</h3>
+<ul>
+<li>structured facts;</li>
+<li>credits and roles;</li>
+<li>dates, places, organizations, and relationships;</li>
+<li>identifiers and external references;</li>
+<li>editions and releases;</li>
+<li>source citations and verification state;</li>
+<li>revision history.</li>
+</ul>
+<h3>Lens Feed</h3>
+<ul>
+<li>creator and organization posts;</li>
+<li>title announcements;</li>
+<li>trailers and approved media;</li>
+<li>credit additions and corrections;</li>
+<li>StarQuest availability changes;</li>
+<li>Infinity HI-FI release events;</li>
+<li>card-set and pack announcements;</li>
+<li>linked cartoon or game releases;</li>
+<li>reviews, replies, and community discussion;</li>
+<li>moderation and dispute outcomes when public notice is appropriate.</li>
+</ul>
+<h3>Related universe</h3>
+<ul>
+<li>cast, crew, characters, titles, episodes, music, cards, games, adaptations, production organizations, and source works;</li>
+<li>graph relationships explain how each item is connected.</li>
+</ul>
+<h2>Feed behavior</h2>
+<p>Every feed item has one primary target Lens and may mention other Lenses. Events generated from database changes link to the exact revision.</p>
+<h3>Feed item types</h3>
+<pre><code class="language-text">post
+announcement
+release
+credit-added
+credit-corrected
+availability-changed
+review
+reply
+media-added
+card-set-published
+hifi-mix-published
+cartoon-published
+verification-update
+dispute-opened
+dispute-resolved
+</code></pre>
+<h3>Visibility</h3>
+<pre><code class="language-text">private → collaborators → shared link → followers → public
+</code></pre>
+<p>Drafts never become public merely because they were added to a private project page.</p>
+<h3>Following</h3>
+<p>Users may follow people, titles, characters, studios, projects, collections, or topics. The home feed combines followed Lens events with clearly labeled recommendations. Chronological view remains available.</p>
+<h2>Record truth model</h2>
+<p>StarLens stores claims rather than pretending every submitted value is immediately true.</p>
+<pre><code class="language-text">proposed → sourced → verified
+        ↘ disputed
+        ↘ rejected
+verified → superseded
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proposed</td>
+<td>Submitted but not yet supported sufficiently</td>
+</tr>
+<tr>
+<td>Sourced</td>
+<td>Connected to a reviewable source</td>
+</tr>
+<tr>
+<td>Verified</td>
+<td>Accepted under the applicable verification rule</td>
+</tr>
+<tr>
+<td>Disputed</td>
+<td>A substantive conflict is under review</td>
+</tr>
+<tr>
+<td>Rejected</td>
+<td>Failed a factual, rights, identity, or policy check</td>
+</tr>
+<tr>
+<td>Superseded</td>
+<td>Replaced by a later record without deleting history</td>
+</tr>
+</tbody>
+</table>
+<p>Opinions and reviews do not need to become verified facts. They remain attributable opinions.</p>
+<h2>Identity and page control</h2>
+<p>StarLens distinguishes:</p>
+<ul>
+<li>a person or organization's identity;</li>
+<li>the account operating on its behalf;</li>
+<li>the maintainers curating a page;</li>
+<li>contributors proposing changes;</li>
+<li>automated services posting system events.</li>
+</ul>
+<p>Verification may establish control of an account or relationship to a project; it does not make every future statement factually correct. High-impact changes require stronger evidence or multiple reviewers.</p>
+<h2>StarQuest integration</h2>
+<p>StarLens provides StarQuest with canonical media identity and context.</p>
+<p>StarQuest can read:</p>
+<ul>
+<li>title and episode metadata;</li>
+<li>approved artwork;</li>
+<li>playable-source status;</li>
+<li>cast, characters, genres, keywords, and content notices;</li>
+<li>captions and audio-profile relationships;</li>
+<li>card sets and related Infinity projects;</li>
+<li>creator announcements and release events.</li>
+</ul>
+<p>StarQuest can write attributable events for:</p>
+<ul>
+<li>a newly verified playable source;</li>
+<li>source removal or availability failure;</li>
+<li>Infinity HI-FI profile publication;</li>
+<li>an authorized Auto Built Cartoon release;</li>
+<li>a 350-card checklist or pack release;</li>
+<li>creator-approved watch milestones when privacy settings allow.</li>
+</ul>
+<p>Playback must not depend on the feed service. If StarLens is unavailable, StarQuest uses cached title metadata and continues playing.</p>
+<h2>Infinity economy</h2>
+<p>StarLens catalogs economic relationships without hiding prices or confusing access with ownership.</p>
+<ul>
+<li>Star Coins may unlock eligible StarQuest episodes or experiences.</li>
+<li>Infinity may purchase eligible digital card packs, creator releases, or listed products.</li>
+<li>Following, reading pages, proposing corrections, and viewing ordinary database facts do not require payment.</li>
+<li>Ownership, access permission, edition, transfer, and provenance are separate records.</li>
+<li>No page may request a wallet recovery phrase, seed phrase, or private key.</li>
+<li>Prices, odds, royalties, and rights state must be visible before a purchase.</li>
+</ul>
+<h2>Cards and collections</h2>
+<p>A card set receives its own Lens with:</p>
+<ul>
+<li>set title and description;</li>
+<li>publisher and creators;</li>
+<li>checklist size;</li>
+<li>card records and numbers;</li>
+<li>related title, person, character, and episode Lenses;</li>
+<li>pack configuration and published odds;</li>
+<li>rights and audit state;</li>
+<li>provenance and release history;</li>
+<li>museum or collection relationships.</li>
+</ul>
+<p>A card image cannot become sellable merely because it is attached to a page. Publication requires cleared rights, valid provenance, quality approval, and the applicable pack/release contract.</p>
+<h2>Reviews and ratings</h2>
+<p>StarLens separates several measures:</p>
+<ul>
+<li>user rating;</li>
+<li>written review;</li>
+<li>verified-watch rating when StarQuest can confirm completion with permission;</li>
+<li>critic or publication review;</li>
+<li>technical quality assessment;</li>
+<li>accessibility assessment;</li>
+<li>community trust signals.</li>
+</ul>
+<p>The calculation method and sample size are visible. Rating manipulation, duplicate accounts, purchased engagement, and coordinated abuse are monitored without hiding legitimate disagreement.</p>
+<h2>Moderation and safety</h2>
+<ul>
+<li>Personal attacks, threats, harassment, impersonation, doxxing, and non-consensual intimate material are prohibited.</li>
+<li>Allegations about real people require careful sourcing, neutral presentation, and a dispute path.</li>
+<li>Unverified claims are not promoted as biography facts.</li>
+<li>Minors receive stronger privacy and contact protections.</li>
+<li>AI-generated images, summaries, reviews, voices, and posts are labeled.</li>
+<li>Protected media, trademarks, characters, and likenesses require appropriate authorization for commercial reuse.</li>
+<li>Page maintainers cannot use moderation to erase sourced corrections or criticism solely because it is unfavorable.</li>
+<li>Appeals and moderation actions receive stable case IDs and audit events.</li>
+</ul>
+<h2>Data model</h2>
+<pre><code class="language-text">LensEntity
+├── CanonicalIdentity
+├── Claim[]
+├── Credit[]
+├── Relationship[]
+├── Release[]
+├── Availability[]
+├── MediaAsset[]
+├── FeedEvent[]
+├── Review[]
+├── CollectionMembership[]
+├── Verification[]
+├── RightsRecord[]
+└── Revision[]
+</code></pre>
+<h3>Core entity</h3>
+<pre><code class="language-json">{
+  &quot;lensId&quot;: &quot;lens_01J...&quot;,
+  &quot;entityType&quot;: &quot;title&quot;,
+  &quot;canonicalName&quot;: &quot;Example Film&quot;,
+  &quot;slug&quot;: &quot;example-film-2026&quot;,
+  &quot;verificationState&quot;: &quot;verified&quot;,
+  &quot;visibility&quot;: &quot;public&quot;,
+  &quot;currentRevisionId&quot;: &quot;rev_01J...&quot;,
+  &quot;createdAt&quot;: &quot;2026-08-27T00:00:00Z&quot;,
+  &quot;updatedAt&quot;: &quot;2026-08-27T00:00:00Z&quot;
+}
+</code></pre>
+<h3>Feed event</h3>
+<pre><code class="language-json">{
+  &quot;eventId&quot;: &quot;event_01J...&quot;,
+  &quot;lensId&quot;: &quot;lens_01J...&quot;,
+  &quot;actorId&quot;: &quot;account_01J...&quot;,
+  &quot;eventType&quot;: &quot;credit-corrected&quot;,
+  &quot;body&quot;: &quot;Updated the credited role after source review.&quot;,
+  &quot;revisionId&quot;: &quot;rev_01J...&quot;,
+  &quot;mentions&quot;: [&quot;lens_person_01J...&quot;],
+  &quot;visibility&quot;: &quot;public&quot;,
+  &quot;verificationLabel&quot;: &quot;system-record&quot;,
+  &quot;createdAt&quot;: &quot;2026-08-27T00:00:00Z&quot;
+}
+</code></pre>
+<h2>Reference architecture</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[Phone or web client] --&gt; B[StarLens API]
+    B --&gt; C[Identity and record database]
+    B --&gt; D[Lens Feed service]
+    B --&gt; E[Search index]
+    B --&gt; F[Media/object storage]
+    C --&gt; G[Revision and provenance ledger]
+    D --&gt; G
+    H[StarQuest and Infinity apps] --&gt; B
+</code></pre>
+<h3>Services</h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity service</td>
+<td>Stable Lens IDs, slugs, aliases, verification, ownership</td>
+</tr>
+<tr>
+<td>Record service</td>
+<td>Claims, credits, relationships, releases, revisions</td>
+</tr>
+<tr>
+<td>Feed service</td>
+<td>Posts, database events, follows, replies, timelines</td>
+</tr>
+<tr>
+<td>Search service</td>
+<td>Titles, people, credits, characters, works, and feed discovery</td>
+</tr>
+<tr>
+<td>Media service</td>
+<td>Approved images, trailers, audio, captions, hashes, rights</td>
+</tr>
+<tr>
+<td>Moderation service</td>
+<td>Reports, cases, appeals, enforcement, safety labels</td>
+</tr>
+<tr>
+<td>Provenance service</td>
+<td>Sources, contributors, revisions, signatures, audit history</td>
+</tr>
+<tr>
+<td>Infinity adapter</td>
+<td>StarQuest, HI-FI, cards, cartoons, wallet-safe product links</td>
+</tr>
+</tbody>
+</table>
+<h2>Suggested repository structure</h2>
+<pre><code class="language-text">starlens/
+├── README.md
+├── SECURITY.md
+├── docs/
+│   ├── record-truth-model.md
+│   ├── feed-events.md
+│   ├── identity-verification.md
+│   ├── moderation.md
+│   └── starquest-integration.md
+├── apps/
+│   ├── mobile-web/
+│   └── moderation-console/
+├── services/
+│   ├── api/
+│   ├── records/
+│   ├── feed/
+│   ├── search/
+│   └── provenance/
+├── packages/
+│   ├── contracts/
+│   ├── permissions/
+│   └── infinity-adapter/
+├── migrations/
+└── tests/
+</code></pre>
+<h2>First prototype</h2>
+<p>The prototype should use a small rights-cleared catalog:</p>
+<ul>
+<li>five titles;</li>
+<li>ten people or creator profiles;</li>
+<li>five characters;</li>
+<li>one organization;</li>
+<li>one StarQuest playable-source relationship;</li>
+<li>one Infinity HI-FI release;</li>
+<li>one 350-card set shell;</li>
+<li>structured credits and relationships;</li>
+<li>feed events automatically generated from record changes;</li>
+<li>user posts, follows, reviews, replies, and correction proposals;</li>
+<li>phone-first search and page navigation.</li>
+</ul>
+<h2>First build milestones</h2>
+<ol>
+<li>Define Lens IDs, entity types, claims, credits, relationships, and revisions.</li>
+<li>Build title, person, character, organization, and collection pages.</li>
+<li>Create the Lens Feed and database-change event generator.</li>
+<li>Add sources and claim verification states.</li>
+<li>Add follows, posts, replies, reviews, and chronological timelines.</li>
+<li>Implement correction proposals and moderator review.</li>
+<li>Connect one StarQuest title and availability record.</li>
+<li>Connect one Infinity HI-FI release and one card-set Lens.</li>
+<li>Add search, aliases, and relationship navigation.</li>
+<li>Test Android readability, privacy, abuse handling, provenance, and offline caching.</li>
+</ol>
+<h2>Acceptance criteria</h2>
+<ul>
+<li>Every page and feed item uses a stable ID.</li>
+<li>A database edit creates a linked, attributable feed event.</li>
+<li>A feed post cannot silently become a verified credit.</li>
+<li>Credits retain sources and revision history.</li>
+<li>Disputed claims are visibly labeled and reviewable.</li>
+<li>Verified owners can post without controlling unrelated factual review.</li>
+<li>StarQuest can resolve a title even if the feed is unavailable.</li>
+<li>Infinity HI-FI and card releases appear as typed relationships, not loose text.</li>
+<li>Private drafts do not enter public feeds.</li>
+<li>The main page, search, feed, editing, and review flows work on an Android phone.</li>
+</ul>
+<h2>Status</h2>
+<p><strong>Architecture and prototype specification.</strong> The first release should establish trustworthy records and attributable timelines before adding large-scale recommendations or monetization.</p>
+<h2>Working principle</h2>
+<blockquote>
+<p>Every work has a record. Every addition has an author. Every page has a living timeline.</p>
+</blockquote></article></main><script defer src="https://www-infinity4.github.io/Mint-For-Infinity/unified-wallet.js?v=20260831-game-rewards1"></script>
+<script defer src="https://www-infinity4.github.io/Mint-For-Infinity/site-community.js?v=20260831-storage2" data-site-id="STARLENS" data-site-title="StarLens" data-share-url="https://www-infinity4.github.io/INFINITY/projects/starlens/share.html"></script></body></html>

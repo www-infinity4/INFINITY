@@ -1,0 +1,417 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Auto Built Cartoon Deployer</title><meta name="description" content="Project blueprint: A rights-aware concept for cartoon worlds, episode production, and collectible cards.">
+<link rel="canonical" href="https://www-infinity4.github.io/INFINITY/projects/auto-built-cartoon-deployer/">
+<meta property="og:type" content="website"><meta property="og:title" content="Auto Built Cartoon Deployer"><meta property="og:description" content="Project blueprint: A rights-aware concept for cartoon worlds, episode production, and collectible cards."><meta property="og:url" content="https://www-infinity4.github.io/INFINITY/projects/auto-built-cartoon-deployer/"><meta property="og:image" content="https://www-infinity4.github.io/INFINITY/projects/auto-built-cartoon-deployer/assets/share-preview-v1.png"><meta property="og:image:secure_url" content="https://www-infinity4.github.io/INFINITY/projects/auto-built-cartoon-deployer/assets/share-preview-v1.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1731"><meta property="og:image:height" content="909"><meta property="og:image:alt" content="Auto Built Cartoon Deployer website preview">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Auto Built Cartoon Deployer"><meta name="twitter:description" content="Project blueprint: A rights-aware concept for cartoon worlds, episode production, and collectible cards."><meta name="twitter:image" content="https://www-infinity4.github.io/INFINITY/projects/auto-built-cartoon-deployer/assets/share-preview-v1.png"><meta name="twitter:image:alt" content="Auto Built Cartoon Deployer website preview"><style>*{box-sizing:border-box}body{margin:0;background:#080f1c;color:#f7f1df;font:17px/1.6 system-ui,sans-serif}main{max-width:1040px;margin:auto;padding:32px 24px 80px}h1{font-size:clamp(36px,7vw,68px);line-height:1.08;letter-spacing:-.04em}h2{margin-top:2em}a{color:#aee8ff}img.hero{display:block;width:100%;height:auto;border-radius:16px;margin:24px 0}p{max-width:75ch}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#ffd68a}.button{display:inline-block;border:1px solid #7c99ad;border-radius:8px;padding:12px 20px;text-decoration:none;background:#162a3c;color:#fff;margin:5px 8px 5px 0}.note{border-left:3px solid #ffd68a;background:#142031;padding:16px 20px}.doc{border-top:1px solid #324055;margin-top:48px;overflow-wrap:anywhere}.doc pre{overflow:auto;background:#121d2b;padding:18px;border-radius:8px}.doc table{display:block;overflow:auto;border-collapse:collapse}.doc td,.doc th{border:1px solid #44556b;padding:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{padding:22px;border:1px solid #324055;border-radius:14px;background:#101d2c}.card h2{margin:0}</style></head><body><main><a href="https://www-infinity4.github.io/INFINITY/projects/">← Infinity project launchpad</a><p class="eyebrow">Project blueprint</p><h1>Auto Built Cartoon Deployer</h1><p>Project blueprint: A rights-aware concept for cartoon worlds, episode production, and collectible cards.</p><p class="note"><strong>This is the project design, not an implemented application.</strong> The original specification is preserved below. Features described in it are planned; no AI generation, browser engine, or publishing service runs on this page.</p><a class="button" href="#blueprint">Read the blueprint ↓</a><a class="button" href="https://github.com/www-infinity4/Auto-Built-Cartoon-Deployer">View source on GitHub ↗</a><img class="hero" src="assets/share-preview-v1.png" alt="Auto Built Cartoon Deployer — Project blueprint"><article class="doc" id="blueprint" aria-label="Original project specification"><h1>Auto Built Cartoon Deployer</h1>
+<p><strong>Watch media. Describe the new episode. Build a private cartoon world and a collectible card set. Share only when the creator chooses.</strong></p>
+<p>Auto Built Cartoon Deployer is a media-to-animation production system for StarQuest and the Infinity ecosystem. While authorized media is playing, the system studies its structure and prepares a reusable production package: characters, locations, props, relationships, scene grammar, sound cues, story beats, and card-ready moments. The creator can then supply a short episode idea and generate a new cartoon without rebuilding the entire world from the beginning.</p>
+<p>The intended experience is simple:</p>
+<pre><code class="language-text">Watch → Analyze → Build world kit → Give episode context → Generate privately
+      → Review → Create 350-card set → Publish/share → Watch or collect
+</code></pre>
+<p>The complicated work belongs behind the interface. The creator should not need to animate every frame, rewrite every character description, or manually prepare hundreds of card layouts.</p>
+<h2>Example experience</h2>
+<p>A viewer finishes an authorized movie in StarQuest. During playback, Auto Built Cartoon Deployer has prepared a rights-aware production package describing:</p>
+<ul>
+<li>the story's characters and their relationships;</li>
+<li>recognizable locations and recurring objects;</li>
+<li>costume, color, lighting, and movement references;</li>
+<li>dialogue rhythm and vocabulary without copying the original script;</li>
+<li>important scene types and emotional beats;</li>
+<li>reusable original animation rigs;</li>
+<li>350 possible card subjects.</li>
+</ul>
+<p>When the movie ends, the viewer can choose either path:</p>
+<ol>
+<li><strong>Build a cartoon episode</strong> — enter a short premise, choose characters and length, then generate a private episode.</li>
+<li><strong>Open the card collection</strong> — inspect the 350-card checklist and buy a generated pack using Infinity after the set passes its publishing audit.</li>
+</ol>
+<p>If the creator makes a new episode, it remains unseen by anyone else until the creator explicitly shares or publishes it. Published episodes may be watched with Star Coins. Shared episodes can also produce their own provenance-linked card subsets.</p>
+<h2>Product principles</h2>
+<h3>Private first</h3>
+<p>Generation begins in a private workspace. Drafts, prompts, rejected scenes, reference frames, and unfinished episodes are not automatically public. Sharing, selling, and publishing are separate visible actions.</p>
+<h3>Creator control</h3>
+<p>The creator controls:</p>
+<ul>
+<li>the episode premise;</li>
+<li>which approved characters and locations may appear;</li>
+<li>tone, audience rating, length, and learning goals;</li>
+<li>regeneration or manual replacement of any scene;</li>
+<li>whether a release is private, shared, listed, or withdrawn;</li>
+<li>whether cards are generated, packed, sold, or retained;</li>
+<li>which collaborators can view, edit, animate, approve, or publish.</li>
+</ul>
+<h3>Reusable production intelligence</h3>
+<p>The expensive step is building a stable <strong>World Kit</strong>. Once approved, the same rigs, expression sheets, locations, props, palettes, and voice rules can support many fresh episodes. New scripts modify performance and story context without unnecessarily redesigning the entire cast.</p>
+<h3>Rights-aware by construction</h3>
+<p>The system must distinguish between:</p>
+<ul>
+<li>original user-owned worlds;</li>
+<li>public-domain material;</li>
+<li>licensed properties and likenesses;</li>
+<li>user-authorized personal media;</li>
+<li>protected third-party films, characters, trademarks, voices, music, and celebrity likenesses.</li>
+</ul>
+<p>Faithful character conversion is available only when the necessary rights or permissions are recorded. Otherwise the deployer creates an original cast and world that captures broad genre qualities without copying protected character designs, names, scripts, logos, voices, or a living artist's or studio's exact style.</p>
+<p>The default art direction is an <strong>original 1990s theatrical hand-drawn animation profile</strong>: expressive silhouettes, clean ink lines, painted-background depth, warm cel shading, readable motion, and strong facial acting. It is a production profile, not a claim of affiliation with Disney or another studio.</p>
+<h2>The generation pipeline</h2>
+<h3>1. Media authorization</h3>
+<p>Before analysis begins, the source receives a rights state:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Permitted output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original/owned</td>
+<td>Private and commercial generation, subject to participant releases</td>
+</tr>
+<tr>
+<td>Licensed</td>
+<td>Outputs allowed within recorded license scope</td>
+</tr>
+<tr>
+<td>Public domain</td>
+<td>Generation allowed; new additions remain separately tracked</td>
+</tr>
+<tr>
+<td>Personal reference only</td>
+<td>Private analysis and notes; no automatic public deployment</td>
+</tr>
+<tr>
+<td>Unknown or restricted</td>
+<td>Metadata-only cataloging until cleared</td>
+</tr>
+</tbody>
+</table>
+<p>The rights record travels with every derived asset and release.</p>
+<h3>2. Playback analysis</h3>
+<p>The analyzer processes only authorized inputs and records time-aligned observations:</p>
+<ul>
+<li>scene boundaries and shot types;</li>
+<li>characters present;</li>
+<li>dialogue speaker and emotional intent;</li>
+<li>location and time of day;</li>
+<li>important props and vehicles;</li>
+<li>action, gesture, and camera movement;</li>
+<li>music and sound-event categories;</li>
+<li>color and lighting profiles;</li>
+<li>plot events and unresolved threads;</li>
+<li>card-worthy compositions;</li>
+<li>content rating and safety signals.</li>
+</ul>
+<p>Raw media does not need to be copied into the release package. The system stores references, derived measurements, approved reference crops when permitted, and hashes for provenance.</p>
+<h3>3. World Kit compiler</h3>
+<p>The compiler turns analysis into reusable production assets:</p>
+<pre><code class="language-text">World Kit
+├── Rights manifest
+├── Character bible
+│   ├── Turnarounds
+│   ├── Expression sheets
+│   ├── Pose and motion library
+│   ├── Costume variants
+│   ├── Relationship rules
+│   └── Voice/performance rules
+├── Location bible
+│   ├── Establishing views
+│   ├── Reusable layouts
+│   └── Lighting variants
+├── Props and vehicles
+├── Story grammar
+├── Approved vocabulary
+├── Animation profile
+├── Card design system
+└── Validation tests
+</code></pre>
+<p>Each asset has a stable identifier and version. A character update should not silently alter an already released episode.</p>
+<h3>4. Creator episode brief</h3>
+<p>The minimum viable input is deliberately small:</p>
+<pre><code class="language-text">Premise: The group must repair a school robot before the science fair.
+Characters: Alex, Mina, Coach
+Length: 7 minutes
+Tone: Funny, inventive, family-friendly
+Required event: The wrong capacitor makes the robot dance
+Ending: The repair becomes the winning demonstration
+</code></pre>
+<p>Advanced controls remain optional: lesson goal, scene count, forbidden topics, selected locations, card emphasis, dialogue density, music profile, and continuity point.</p>
+<h3>5. Story engine</h3>
+<p>The story engine produces structured material before rendering expensive animation:</p>
+<ol>
+<li>premise and continuity check;</li>
+<li>beat sheet;</li>
+<li>scene outline;</li>
+<li>script and dialogue;</li>
+<li>storyboard panels;</li>
+<li>timing/animatic;</li>
+<li>creator approval checkpoint;</li>
+<li>final animation plan.</li>
+</ol>
+<p>Every stage remains editable. A rejected line should regenerate the affected performance, not the entire episode.</p>
+<h3>6. Animation assembly</h3>
+<p>The renderer combines approved rigs and backgrounds with new performance data:</p>
+<ul>
+<li>character blocking;</li>
+<li>facial expressions and lip synchronization;</li>
+<li>pose interpolation and hand corrections;</li>
+<li>camera and parallax movement;</li>
+<li>lighting and effects;</li>
+<li>dialogue, music, and sound effects;</li>
+<li>captions and descriptive audio;</li>
+<li>final quality and continuity checks.</li>
+</ul>
+<p>Rendering can happen in scene-sized jobs so a phone may supervise production without keeping one fragile request open.</p>
+<h3>7. Review and provenance</h3>
+<p>Before a creator can publish, the system displays:</p>
+<ul>
+<li>episode preview;</li>
+<li>rights/audit status;</li>
+<li>used World Kit version;</li>
+<li>generated and human-edited scenes;</li>
+<li>content rating;</li>
+<li>unresolved visual or audio defects;</li>
+<li>expected Star Coin price;</li>
+<li>proposed card-set relationship;</li>
+<li>release hash and creator signature.</li>
+</ul>
+<h3>8. Private release, sharing, and deployment</h3>
+<p>Release states are explicit:</p>
+<pre><code class="language-text">Draft → Private Preview → Approved → Shared Link → Listed → Archived
+</code></pre>
+<p>Nothing moves from private preview to shared or listed without creator approval. A shared viewer receives the final release, not the creator's hidden prompts, raw references, or rejected drafts.</p>
+<h2>The 350-card engine</h2>
+<p>Each completed World Kit prepares a 350-card master checklist. Cards can represent:</p>
+<ul>
+<li>main and supporting characters;</li>
+<li>character expressions and costumes;</li>
+<li>locations and vehicles;</li>
+<li>props and inventions;</li>
+<li>story moments;</li>
+<li>episode milestones;</li>
+<li>behind-the-scenes production stages;</li>
+<li>educational explanations;</li>
+<li>rare alternates and creator cards.</li>
+</ul>
+<p>The set is generated as structured card records before final artwork:</p>
+<pre><code class="language-json">{
+  &quot;cardId&quot;: &quot;world-001-card-027&quot;,
+  &quot;setNumber&quot;: 27,
+  &quot;title&quot;: &quot;The Capacitor Test&quot;,
+  &quot;subjectType&quot;: &quot;story-moment&quot;,
+  &quot;worldKitVersion&quot;: &quot;1.0.0&quot;,
+  &quot;episodeId&quot;: &quot;episode-001&quot;,
+  &quot;artAssetId&quot;: &quot;frame-approved-184&quot;,
+  &quot;rarity&quot;: &quot;standard&quot;,
+  &quot;rightsState&quot;: &quot;cleared&quot;,
+  &quot;provenanceHash&quot;: &quot;sha256:...&quot;
+}
+</code></pre>
+<p>Cards failing the rights or quality audit cannot enter sellable packs. They remain blocked until replaced with cleared original material.</p>
+<h3>Pack model</h3>
+<ul>
+<li>The creator may inspect the checklist before packs exist.</li>
+<li>A pack contains a declared number of digital cards and published odds.</li>
+<li>Infinity is used to purchase collectible packs.</li>
+<li>Star Coins are used to access eligible cartoon episodes in StarQuest.</li>
+<li>Ownership, edition, transfer, and provenance are recorded separately from the artwork file.</li>
+<li>Payment logic must use an auditable ledger and never request a wallet recovery phrase.</li>
+</ul>
+<h2>StarQuest integration</h2>
+<p>StarQuest supplies the viewing surface and, for authorized media, time-aligned playback events. The deployer returns:</p>
+<ul>
+<li>analysis progress that does not interrupt playback;</li>
+<li>an end-of-show <strong>Build Cartoon</strong> option;</li>
+<li>an end-of-show <strong>Open Card Set</strong> option;</li>
+<li>private episode previews;</li>
+<li>Star Coin watch-price metadata;</li>
+<li>share and creator pages;</li>
+<li>watch-history and release provenance links.</li>
+</ul>
+<p>Background work must be queued and rate-limited. A failed analysis job cannot break video playback.</p>
+<h2>Prototype scope</h2>
+<p>The first prototype should prove the full story with a small, rights-cleared test world rather than attempting feature-film rendering immediately.</p>
+<h3>Prototype input</h3>
+<ul>
+<li>one original or public-domain 3–5 minute source;</li>
+<li>three characters;</li>
+<li>two locations;</li>
+<li>six props;</li>
+<li>a recorded rights manifest;</li>
+<li>one 60–90 second creator-generated episode.</li>
+</ul>
+<h3>Prototype output</h3>
+<ul>
+<li>playback timeline analysis;</li>
+<li>World Kit JSON;</li>
+<li>three character reference sheets;</li>
+<li>two reusable background layouts;</li>
+<li>creator episode-brief form;</li>
+<li>beat sheet, script, and storyboard;</li>
+<li>low-frame-rate animatic with captions;</li>
+<li>ten fully rendered demonstration cards;</li>
+<li>the remaining 340 cards represented by valid checklist records;</li>
+<li>private preview and explicit share control;</li>
+<li>simulated Infinity pack checkout and Star Coin episode unlock;</li>
+<li>complete audit and provenance record.</li>
+</ul>
+<p>The prototype does <strong>not</strong> need to render a full feature, impersonate protected voices, mint tokens, or process irreversible payments.</p>
+<h2>Reference architecture</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[Authorized media] --&gt; B[Playback analyzer]
+    B --&gt; C[World Kit compiler]
+    C --&gt; D[Creator episode brief]
+    D --&gt; E[Story and storyboard engine]
+    E --&gt; F[Scene render queue]
+    F --&gt; G[Private review]
+    G --&gt; H{Creator approves?}
+    H -- Revise --&gt; E
+    H -- Yes --&gt; I[Rights and quality audit]
+    I --&gt; J[Cartoon release]
+    I --&gt; K[350-card collection]
+</code></pre>
+<h3>Services</h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ingest gateway</td>
+<td>Authorizes sources and creates analysis jobs</td>
+</tr>
+<tr>
+<td>Timeline analyzer</td>
+<td>Produces time-coded scenes, cast, objects, actions, and beats</td>
+</tr>
+<tr>
+<td>Rights engine</td>
+<td>Enforces allowed use for each source and derived asset</td>
+</tr>
+<tr>
+<td>World Kit compiler</td>
+<td>Creates versioned reusable production assets</td>
+</tr>
+<tr>
+<td>Story engine</td>
+<td>Converts short creator context into structured episode plans</td>
+</tr>
+<tr>
+<td>Render orchestrator</td>
+<td>Splits animation into retryable scene jobs</td>
+</tr>
+<tr>
+<td>Consistency checker</td>
+<td>Detects character, costume, prop, and continuity drift</td>
+</tr>
+<tr>
+<td>Card factory</td>
+<td>Builds checklist records, art jobs, packs, and odds</td>
+</tr>
+<tr>
+<td>Provenance ledger</td>
+<td>Links source authorization, edits, releases, cards, and owners</td>
+</tr>
+<tr>
+<td>StarQuest adapter</td>
+<td>Presents episodes, cards, prices, history, and sharing</td>
+</tr>
+</tbody>
+</table>
+<h2>Core records</h2>
+<pre><code class="language-text">SourceAsset
+AnalysisTimeline
+RightsManifest
+WorldKit
+CharacterAsset
+LocationAsset
+EpisodeBrief
+ScriptVersion
+StoryboardPanel
+RenderJob
+EpisodeRelease
+CardSet
+CardRecord
+PackDefinition
+CreatorApproval
+LedgerEntry
+</code></pre>
+<p>Every record uses a stable ID, creator ID, timestamps, version, content hash, rights state, visibility state, and parent provenance.</p>
+<h2>Suggested repository structure</h2>
+<pre><code class="language-text">auto-built-cartoon-deployer/
+├── README.md
+├── SECURITY.md
+├── LICENSE
+├── docs/
+│   ├── rights-model.md
+│   ├── world-kit-schema.md
+│   ├── card-set-schema.md
+│   └── starquest-integration.md
+├── apps/
+│   ├── creator-mobile/
+│   └── review-console/
+├── services/
+│   ├── analyzer/
+│   ├── world-kit-compiler/
+│   ├── story-engine/
+│   ├── render-orchestrator/
+│   ├── card-factory/
+│   └── provenance-ledger/
+├── packages/
+│   ├── contracts/
+│   ├── rights-policy/
+│   ├── animation-profile-1990s/
+│   └── starquest-adapter/
+├── examples/
+│   └── prototype-world/
+└── tests/
+</code></pre>
+<h2>Safety and release requirements</h2>
+<ul>
+<li>No public release without a resolved rights state.</li>
+<li>No unauthorized cloning of a person's voice or likeness.</li>
+<li>No generation marketed as an official studio production without authorization.</li>
+<li>No hidden publishing or automatic public sharing.</li>
+<li>No prompt, draft, or private-reference exposure to viewers.</li>
+<li>No card sale before art, rights, odds, price, and provenance validation.</li>
+<li>No irreversible token or payment action during prototype mode.</li>
+<li>Child-directed releases require stronger content, privacy, purchase, and advertising controls.</li>
+<li>Generated frames and dialogue require automated checks plus creator review.</li>
+</ul>
+<h2>First build milestones</h2>
+<ol>
+<li>Define JSON schemas for source authorization, timeline events, World Kits, episodes, and cards.</li>
+<li>Build a phone-readable creator brief with private-by-default projects.</li>
+<li>Analyze one cleared short and produce a timeline.</li>
+<li>Compile a three-character reusable World Kit.</li>
+<li>Generate a beat sheet, script, storyboard, and animatic.</li>
+<li>Approve individual scenes and rerender only rejected scenes.</li>
+<li>Create ten finished cards plus a validated 350-card checklist.</li>
+<li>Add simulated Infinity pack purchasing and Star Coin episode access.</li>
+<li>Connect the private preview to a StarQuest test page.</li>
+<li>Run rights, quality, accessibility, provenance, and Android usability tests.</li>
+</ol>
+<h2>Prototype acceptance criteria</h2>
+<p>The first prototype is successful when:</p>
+<ul>
+<li>an authorized source can be analyzed without disrupting playback;</li>
+<li>a reusable World Kit is produced and versioned;</li>
+<li>a creator can describe an episode in five short fields;</li>
+<li>a private animatic is generated from that brief;</li>
+<li>one rejected scene can be regenerated independently;</li>
+<li>character appearance remains consistent across scenes;</li>
+<li>ten demonstration cards and 350 valid card records are created;</li>
+<li>blocked assets cannot be published or sold;</li>
+<li>no release becomes public without a creator action;</li>
+<li>the complete flow is readable and operable on an Android phone.</li>
+</ul>
+<h2>Status</h2>
+<p><strong>Prototype specification.</strong> The immediate goal is a small end-to-end demonstration using rights-cleared material. Scaling to feature-length media, full animation, large card catalogs, and public creator markets comes only after the World Kit, rights, provenance, and scene-retry systems are proven.</p>
+<h2>Working principle</h2>
+<blockquote>
+<p>The creator supplies the idea. The system carries the production memory. Nothing becomes public until the creator decides it is ready.</p>
+</blockquote></article></main><script defer src="https://www-infinity4.github.io/Mint-For-Infinity/unified-wallet.js?v=20260831-game-rewards1"></script>
+<script defer src="https://www-infinity4.github.io/Mint-For-Infinity/site-community.js?v=20260831-storage2" data-site-id="AUTO-BUILT-CARTOON-DEPLOYER" data-site-title="Auto Built Cartoon Deployer" data-share-url="https://www-infinity4.github.io/INFINITY/projects/auto-built-cartoon-deployer/share.html"></script></body></html>

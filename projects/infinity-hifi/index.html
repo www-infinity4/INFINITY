@@ -1,0 +1,499 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Infinity HI-FI</title><meta name="description" content="Project blueprint: A reactive sound and multimodal production system designed for StarQuest.">
+<link rel="canonical" href="https://www-infinity4.github.io/INFINITY/projects/infinity-hifi/">
+<meta property="og:type" content="website"><meta property="og:title" content="Infinity HI-FI"><meta property="og:description" content="Project blueprint: A reactive sound and multimodal production system designed for StarQuest."><meta property="og:url" content="https://www-infinity4.github.io/INFINITY/projects/infinity-hifi/"><meta property="og:image" content="https://www-infinity4.github.io/INFINITY/projects/infinity-hifi/assets/share-preview-v1.png"><meta property="og:image:secure_url" content="https://www-infinity4.github.io/INFINITY/projects/infinity-hifi/assets/share-preview-v1.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1731"><meta property="og:image:height" content="909"><meta property="og:image:alt" content="Infinity HI-FI website preview">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Infinity HI-FI"><meta name="twitter:description" content="Project blueprint: A reactive sound and multimodal production system designed for StarQuest."><meta name="twitter:image" content="https://www-infinity4.github.io/INFINITY/projects/infinity-hifi/assets/share-preview-v1.png"><meta name="twitter:image:alt" content="Infinity HI-FI website preview"><style>*{box-sizing:border-box}body{margin:0;background:#080f1c;color:#f7f1df;font:17px/1.6 system-ui,sans-serif}main{max-width:1040px;margin:auto;padding:32px 24px 80px}h1{font-size:clamp(36px,7vw,68px);line-height:1.08;letter-spacing:-.04em}h2{margin-top:2em}a{color:#aee8ff}img.hero{display:block;width:100%;height:auto;border-radius:16px;margin:24px 0}p{max-width:75ch}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#ffd68a}.button{display:inline-block;border:1px solid #7c99ad;border-radius:8px;padding:12px 20px;text-decoration:none;background:#162a3c;color:#fff;margin:5px 8px 5px 0}.note{border-left:3px solid #ffd68a;background:#142031;padding:16px 20px}.doc{border-top:1px solid #324055;margin-top:48px;overflow-wrap:anywhere}.doc pre{overflow:auto;background:#121d2b;padding:18px;border-radius:8px}.doc table{display:block;overflow:auto;border-collapse:collapse}.doc td,.doc th{border:1px solid #44556b;padding:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.card{padding:22px;border:1px solid #324055;border-radius:14px;background:#101d2c}.card h2{margin:0}</style></head><body><main><a href="https://www-infinity4.github.io/INFINITY/projects/">← Infinity project launchpad</a><p class="eyebrow">Project blueprint</p><h1>Infinity HI-FI</h1><p>Project blueprint: A reactive sound and multimodal production system designed for StarQuest.</p><p class="note"><strong>This is the project design, not an implemented application.</strong> The original specification is preserved below. Features described in it are planned; no AI generation, browser engine, or publishing service runs on this page.</p><a class="button" href="#blueprint">Read the blueprint ↓</a><a class="button" href="https://github.com/www-infinity4/Infinity-HiFi">View source on GitHub ↗</a><img class="hero" src="assets/share-preview-v1.png" alt="Infinity HI-FI — Project blueprint"><article class="doc" id="blueprint" aria-label="Original project specification"><h1>Infinity HI-FI</h1>
+<p><strong>A reactive high-fidelity sound and multimodal production system for StarQuest—with Solidify turning live experiments into durable software projects.</strong></p>
+<p>Infinity HI-FI begins as StarQuest's intelligent sound system. It listens to authorized playback events, scene context, dialogue, user interaction, device capability, and creator rules, then produces a synchronized listening environment that can change while the program plays.</p>
+<p>It is also broader than a player enhancement. Infinity HI-FI is a real-time audio-visual production layer where soundscapes, commentary, accessibility tracks, generated media, code, and agent work can move through one versioned timeline. The accompanying <strong>Solidify</strong> interface promotes successful experiments from temporary sessions into named, testable, deployable projects.</p>
+<h2>The idea in one flow</h2>
+<pre><code class="language-text">StarQuest playback
+      ↓
+Scene and timing events
+      ↓
+Infinity HI-FI reactive audio engine
+      ↓
+Omni Gemini multimodal orchestration
+      ↓
+Wave-style production blips
+      ↓
+Solidify validation and project promotion
+      ↓
+Versioned release for StarQuest or another Infinity application
+</code></pre>
+<h2>Why it exists</h2>
+<p>Ordinary streaming sends one finished audio track to every listener. Infinity HI-FI treats the soundtrack as a controlled, layered acoustic environment.</p>
+<p>Examples include:</p>
+<ul>
+<li>dialogue remaining clear when effects become loud;</li>
+<li>a room or headphone profile changing spatial reflections;</li>
+<li>Cosmo speaking at a safe opening in the dialogue;</li>
+<li>accessibility narration entering without covering important speech;</li>
+<li>educational explanations appearing at an experiment or invention;</li>
+<li>music and ambience responding to a StarQuest interaction;</li>
+<li>authorized alternate dialogue, language, or performance layers;</li>
+<li>a creator testing a new sound treatment and turning it into a reusable project.</li>
+</ul>
+<p>The original program remains available as the reference mix. Reactive additions are optional, attributable, reversible, and synchronized to stable media time.</p>
+<h2>Primary systems</h2>
+<h3>1. Infinity HI-FI Engine</h3>
+<p>The engine receives media and context events and produces synchronized audio-visual layers.</p>
+<p>It manages:</p>
+<ul>
+<li>lossless or high-resolution source audio when available;</li>
+<li>dialogue, music, effects, ambience, narration, and commentary stems;</li>
+<li>sample-accurate or frame-accurate timeline alignment;</li>
+<li>loudness, peak, phase, and latency controls;</li>
+<li>spatial sound and acoustic-room simulation;</li>
+<li>adaptive mixes for speakers, headphones, phone hardware, and accessibility;</li>
+<li>real-time generated layers with safe fallback to the original track;</li>
+<li>captions, transcripts, visualizers, and video-mask metadata;</li>
+<li>provenance for every generated or modified segment.</li>
+</ul>
+<h3>2. Wave Canvas</h3>
+<p>The production interface is a modern spiritual successor to Google Wave. Work is stored in concurrent, non-linear units called <strong>blips</strong> instead of one rigid chat thread.</p>
+<p>A blip can contain:</p>
+<ul>
+<li>text or a conversation;</li>
+<li>code and test results;</li>
+<li>an audio stem or time range;</li>
+<li>a waveform annotation;</li>
+<li>a video frame or mask;</li>
+<li>a prompt and generated result;</li>
+<li>an agent handoff;</li>
+<li>a rights or approval decision;</li>
+<li>a Solidify candidate.</li>
+</ul>
+<p>Blips can reply to, branch from, cite, merge with, or supersede one another without deleting the earlier production record.</p>
+<h3>3. Omni Gemini Orchestrator</h3>
+<p>Omni Gemini is the capability and handoff framework coordinating reasoning, generation, validation, publishing, and digital-signal-processing work. The name describes the custom orchestration contract; it does not require one model provider.</p>
+<p>Each agent advertises capabilities rather than receiving unrestricted project access.</p>
+<p>Core roles:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reasoning</td>
+<td>Interpret intent, scene context, constraints, and next actions</td>
+</tr>
+<tr>
+<td>Generation</td>
+<td>Produce text, audio, code, masks, images, or structured plans</td>
+</tr>
+<tr>
+<td>DSP audio</td>
+<td>Analyze, mix, filter, spatialize, and validate sound</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Check schemas, timing, quality, safety, rights, and tests</td>
+</tr>
+<tr>
+<td>Publishing</td>
+<td>Package an approved immutable release</td>
+</tr>
+</tbody>
+</table>
+<h3>4. Solidify</h3>
+<p>Solidify is the programming interface that converts temporary creative work into a durable project.</p>
+<p>Solidify is maintained as a separate project and database at <a href="https://github.com/www-infinity4/Solidify"><code>www-infinity4/Solidify</code></a>. Infinity HI-FI sends versioned Candidate and validation events to Solidify; it does not own Solidify's authoritative promotion history.</p>
+<p>During exploration, creators may produce many blips, prompts, code fragments, stems, parameter changes, and agent results. Solidify gathers the selected pieces into a <strong>Candidate</strong>, resolves dependencies, freezes inputs, runs tests, records provenance, and—only after approval—promotes the Candidate to a versioned project release.</p>
+<p>Solidify answers five questions:</p>
+<ol>
+<li>What exactly are we keeping?</li>
+<li>Which source versions and rights apply?</li>
+<li>Can the result be reproduced?</li>
+<li>Did it pass functional, media-quality, and safety checks?</li>
+<li>Where is the approved build allowed to deploy?</li>
+</ol>
+<h2>StarQuest experience</h2>
+<p>Infinity HI-FI must never make ordinary playback fragile. StarQuest starts the original media path first, then connects enhanced layers when ready.</p>
+<h3>Playback lifecycle</h3>
+<ol>
+<li>StarQuest opens a playable source.</li>
+<li>The media identity and duration are resolved.</li>
+<li>A synchronized HI-FI session is created.</li>
+<li>Available stems, captions, scene markers, and approved enhancements load.</li>
+<li>Device and accessibility capabilities are detected locally.</li>
+<li>The listener chooses a mix profile or keeps the original.</li>
+<li>Reactive layers subscribe to playback time and state.</li>
+<li>If any enhancement fails, the player continues with the reference track.</li>
+<li>Listening position, chosen profile, and authorized project state are saved.</li>
+</ol>
+<h3>Initial sound profiles</h3>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original</td>
+<td>Untouched reference mix</td>
+</tr>
+<tr>
+<td>Clear dialogue</td>
+<td>Raises speech intelligibility without flattening the whole program</td>
+</tr>
+<tr>
+<td>Cinema headphones</td>
+<td>Spatial presentation tuned for headphones</td>
+</tr>
+<tr>
+<td>Phone speaker</td>
+<td>Preserves dialogue and impact on limited hardware</td>
+</tr>
+<tr>
+<td>Quiet night</td>
+<td>Reduces extreme peaks while retaining detail</td>
+</tr>
+<tr>
+<td>Accessible narration</td>
+<td>Places description in safe dialogue openings</td>
+</tr>
+<tr>
+<td>Cosmo companion</td>
+<td>Allows approved contextual commentary at interruption-safe moments</td>
+</tr>
+<tr>
+<td>Creator lab</td>
+<td>Exposes stems and parameters for a private experiment</td>
+</tr>
+</tbody>
+</table>
+<h2>Reactive audio graph</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[Reference media clock] --&gt; B[Scene context]
+    A --&gt; C[Source stems]
+    B --&gt; D[Policy and interruption gate]
+    C --&gt; E[Mix graph]
+    D --&gt; E
+    F[Generated or companion layers] --&gt; D
+    E --&gt; G[Quality limiter]
+    G --&gt; H[Device output]
+    G --&gt; I[Metrics and provenance]
+</code></pre>
+<p>The media clock is authoritative. Generated layers may be late or unavailable; they cannot redefine playback time.</p>
+<h2>Multimodal event contract</h2>
+<p>All real-time messages share a common envelope:</p>
+<pre><code class="language-json">{
+  &quot;eventId&quot;: &quot;evt_01J...&quot;,
+  &quot;sessionId&quot;: &quot;session_01J...&quot;,
+  &quot;projectId&quot;: &quot;starquest-hifi&quot;,
+  &quot;blipId&quot;: &quot;blip_01J...&quot;,
+  &quot;type&quot;: &quot;hifi.audio.segment&quot;,
+  &quot;mediaTimeMs&quot;: 184230,
+  &quot;sequence&quot;: 42,
+  &quot;producer&quot;: &quot;dsp-audio-agent&quot;,
+  &quot;contentHash&quot;: &quot;sha256:...&quot;,
+  &quot;createdAt&quot;: &quot;2026-08-27T00:00:00Z&quot;,
+  &quot;payload&quot;: {}
+}
+</code></pre>
+<p>Initial payload types:</p>
+<ul>
+<li><code>text.delta</code></li>
+<li><code>code.execution</code></li>
+<li><code>hifi.audio.stream</code></li>
+<li><code>hifi.audio.segment</code></li>
+<li><code>agent.handoff</code></li>
+<li><code>yjs.update</code></li>
+<li><code>video.mask.render</code></li>
+<li><code>timeline.annotation</code></li>
+<li><code>candidate.status</code></li>
+<li><code>approval.request</code></li>
+<li><code>release.published</code></li>
+</ul>
+<p>Large binary media stays in object storage. Events carry immutable content references, hashes, timing, and metadata rather than forcing audio or video through the collaboration document.</p>
+<h2>Omni Gemini capability contract</h2>
+<pre><code class="language-json">{
+  &quot;agentId&quot;: &quot;agent_dsp_01&quot;,
+  &quot;roles&quot;: [&quot;dsp_audio&quot;, &quot;validation&quot;],
+  &quot;accepts&quot;: [&quot;hifi.audio.segment&quot;, &quot;timeline.annotation&quot;],
+  &quot;produces&quot;: [&quot;hifi.audio.segment&quot;, &quot;validation.report&quot;],
+  &quot;limits&quot;: {
+    &quot;maxDurationMs&quot;: 30000,
+    &quot;maxConcurrentJobs&quot;: 2,
+    &quot;network&quot;: false
+  },
+  &quot;permissions&quot;: [&quot;project:read&quot;, &quot;candidate:write&quot;],
+  &quot;version&quot;: &quot;1.0.0&quot;
+}
+</code></pre>
+<p>An agent handoff includes the input references, expected output schema, lease duration, retry policy, cost/time budget, and stopping condition. Agents never receive authority merely because another agent mentions it in text.</p>
+<h2>Run states and leases</h2>
+<p>Long-running media work uses explicit state:</p>
+<pre><code class="language-text">queued
+  → claimed
+  → running
+  → handoff_pending
+  → completed
+
+recoverable: retry_wait
+human decision: blocked
+terminal: failed | cancelled
+</code></pre>
+<p>Claims use expiring leases. A crashed worker cannot hold a scene forever. Completion is idempotent: repeating a message with the same key returns the recorded result instead of producing another charge or duplicate asset.</p>
+<h2>Wave collaboration model</h2>
+<p>The canvas uses a shared document model such as Yjs for concurrent text and structured state. Presence, cursors, blip structure, and small annotations belong in the shared document; final ledger records and large media do not.</p>
+<h3>Blip record</h3>
+<pre><code class="language-json">{
+  &quot;blipId&quot;: &quot;blip_01J...&quot;,
+  &quot;parentIds&quot;: [&quot;blip_01H...&quot;],
+  &quot;kind&quot;: &quot;audio-experiment&quot;,
+  &quot;authorType&quot;: &quot;human&quot;,
+  &quot;authorId&quot;: &quot;creator_01&quot;,
+  &quot;visibility&quot;: &quot;private&quot;,
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;mediaRange&quot;: {&quot;startMs&quot;: 181000, &quot;endMs&quot;: 196000},
+  &quot;contentRefs&quot;: [&quot;asset://audio/sha256/...&quot;],
+  &quot;supersedes&quot;: null,
+  &quot;createdAt&quot;: &quot;2026-08-27T00:00:00Z&quot;
+}
+</code></pre>
+<p>The client stores unsent updates in an IndexedDB outbox. Reconnection sends missing updates by stable ID, preventing phone connectivity loss from erasing work.</p>
+<h2>Solidify workflow</h2>
+<h3>1. Select</h3>
+<p>The creator selects blips, code, media layers, prompts, parameters, and decisions to preserve.</p>
+<h3>2. Resolve</h3>
+<p>Solidify produces a dependency graph and reports missing, mutable, incompatible, or unauthorized inputs.</p>
+<h3>3. Freeze</h3>
+<p>Every input becomes a content-addressed reference. Model versions, source commits, configuration, licenses, and environment contracts are recorded.</p>
+<h3>4. Build</h3>
+<p>The Candidate is assembled in an isolated job. Generated output is written to candidate storage, never directly over the active release.</p>
+<h3>5. Validate</h3>
+<p>Required checks include:</p>
+<ul>
+<li>schema and contract validation;</li>
+<li>unit and integration tests;</li>
+<li>audio duration and sample-rate checks;</li>
+<li>loudness, true-peak, clipping, phase, and silence detection;</li>
+<li>synchronization drift;</li>
+<li>accessibility track collision checks;</li>
+<li>rights and source-scope validation;</li>
+<li>malware and unsafe-code boundaries;</li>
+<li>Android performance budget;</li>
+<li>deterministic manifest and content hashes.</li>
+</ul>
+<h3>6. Preview</h3>
+<p>The creator compares the Candidate with the active version in StarQuest without exposing it publicly.</p>
+<h3>7. Approve and publish</h3>
+<p>Approval creates an immutable release manifest. Deployment is a separate authorized step. Rollback changes the active pointer to an earlier valid release; it does not erase history.</p>
+<h2>Solidify candidate contract</h2>
+<pre><code class="language-json">{
+  &quot;candidateId&quot;: &quot;cand_01J...&quot;,
+  &quot;projectId&quot;: &quot;starquest-hifi&quot;,
+  &quot;idempotencyKey&quot;: &quot;project:source-hash:config-hash&quot;,
+  &quot;sourceBlips&quot;: [&quot;blip_01J...&quot;],
+  &quot;sourceCommit&quot;: &quot;git:abc123&quot;,
+  &quot;assets&quot;: [
+    {&quot;uri&quot;: &quot;asset://audio/sha256/...&quot;, &quot;hash&quot;: &quot;sha256:...&quot;}
+  ],
+  &quot;target&quot;: &quot;starquest-preview&quot;,
+  &quot;status&quot;: &quot;queued&quot;,
+  &quot;requiredChecks&quot;: [&quot;contracts&quot;, &quot;audio-quality&quot;, &quot;sync&quot;, &quot;rights&quot;, &quot;android&quot;],
+  &quot;createdBy&quot;: &quot;creator_01&quot;
+}
+</code></pre>
+<h3>Promotion gate</h3>
+<pre><code class="language-text">experiment → candidate → verified → approved → released
+                    ↘ rejected
+                    ↘ blocked
+</code></pre>
+<ul>
+<li><strong>Rejected</strong> means the Candidate itself failed a deterministic rule.</li>
+<li><strong>Blocked</strong> means a required dependency, permission, service, or human decision is unavailable.</li>
+</ul>
+<p>This distinction keeps infrastructure trouble from being mislabeled as bad creative work.</p>
+<h2>Reference architecture</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[StarQuest client] --&gt; B[HI-FI session gateway]
+    B --&gt; C[Media clock and timeline]
+    C --&gt; D[Reactive mix service]
+    B --&gt; E[Wave collaboration service]
+    E --&gt; F[Omni Gemini orchestrator]
+    F --&gt; G[Agent and render workers]
+    E --&gt; H[Solidify candidates]
+    G --&gt; H
+    H --&gt; I[Validation executor]
+    I --&gt; J[Release registry]
+</code></pre>
+<h3>Suggested prototype stack</h3>
+<ul>
+<li><strong>FastAPI</strong> for control APIs and WebSocket session endpoints;</li>
+<li><strong>Yjs</strong> for concurrent blip/canvas state;</li>
+<li><strong>SQLite</strong> for a local prototype, then PostgreSQL or D1 where deployment requires it;</li>
+<li><strong>object storage</strong> for immutable audio, video, masks, reports, and snapshots;</li>
+<li><strong>Redis, Durable Objects, or equivalent coordination</strong> for presence and leases;</li>
+<li><strong>queues</strong> for DSP, generation, testing, and publishing jobs;</li>
+<li><strong>Web Audio API / AudioWorklet</strong> for browser DSP and synchronized playback;</li>
+<li><strong>FFmpeg-based workers</strong> for offline rendering and media validation;</li>
+<li><strong>OpenTelemetry-compatible traces</strong> across session, blip, agent, candidate, and release IDs.</li>
+</ul>
+<p>Provider choices may change. Contracts, hashes, timing rules, and state transitions are the stable architecture.</p>
+<h2>Persistence</h2>
+<p>The earlier prototype name <code>wave_production_timeline.db</code> remains suitable for local development.</p>
+<p>Minimum tables or logical collections:</p>
+<pre><code class="language-text">projects
+sessions
+timeline_ledger
+blips
+yjs_snapshots
+agents
+runs
+leases
+assets
+candidates
+validation_reports
+approvals
+releases
+deployments
+</code></pre>
+<p>Infinity HI-FI database rows hold media-session metadata and working state. Candidate promotion, validation decisions, approvals, releases, and deployment history are authoritative in the separate Solidify database. Immutable media and large reports live in object storage and are referenced by hash from both systems.</p>
+<h2>Security and privacy</h2>
+<ul>
+<li>Playback media and generated layers require recorded authorization.</li>
+<li>Private Wave blips are not training data or public content by default.</li>
+<li>Agents receive scoped capabilities and expiring leases.</li>
+<li>Page, media, model, and agent output are treated as untrusted input.</li>
+<li>Publishing, purchases, rights changes, and public sharing require creator approval.</li>
+<li>Signed release manifests identify every input and output hash.</li>
+<li>Secrets remain in server-side configuration and never enter collaboration blips.</li>
+<li>Audio generation must not clone a person's voice without authorization.</li>
+<li>The reference track remains available when an enhancement is unsafe or unhealthy.</li>
+</ul>
+<h2>Failure behavior</h2>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Required result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generated layer arrives late</td>
+<td>Skip or crossfade safely; never pause reference playback</td>
+</tr>
+<tr>
+<td>WebSocket disconnects</td>
+<td>Continue local playback and queue collaboration updates</td>
+</tr>
+<tr>
+<td>Agent lease expires</td>
+<td>Requeue idempotently</td>
+</tr>
+<tr>
+<td>Audio validation fails</td>
+<td>Reject Candidate; retain report and active release</td>
+</tr>
+<tr>
+<td>Rights information missing</td>
+<td>Block publishing, not private structural work</td>
+</tr>
+<tr>
+<td>Device is overloaded</td>
+<td>Reduce enhancement quality before affecting playback</td>
+</tr>
+<tr>
+<td>Deployment fails</td>
+<td>Keep previous release active</td>
+</tr>
+</tbody>
+</table>
+<h2>Repository structure</h2>
+<pre><code class="language-text">infinity-hi-fi/
+├── README.md
+├── SECURITY.md
+├── docs/
+│   ├── audio-protocol.md
+│   ├── wave-blips.md
+│   ├── omni-gemini-contract.md
+│   ├── solidify-candidates.md
+│   └── starquest-integration.md
+├── apps/
+│   ├── starquest-hifi-client/
+│   ├── wave-canvas/
+│   └── solidify-console/
+├── services/
+│   ├── session-gateway/
+│   ├── timeline/
+│   ├── mix-engine/
+│   ├── orchestrator/
+│   ├── validation-executor/
+│   └── release-registry/
+├── packages/
+│   ├── contracts/
+│   ├── audio-quality/
+│   ├── capability-policy/
+│   └── telemetry/
+├── workers/
+│   ├── dsp/
+│   ├── generation/
+│   └── publishing/
+└── tests/
+</code></pre>
+<h2>First prototype</h2>
+<p>The first build should prove one complete, safe StarQuest enhancement rather than attempt every generative feature.</p>
+<h3>Demonstration</h3>
+<p>Use one rights-cleared five-minute video with:</p>
+<ul>
+<li>a reference stereo track;</li>
+<li>dialogue and music/effects stems or a documented separation step;</li>
+<li>scene markers and captions;</li>
+<li>one optional Cosmo commentary event;</li>
+<li>Clear Dialogue and Original profiles;</li>
+<li>one creator-adjusted mix stored as a Wave blip;</li>
+<li>one Solidify Candidate promoted to a private StarQuest preview.</li>
+</ul>
+<h3>Required deliverables</h3>
+<ol>
+<li>Shared event and capability schemas.</li>
+<li>Media clock and WebSocket session prototype.</li>
+<li>Web Audio mix graph with Original and Clear Dialogue modes.</li>
+<li>Wave canvas holding text, audio-range, code, and handoff blips.</li>
+<li>Omni Gemini worker lease and idempotent handoff demonstration.</li>
+<li>Solidify Candidate builder.</li>
+<li>Automated audio, synchronization, and contract validation.</li>
+<li>Private preview with explicit approval.</li>
+<li>Immutable release manifest and rollback pointer.</li>
+<li>Android phone performance and readability report.</li>
+</ol>
+<h2>Acceptance criteria</h2>
+<p>The prototype succeeds when:</p>
+<ul>
+<li>StarQuest reference playback never depends on an AI response;</li>
+<li>switching sound profiles remains synchronized;</li>
+<li>dialogue enhancement does not clip or drift;</li>
+<li>a generated companion segment can enter only at an approved time;</li>
+<li>two clients can edit different Wave blips concurrently;</li>
+<li>a failed or expired agent job retries without duplicating output;</li>
+<li>Solidify freezes every Candidate input by version and hash;</li>
+<li>failed validation cannot replace the active release;</li>
+<li>an approved Candidate opens as a private StarQuest preview;</li>
+<li>the complete control surface is usable on an Android phone.</li>
+</ul>
+<h2>Roadmap</h2>
+<h3>Phase 1 — StarQuest sound system</h3>
+<p>Reference playback, media clock, Clear Dialogue, phone/headphone profiles, captions, and graceful fallback.</p>
+<h3>Phase 2 — Reactive HI-FI</h3>
+<p>Scene events, acoustic spaces, accessibility narration, companion commentary, spatial sound, and generated layers.</p>
+<h3>Phase 3 — Wave production canvas</h3>
+<p>Concurrent blips, time-range annotations, code execution records, audio previews, agent handoffs, and offline outbox.</p>
+<h3>Phase 4 — Solidify</h3>
+<p>Dependency resolution, Candidate manifests, isolated builds, validation reports, private previews, releases, and rollback.</p>
+<h3>Phase 5 — Infinity production network</h3>
+<p>Reusable HI-FI projects for StarQuest programs, Auto Built Cartoon Deployer, Instrument Lab, games, education, and creator-published sound experiences.</p>
+<h2>Status</h2>
+<p><strong>Architecture and prototype specification.</strong> StarQuest is the first deployment target. The contracts intentionally keep Infinity HI-FI, Wave collaboration, Omni Gemini orchestration, and Solidify separable so each system can be tested and improved without breaking ordinary media playback.</p>
+<h2>Working principle</h2>
+<blockquote>
+<p>Keep playback alive. Let sound react. Preserve every decision. Solidify only what can be explained, tested, and safely released.</p>
+</blockquote></article></main><script defer src="https://www-infinity4.github.io/Mint-For-Infinity/unified-wallet.js?v=20260831-game-rewards1"></script>
+<script defer src="https://www-infinity4.github.io/Mint-For-Infinity/site-community.js?v=20260831-storage2" data-site-id="INFINITY-HIFI" data-site-title="Infinity HI-FI" data-share-url="https://www-infinity4.github.io/INFINITY/projects/infinity-hifi/share.html"></script></body></html>
