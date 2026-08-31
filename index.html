@@ -1,103 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Infinity root portal connecting the www-infinity4 repository network, AI Token Studio, Good Bee, Store Cards, reciprocal clearing, AI Wallet, Coin Planner, housing, work, and business systems.">
-  <title>Infinity Root Portal</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Infinity root portal connecting the www-infinity4 repository network, AI Token Studio, Good Bee, Store Cards, reciprocal clearing, AI Wallet, Coin Planner, housing, work, and business systems." name="description"/>
+<title>Infinity Root Portal</title>
+<link href="styles.css?v=20260831-simple1" rel="stylesheet"/>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top">Infinity</a>
-    <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="mainNav">Menu</button>
-    <nav id="mainNav" class="main-nav" aria-label="Primary navigation">
-      <a href="good-bee/infinity-system.html">System Map</a>
-      <a href="good-bee/token-studio.html">⭐ Token Studio</a>
-      <a href="good-bee/">Good Bee</a>
-      <a href="good-bee/store-cards.html">Store Cards</a>
-      <a href="good-bee/reciprocal-clearing.html">Clearing</a>
-      <a href="good-bee/wallet-orchestrator.html">AI Wallet</a>
-      <a href="good-bee/coin-planner.html">Coin Planner</a>
-      <a href="#projects">Repositories</a>
-      <a href="https://github.com/www-infinity4" rel="noreferrer">GitHub</a>
-    </nav>
-  </header>
+<header class="site-header">
+<a class="brand" href="#top">Infinity</a>
+<button aria-controls="mainNav" aria-expanded="false" class="menu-button" id="menuButton">Menu</button>
+<nav aria-label="Primary navigation" class="main-nav" id="mainNav"><a href="good-bee/token-studio.html">Create a token draft</a><a href="good-bee/wallet-orchestrator.html">Wallet</a><a href="#projects">Projects</a><a href="#all-tools">All tools</a></nav>
+</header>
+<main id="top">
+<section class="hero">
+<p class="eyebrow">Your Infinity workspace</p>
+<h1>What would you like to work on?</h1>
+<p class="hero-copy">Create a token draft, open your wallet, or find one of your projects. Start with one task; the connected systems are here when you need them.</p>
+<div class="hero-actions"><a class="button primary" href="good-bee/token-studio.html">Create a token draft</a><a class="button secondary" href="good-bee/wallet-orchestrator.html">Open my wallet</a><a class="button secondary" href="#projects">Find a project</a></div>
+<div aria-live="polite" class="metrics">
+<article><strong id="repoCount">—</strong><span>Repositories</span></article>
+<article><strong id="categoryCount">—</strong><span>Categories</span></article>
+<article><strong id="updatedCount">—</strong><span>Recently updated</span></article>
+</div>
+</section><section class="section" id="projects">
+<div class="section-heading">
+<div><p class="eyebrow">Live repository registry</p><h2>Project directory</h2></div>
+<input aria-label="Search repositories" id="searchInput" placeholder="Search repositories" type="search"/>
+</div>
+<div aria-label="Project categories" class="filter-bar" id="filterBar"></div>
+<p class="status" id="statusMessage">Loading repositories from GitHub…</p>
+<div class="project-grid" id="projectGrid"></div>
+</section><details class="portal-details" id="all-tools"><summary>All Infinity tools</summary><section class="section panel-section">
+<p class="eyebrow">Choose a tool</p>
+<h2>Explore the rest of Infinity</h2>
+<div class="architecture-grid">
+<article><h3>Infinity System Map</h3><p>See how the projects and services connect.</p><a class="button primary" href="good-bee/infinity-system.html">Open map</a></article>
+<article><h3>⭐ Infinity AI Token Studio</h3><p>Describe an idea, review its token plan, and save a draft in this browser.</p><a class="button primary" href="good-bee/token-studio.html">Open Token Studio</a></article>
+<article><h3>Good Bee Living</h3><p>Plan housing, travel, accessibility, and support.</p><a class="button primary" href="good-bee/">Open Good Bee</a></article>
+<article><h3>Infinity Store Cards</h3><p>Explore product and service card plans.</p><a class="button primary" href="good-bee/store-cards.html">Open Store Cards</a></article>
+<article><h3>Reciprocal Clearing</h3><p>Review claim verification and conversion rules.</p><a class="button primary" href="good-bee/reciprocal-clearing.html">Open clearing</a></article>
+<article><h3>Infinity AI Wallet</h3><p>Review wallet plans and available actions.</p><a class="button primary" href="good-bee/wallet-orchestrator.html">Open wallet</a></article>
+<article><h3>Infinity Coin Planner</h3><p>Plan products, providers, and package costs.</p><a class="button primary" href="good-bee/coin-planner.html">Open planner</a></article>
+</div>
+</section></details>
 
-  <main id="top">
-    <section class="hero">
-      <p class="eyebrow">www-infinity4 connected project and economic network</p>
-      <h1>One root. Every website, creation, and system connected.</h1>
-      <p class="hero-copy">Infinity now has working website files for AI-assisted Product Token creation, Star Blueprint versions, Avatar Coin identity activation, accessible housing and travel, physical and digital Store Cards, reciprocal clearing, the AI Wallet, global-local Coin Planner, hotel packages, physical-metal access, NFC discounts, business coins, work matching, and repository discovery.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="good-bee/token-studio.html">⭐ Open the AI Token Studio</a>
-        <a class="button secondary" href="good-bee/infinity-system.html">Open the complete system map</a>
-        <a class="button secondary" href="good-bee/wallet-orchestrator.html">Open the AI Wallet</a>
-        <a class="button secondary" href="#projects">Explore repositories</a>
-      </div>
-      <div class="metrics" aria-live="polite">
-        <article><strong id="repoCount">—</strong><span>Repositories</span></article>
-        <article><strong id="categoryCount">—</strong><span>Categories</span></article>
-        <article><strong id="updatedCount">—</strong><span>Recently updated</span></article>
-      </div>
-    </section>
 
-    <section class="section panel-section">
-      <p class="eyebrow">Infinity economic, creation, and living websites</p>
-      <h2>The connected system built from the full conversation tree</h2>
-      <div class="architecture-grid">
-        <article><h3>Infinity System Map</h3><p>The master tree connecting creation, funding, businesses, packages, cards, clearing, wallet decisions, housing, work, metals, rights, receipts, and recirculation.</p><a class="button primary" href="good-bee/infinity-system.html">Open map</a></article>
-        <article><h3>⭐ Infinity AI Token Studio</h3><p>Uses one subtle universal Star mark to select anything convertible, rank what the system needs, define the exact Product Token, create named child versions, calculate supply, and identify Avatar Coin requirements.</p><a class="button primary" href="good-bee/token-studio.html">Open Token Studio</a></article>
-        <article><h3>Good Bee Living</h3><p>Voluntary beach, mountain, sailing, trial-stay, move, support, accessibility, nursing, transportation, return-plan, and modular-home planning.</p><a class="button primary" href="good-bee/">Open Good Bee</a></article>
-        <article><h3>Infinity Store Cards</h3><p>Good Bee Honey, Infinity Store, Arrowhead Drop, Black Card Market, Relic, and Shop World cards with NFC, offers, provenance, returns, and receipts.</p><a class="button primary" href="good-bee/store-cards.html">Open Store Cards</a></article>
-        <article><h3>Reciprocal Clearing</h3><p>Verifies, locks, and retires an eligible Store Claim before issuing general Infinity units, with separate funding, claim, unit, and treasury ledgers.</p><a class="button primary" href="good-bee/reciprocal-clearing.html">Open clearing</a></article>
-        <article><h3>Infinity AI Wallet</h3><p>Simplifies Star Blueprints, Product Tokens, Avatar Coins, hotel nights, meals, rides, products, metal access, NFC discounts, businesses, ads, work, approvals, rights, and receipts into useful actions.</p><a class="button primary" href="good-bee/wallet-orchestrator.html">Open wallet</a></article>
-        <article><h3>Infinity Coin Planner</h3><p>Discovers and verifies businesses, sources locally, negotiates bulk capacity, predicts destination demand, stages products, and closes package funding gaps.</p><a class="button primary" href="good-bee/coin-planner.html">Open planner</a></article>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <div><p class="eyebrow">How the pieces connect</p><h2>A need becomes a verified product and a usable package.</h2></div>
-      </div>
-      <div class="architecture-grid">
-        <article><h3>1. Select with ⭐</h3><p>The same quiet upper-right Star mark opens any convertible project, module, product, service, station, business, offer, chart, component, or work role.</p></article>
-        <article><h3>2. Create the Product Token</h3><p>AI ranks system demand, scarcity, usefulness, readiness, and local capacity; the person saves a named version without erasing its parent.</p></article>
-        <article><h3>3. Verify funding and capacity</h3><p>Programs, customers, sponsors, businesses, workers, hotels, builders, producers, and providers supply real funding or verified capacity.</p></article>
-        <article><h3>4. Coin Planner</h3><p>Finds businesses, verifies control, requests bulk contracts, sources locally, stages appropriate inventory, and calculates actual package cost.</p></article>
-        <article><h3>5. Store Claims</h3><p>Verified Product Tokens become specific hotel nights, meals, rides, products, support hours, station offers, components, discounts, and experiences.</p></article>
-        <article><h3>6. AI Wallet</h3><p>Combines Star versions, Product Tokens, Avatar Coins, claims, and units into understandable actions while preserving every underlying rule.</p></article>
-        <article><h3>7. Fulfillment and clearing</h3><p>Providers fulfill exact claims; when conversion is allowed, the source claim is retired before replacement Infinity units issue.</p></article>
-        <article><h3>8. Work and recirculation</h3><p>Providers and contributors earn settlement; audited surplus can support reserves, New Hope, Infinity Health, housing, tools, businesses, and future products.</p></article>
-      </div>
-    </section>
 
-    <section id="projects" class="section">
-      <div class="section-heading">
-        <div><p class="eyebrow">Live repository registry</p><h2>Project directory</h2></div>
-        <input id="searchInput" type="search" placeholder="Search repositories" aria-label="Search repositories">
-      </div>
-      <div id="filterBar" class="filter-bar" aria-label="Project categories"></div>
-      <p id="statusMessage" class="status">Loading repositories from GitHub…</p>
-      <div id="projectGrid" class="project-grid"></div>
-    </section>
 
-    <section id="architecture" class="section panel-section">
-      <p class="eyebrow">Repository connection model</p>
-      <h2>Hub-and-spoke architecture</h2>
-      <div class="architecture-grid">
-        <article><h3>Root portal</h3><p>Navigation, registry, shared design system, Token Studio, documentation, health status, and integration contracts.</p></article>
-        <article><h3>Independent repositories</h3><p>Each project keeps its own history, deployment, dependencies, Star versions, and purpose. No destructive mass merge.</p></article>
-        <article><h3>Shared packages</h3><p>Reusable Star marks, token schemas, UI, authentication, API clients, data contracts, and security policies move into versioned shared modules only after validation.</p></article>
-        <article><h3>AI gateway</h3><p>A server-side adapter routes approved research, product planning, verification, and orchestration without exposing provider secrets in browser code.</p></article>
-      </div>
-    </section>
-
-    <section id="ai" class="section ai-section">
-      <p class="eyebrow">Provider-neutral intelligence</p>
-      <h2>AI expands and manages the tree without owning the decisions.</h2>
-      <p>The gateway can route product-need analysis, Star version assistance, business discovery, comparison, package planning, reconciliation, documentation, work matching, accessibility checking, fraud monitoring, and explanation tasks. The browser never stores provider, payment, GitHub, identity-signing, or treasury secrets.</p>
-      <pre><code>POST /api/ai
+<details class="portal-details" id="technical-details"><summary>How the system works (technical details)</summary><section class="section">
+<div class="section-heading">
+<div><p class="eyebrow">How the pieces connect</p><h2>A need becomes a verified product and a usable package.</h2></div>
+</div>
+<div class="architecture-grid">
+<article><h3>1. Select with ⭐</h3><p>The same quiet upper-right Star mark opens any convertible project, module, product, service, station, business, offer, chart, component, or work role.</p></article>
+<article><h3>2. Create the Product Token</h3><p>AI ranks system demand, scarcity, usefulness, readiness, and local capacity; the person saves a named version without erasing its parent.</p></article>
+<article><h3>3. Verify funding and capacity</h3><p>Programs, customers, sponsors, businesses, workers, hotels, builders, producers, and providers supply real funding or verified capacity.</p></article>
+<article><h3>4. Coin Planner</h3><p>Finds businesses, verifies control, requests bulk contracts, sources locally, stages appropriate inventory, and calculates actual package cost.</p></article>
+<article><h3>5. Store Claims</h3><p>Verified Product Tokens become specific hotel nights, meals, rides, products, support hours, station offers, components, discounts, and experiences.</p></article>
+<article><h3>6. AI Wallet</h3><p>Combines Star versions, Product Tokens, Avatar Coins, claims, and units into understandable actions while preserving every underlying rule.</p></article>
+<article><h3>7. Fulfillment and clearing</h3><p>Providers fulfill exact claims; when conversion is allowed, the source claim is retired before replacement Infinity units issue.</p></article>
+<article><h3>8. Work and recirculation</h3><p>Providers and contributors earn settlement; audited surplus can support reserves, New Hope, Infinity Health, housing, tools, businesses, and future products.</p></article>
+</div>
+</section><section class="section panel-section" id="architecture">
+<p class="eyebrow">Repository connection model</p>
+<h2>Hub-and-spoke architecture</h2>
+<div class="architecture-grid">
+<article><h3>Root portal</h3><p>Navigation, registry, shared design system, Token Studio, documentation, health status, and integration contracts.</p></article>
+<article><h3>Independent repositories</h3><p>Each project keeps its own history, deployment, dependencies, Star versions, and purpose. No destructive mass merge.</p></article>
+<article><h3>Shared packages</h3><p>Reusable Star marks, token schemas, UI, authentication, API clients, data contracts, and security policies move into versioned shared modules only after validation.</p></article>
+<article><h3>AI gateway</h3><p>A server-side adapter routes approved research, product planning, verification, and orchestration without exposing provider secrets in browser code.</p></article>
+</div>
+</section><section class="section ai-section" id="ai">
+<p class="eyebrow">Provider-neutral intelligence</p>
+<h2>AI expands and manages the tree without owning the decisions.</h2>
+<p>The gateway can route product-need analysis, Star version assistance, business discovery, comparison, package planning, reconciliation, documentation, work matching, accessibility checking, fraud monitoring, and explanation tasks. The browser never stores provider, payment, GitHub, identity-signing, or treasury secrets.</p>
+<pre><code>POST /api/ai
 {
   "task": "define-needed-product-token",
   "input": {
@@ -105,11 +86,9 @@
     "constraints": ["versioned", "capacity-backed", "human-approved"]
   }
 }</code></pre>
-    </section>
-  </main>
-
-  <footer>Infinity root portal · Connected creation, economic system, and repository registry · <span id="year"></span></footer>
-  <script src="app.js" defer></script>
-  <script src="https://www-infinity4.github.io/Mint-For-Infinity/infinity-wallet-menu.js" defer></script>
+</section></details></main>
+<footer>Infinity root portal · Connected creation, economic system, and repository registry · <span id="year"></span></footer>
+<script defer="" src="app.js"></script>
+<script defer="" src="https://www-infinity4.github.io/Mint-For-Infinity/infinity-wallet-menu.js"></script>
 </body>
 </html>

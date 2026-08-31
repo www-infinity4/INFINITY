@@ -34,7 +34,7 @@ const els = {
 function loadLocal() {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null')
-    if (parsed?.schemaVersion === '1.0.0') return parsed
+    if (parsed?.schemaVersion === '1.0.0' && Array.isArray(parsed.versions) && Array.isArray(parsed.events)) return parsed
   } catch (_) {}
   return { schemaVersion: '1.0.0', versions: [], events: [] }
 }
@@ -60,7 +60,6 @@ function uid(prefix) {
 function addEvent(type, detail, amount = '') {
   state.local.events.unshift({ id: uid('event'), type, detail, amount, createdAt: new Date().toISOString() })
   state.local.events = state.local.events.slice(0, 250)
-  saveLocal()
 }
 
 async function fetchData() {
@@ -168,6 +167,7 @@ function renderModules() {
       <span class="module-category">${String(index + 1).padStart(2, '0')} · ${escapeHtml(module.category)}</span>
       <h3>${escapeHtml(module.name)}</h3>
       <p>${escapeHtml(module.systemNeed)}</p>
+      <button type="button" class="button secondary use-example">Use this example</button>
       <div class="score-row">
         <span>${escapeHtml(priorityFor(module.calculatedScore))}</span>
         <strong>${module.calculatedScore}</strong>
@@ -189,7 +189,8 @@ function selectModule(id) {
   const module = state.data.modules.find(item => item.id === id)
   if (!module) return
   state.selected = { kind: 'module', id: module.id, label: module.name, module }
-  els.selectedObject.value = `module: ${module.name}`
+  document.querySelector('#templateSelect').value = module.id
+  els.selectedObject.value = `Example: ${module.name}`
   els.creationName.value = module.name
   els.productDefinition.value = module.productToken
   els.systemNeed.value = module.systemNeed
@@ -206,7 +207,9 @@ function selectModule(id) {
 }
 
 function selectConvertible(context) {
-  const module = state.data.modules.find(item => item.id === context.id)
+  const saved = state.local.versions.find(item => item.id === context.id)
+  if (saved) { selectSavedVersion(saved); return }
+  const module = state.data?.modules.find(item => item.id === context.id)
   if (module) {
     selectModule(module.id)
     return
@@ -215,8 +218,8 @@ function selectConvertible(context) {
   state.selected = { kind: context.type, id: context.id, label: context.label, module: null }
   els.selectedObject.value = `${context.type}: ${context.label}`
   els.creationName.value = context.label
-  els.productDefinition.value = `Define the exact product, service, capacity, identity, component, right, or deliverable represented by ${context.label}.`
-  els.systemNeed.value = `Explain how ${context.label} fills a verified need in the Infinity system and which connected modules use it.`
+  els.productDefinition.value = ''
+  els.systemNeed.value = ''
   els.plannedUnits.value = 1
   els.identityProduct.checked = ['business', 'station', 'avatar-coin'].includes(context.type)
   els.factorControls.querySelectorAll('[data-factor]').forEach(input => {
@@ -237,7 +240,7 @@ function formValues() {
     name: els.creationName.value.trim() || 'Untitled creation',
     productToken: els.productDefinition.value.trim() || 'Product definition required',
     systemNeed: els.systemNeed.value.trim() || 'System need required',
-    plannedUnits: Math.max(1, Number(els.plannedUnits.value || 1)),
+    plannedUnits: Math.max(1, Math.min(1000000, Math.floor(Number(els.plannedUnits.value) || 1))),
     identityProduct: els.identityProduct.checked,
     scores
   }
@@ -269,7 +272,8 @@ function renderPlan() {
   const values = formValues()
   const plan = buildPlan(values)
 
-  els.planTitle.textContent = `${values.name} Product Token Plan`
+  els.planTitle.textContent = els.creationName.value.trim() || 'Your idea will appear here'
+  document.querySelector('#draftSummary').textContent = `What you’re making: ${els.productDefinition.value.trim() || 'Describe your product or service.'}\n\nWho it helps: ${els.systemNeed.value.trim() || 'Explain who needs it and why.'}\n\nPlanned quantity: ${values.plannedUnits}\n\nSaving creates a draft on this browser only.`
   els.priorityBadge.textContent = `${plan.priority} · ${plan.score}/100`
   els.priorityBadge.style.color = priorityColor(plan.score)
   els.planRows.innerHTML = `
@@ -277,10 +281,10 @@ function renderPlan() {
     <div class="plan-row"><span>Exact Product Token</span><strong>${escapeHtml(values.productToken)}</strong></div>
     <div class="plan-row"><span>System need</span><strong>${escapeHtml(values.systemNeed)}</strong></div>
     <div class="plan-row"><span>Operating units or identities</span><strong>${values.plannedUnits}</strong></div>
-    <div class="plan-row"><span>Minimum Product Token supply</span><strong>${plan.productSupply} (${values.plannedUnits} planned + ${plan.reserve} reserve)</strong></div>
+    <div class="plan-row"><span>Suggested supply (preset 20% reserve)</span><strong>${plan.productSupply} (${values.plannedUnits} planned + ${plan.reserve} reserve)</strong></div>
     <div class="plan-row"><span>Avatar Coins required</span><strong>${plan.avatarRequired}${values.identityProduct ? ' · one locked per identity' : ' · not an identity product'}</strong></div>
     <div class="plan-row"><span>Weakest factor</span><strong>${escapeHtml(plan.weakestLabel)} · ${plan.weakestValue}</strong></div>
-    <div class="plan-row"><span>AI next action</span><strong>${escapeHtml(plan.nextAction)}</strong></div>
+    <div class="plan-row"><span>Suggested next step</span><strong>${escapeHtml(plan.nextAction)}</strong></div>
   `
 
   drawBarChart(els.factorChart, Object.entries(values.scores).map(([id, value]) => ({ label: factorLabels()[id], value })), 100)
@@ -337,6 +341,11 @@ function drawRankingChart(modules) {
 
 function createVersion(event) {
   event.preventDefault()
+  if (!els.tokenForm.reportValidity()) return
+  if (![els.creationName, els.productDefinition, els.systemNeed].every(input => input.value.trim())) {
+    document.querySelector('#saveStatus').textContent = 'Please add a name, a description, and who it helps.'
+    return
+  }
   const values = formValues()
   const plan = buildPlan(values)
   const contextId = state.selected?.id || 'unselected'
@@ -362,9 +371,18 @@ function createVersion(event) {
     status: 'DRAFT — CAPACITY VERIFICATION REQUIRED',
     createdAt: new Date().toISOString()
   }
+  const before = JSON.parse(JSON.stringify(state.local))
   state.local.versions.unshift(version)
   addEvent('STAR_VERSION_CREATED', `${version.name} v${versionNumber} created from ${values.selectedObject}.`, `${plan.score}/100`)
-  saveLocal()
+  const status = document.querySelector('#saveStatus')
+  try { saveLocal() } catch (_) {
+    state.local = before
+    status.dataset.error = 'true'
+    status.textContent = 'This browser could not save your draft. Your form is still here; storage may be full or blocked.'
+    return
+  }
+  status.dataset.error = 'false'
+  status.textContent = `Saved: ${values.name}, version ${versionNumber}. It stays on this browser and has not been minted or published.`
   renderLedger()
   document.querySelector('#ledger').scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
@@ -372,14 +390,15 @@ function createVersion(event) {
 function renderLedger() {
   els.versionList.innerHTML = state.local.versions.length
     ? state.local.versions.map(version => `
-      <article class="version-card convertible" data-convert-id="${escapeHtml(version.contextId)}" data-convert-type="blueprint" data-convert-label="${escapeHtml(version.name)}">
+      <article class="version-card convertible" data-convert-id="${escapeHtml(version.id)}" data-convert-type="blueprint" data-convert-label="${escapeHtml(version.name)}">
         <div class="version-meta"><span>⭐ Version ${version.version}</span><time>${new Date(version.createdAt).toLocaleString()}</time></div>
         <h4>${escapeHtml(version.name)}</h4>
         <p>${escapeHtml(version.productToken)}</p>
+        <button type="button" class="button secondary edit-draft" data-version-id="${escapeHtml(version.id)}">Edit this draft</button>
         <div class="version-meta"><span>${escapeHtml(version.priority)} · ${version.needScore}</span><span>Supply ${version.productSupply} · Avatar ${version.avatarRequired}</span></div>
       </article>
     `).join('')
-    : '<p class="empty-state">No local Star versions yet. Select a small ⭐ and save the first version.</p>'
+    : '<p class="empty-state">No saved drafts yet. Describe your idea above, then choose Save this draft.</p>'
 
   els.eventList.innerHTML = state.local.events.length
     ? state.local.events.map(item => `
@@ -390,16 +409,28 @@ function renderLedger() {
       </article>
     `).join('')
     : '<p class="empty-state">The local event ledger is empty.</p>'
+  els.versionList.querySelectorAll('[data-version-id]').forEach(button => {
+    button.addEventListener('click', () => selectSavedVersion(state.local.versions.find(version => version.id === button.dataset.versionId)))
+  })
   markAllConvertible(els.versionList)
 }
 
 function resetLedger() {
+  if (!window.confirm('Delete all Token Studio drafts saved on this browser? This cannot be undone.')) return
+  const before = state.local
   state.local = { schemaVersion: '1.0.0', versions: [], events: [] }
-  saveLocal()
+  try { saveLocal() } catch (_) { state.local = before; document.querySelector('#saveStatus').textContent = 'Unable to delete saved drafts: browser storage is blocked.'; return }
   renderLedger()
+  document.querySelector('#saveStatus').textContent = 'Saved drafts deleted from this browser.'
 }
 
 function bindEvents() {
+  document.querySelector('#templateSelect').addEventListener('change', event => {
+    if (event.target.value) selectModule(event.target.value)
+    else startBlank()
+  })
+  window.addEventListener('hashchange', revealSection)
+
   els.menuButton?.addEventListener('click', () => {
     const open = els.mainNav.classList.toggle('open')
     els.menuButton.setAttribute('aria-expanded', String(open))
@@ -422,14 +453,58 @@ async function init() {
   renderFactorControls()
   markAllConvertible()
   renderLedger()
+  startBlank()
+  revealSection()
 
   try {
     state.data = await fetchData()
     renderModules()
-    selectModule(rankedModules()[0]?.id)
+    const select = document.querySelector('#templateSelect')
+    state.data.modules.forEach(module => {
+      const option = document.createElement('option'); option.value = module.id; option.textContent = module.name; select.appendChild(option)
+    })
   } catch (error) {
-    els.moduleGrid.innerHTML = `<p role="alert">${escapeHtml(error.message)}</p>`
+    els.moduleGrid.innerHTML = `<p role="alert">Examples could not load. You can still create your own draft.</p>`
   }
+}
+
+function startBlank() {
+  state.selected = { kind: 'idea', id: uid('idea'), label: 'My own idea', module: null }
+  els.tokenForm.reset()
+  els.selectedObject.value = 'My own idea'
+  els.factorControls.querySelectorAll('[data-factor]').forEach(input => {
+    input.value = 50
+    els.factorControls.querySelector(`#output-${CSS.escape(input.dataset.factor)}`).textContent = 50
+  })
+  document.querySelector('#saveStatus').textContent = 'Nothing saved yet. Review the draft before saving.'
+  renderPlan()
+}
+
+function selectSavedVersion(version) {
+  if (!version) return
+  state.selected = { kind: version.contextType, id: version.contextId, label: version.name, module: null }
+  document.querySelector('#templateSelect').value = ''
+  els.selectedObject.value = `Saved draft: ${version.name} v${version.version}`
+  els.creationName.value = version.name.replace(/ Star Blueprint$/, '')
+  els.productDefinition.value = version.productToken
+  els.systemNeed.value = version.systemNeed
+  els.plannedUnits.value = version.plannedUnits
+  els.identityProduct.checked = version.identityProduct
+  els.factorControls.querySelectorAll('[data-factor]').forEach(input => {
+    input.value = version.scores[input.dataset.factor] ?? 50
+    els.factorControls.querySelector(`#output-${CSS.escape(input.dataset.factor)}`).textContent = input.value
+  })
+  renderPlan()
+  document.querySelector('#studio').scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+function revealSection() {
+  const id = window.location.hash.slice(1)
+  const target = document.getElementById(id)
+  if (!target) return
+  let parent = target.parentElement
+  while (parent) { if (parent.tagName === 'DETAILS') parent.open = true; parent = parent.parentElement }
+  target.scrollIntoView({ block: 'start' })
 }
 
 init()
