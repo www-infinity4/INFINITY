@@ -269,6 +269,9 @@ function buildPlan(values) {
 
 function renderPlan() {
   if (!els.planRows) return
+  const status = document.querySelector('#saveStatus')
+  status.dataset.error = 'false'
+  status.textContent = 'Draft preview. Save when you are ready to keep these changes.'
   const values = formValues()
   const plan = buildPlan(values)
 

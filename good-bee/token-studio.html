@@ -7,7 +7,7 @@
 <meta content="Infinity AI Token Studio: universal Star conversion marks, system-need ranking, Product Tokens, Star Blueprints, Avatar Coins, Store Claims, charts, versions, and connected fulfillment." name="description"/>
 <title>Infinity AI Token Studio</title>
 <link href="styles.css" rel="stylesheet"/>
-<link href="token-studio.css?v=20260831-simple1" rel="stylesheet"/>
+<link href="token-studio.css?v=20260831-simple2" rel="stylesheet"/>
 </head>
 <body class="token-studio-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -23,23 +23,18 @@
 <div class="section-heading"><div><p class="eyebrow">1. Describe your idea</p><h2>Start with the basics.</h2></div></div>
 <div class="creation-layout">
 <form class="token-form" id="tokenForm"><label>Start from an example (optional)<select id="templateSelect"><option value="">My own idea</option></select><small>Choosing an example fills the form. You can change every field.</small></label>
-
 <label>Give it a name<input id="creationName" maxlength="100" placeholder="Example: Neighborhood radio station" required=""/></label>
 <label>What are you making?<textarea id="productDefinition" placeholder="Example: An online radio station with music and local news." required=""></textarea></label>
 <label>Who is it for, and how does it help?<textarea id="systemNeed" placeholder="Example: Local listeners who want community news and music." required=""></textarea></label>
 <label>How many do you want to plan?<input id="plannedUnits" max="1000000" min="1" placeholder="1" required="" type="number" value="1"/></label>
-
-
 <details class="studio-details"><summary>Advanced: identity and priority settings</summary><label>Selected convertible object
             <input id="selectedObject" readonly=""/>
-</label><label class="check-row"><input id="identityProduct" type="checkbox"/> Requires a distinct operating identity and Avatar Coin</label><div class="factor-controls" id="factorControls"></div></details><button class="button primary" id="saveDraft" type="submit">Save this draft</button>
-<p aria-live="polite" id="saveStatus" role="status">Nothing saved yet. Review the draft before saving.</p></form>
+</label><label class="check-row"><input id="identityProduct" type="checkbox"/> Requires a distinct operating identity and Avatar Coin</label><div class="factor-controls" id="factorControls"></div></details>
+</form>
 <div class="plan-output">
 <p class="eyebrow">2. Review your draft</p>
 <h3 id="planTitle">Your idea will appear here</h3>
-
-<p aria-live="polite" class="draft-summary" id="draftSummary">Fill in the form to see exactly what you will save.</p>
-
+<p aria-live="polite" class="draft-summary" id="draftSummary">Fill in the form to see exactly what you will save.</p><button class="button primary" form="tokenForm" id="saveDraft" type="submit">Save this draft</button><p aria-live="polite" id="saveStatus" role="status">Nothing saved yet. Review the draft before saving.</p>
 <details class="studio-details"><summary>See calculated supply and priority</summary><span class="priority-badge" id="priorityBadge"></span><div class="plan-rows" id="planRows"></div><div class="chart-grid">
 <article><h4>Need factors</h4><canvas height="240" id="factorChart" width="520"></canvas></article>
 <article><h4>Supply and activation</h4><canvas height="240" id="supplyChart" width="520"></canvas></article>
@@ -55,13 +50,6 @@
 <details class="studio-details"><summary>Technical event history</summary><div class="event-list" id="eventList"></div></details>
 </div>
 </section>
-
-
-
-
-
-
-
 <details class="studio-details learn-details" id="learnDetails"><summary>Examples, rankings, and how Infinity connects</summary><section class="star-standard section">
 <div>
 <p class="eyebrow">Universal mark standard</p>
@@ -123,6 +111,6 @@
 <span>⭐ Create · Version · Convert · Verify · Fulfill · Clear</span>
 <span id="year"></span>
 </footer>
-<script defer="" src="token-studio.js?v=20260831-simple1"></script>
+<script defer="" src="token-studio.js?v=20260831-simple2"></script>
 </body>
 </html>
