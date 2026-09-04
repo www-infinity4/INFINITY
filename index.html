@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 
-<title>Infinity Root Portal</title>
-<link href="styles.css?v=20260831-simple1" rel="stylesheet"/>
-<meta name="description" content="Your connected workspace for projects, creative tools, and the unified wallet.">
+<title>Infinity Search</title>
+<link href="styles.css?v=20260904-search1" rel="stylesheet"/>
+<meta name="description" content="Search the connected Infinity system: indexed by phi, extracted by pi, and carried into useful results.">
 <link rel="canonical" href="https://www-infinity4.github.io/INFINITY/">
-<meta property="og:type" content="website"><meta property="og:title" content="Infinity"><meta property="og:description" content="Your connected workspace for projects, creative tools, and the unified wallet."><meta property="og:url" content="https://www-infinity4.github.io/INFINITY/"><meta property="og:image" content="https://www-infinity4.github.io/INFINITY/assets/share-preview-v1.png"><meta property="og:image:secure_url" content="https://www-infinity4.github.io/INFINITY/assets/share-preview-v1.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1731"><meta property="og:image:height" content="909"><meta property="og:image:alt" content="Infinity website preview">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Infinity"><meta name="twitter:description" content="Your connected workspace for projects, creative tools, and the unified wallet."><meta name="twitter:image" content="https://www-infinity4.github.io/INFINITY/assets/share-preview-v1.png"><meta name="twitter:image:alt" content="Infinity website preview">
+<meta property="og:type" content="website"><meta property="og:title" content="Infinity Search"><meta property="og:description" content="Search the connected Infinity system."><meta property="og:url" content="https://www-infinity4.github.io/INFINITY/"><meta property="og:image" content="https://www-infinity4.github.io/INFINITY/assets/infinity-search-preview.jpg"><meta property="og:image:secure_url" content="https://www-infinity4.github.io/INFINITY/assets/infinity-search-preview.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="675"><meta property="og:image:alt" content="Infinity Search color-processing interface">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Infinity Search"><meta name="twitter:description" content="Search the connected Infinity system."><meta name="twitter:image" content="https://www-infinity4.github.io/INFINITY/assets/infinity-search-preview.jpg"><meta name="twitter:image:alt" content="Infinity Search color-processing interface">
 </head>
 <body>
 <header class="site-header">
@@ -19,11 +19,26 @@
 <nav aria-label="Primary navigation" class="main-nav" id="mainNav"><a href="good-bee/token-studio.html">Create a token draft</a><a href="good-bee/wallet-orchestrator.html">Wallet</a><a href="projects/">Project launchpad</a><a href="#projects">All projects</a><a href="#all-tools">All tools</a></nav>
 </header>
 <main id="top">
-<section class="hero">
-<p class="eyebrow">Your Infinity workspace</p>
-<h1>What would you like to work on?</h1>
-<p class="hero-copy">Create a token draft, open your wallet, or find one of your projects. Start with one task; the connected systems are here when you need them.</p>
-<div class="hero-actions"><a class="button primary" href="good-bee/token-studio.html">Create a token draft</a><a class="button secondary" href="good-bee/wallet-orchestrator.html">Open my wallet</a><a class="button secondary" href="#projects">Find a project</a></div>
+<section class="hero" aria-labelledby="searchTitle">
+<div class="index-field" aria-hidden="true"></div>
+<div class="infinity-mark" aria-hidden="true"><span>φ</span></div>
+<p class="wordmark" id="searchTitle">INFINITY</p>
+<p class="hero-copy">One search across every connected project, tool, and idea.</p>
+<form class="infinity-search" id="infinitySearch" role="search">
+<span class="phi-node" title="Phi continuously indexes the field" aria-hidden="true">φ</span>
+<label class="sr-only" for="heroSearch">Search Infinity</label>
+<input id="heroSearch" type="search" placeholder="Search everything" autocomplete="off"/>
+<span class="decision-node" aria-hidden="true"></span>
+<button class="pi-node" type="submit" aria-label="Extract search results"><span aria-hidden="true">π</span></button>
+</form>
+<div class="process-legend" aria-label="Infinity search process"><span class="red-key">Indexed</span><span class="yellow-key">Extracted</span><span class="orange-key">Decided</span><span class="blue-key">Transferred</span></div>
+<div class="search-result" id="searchResult" aria-live="polite">
+<div class="result-beam" aria-hidden="true"></div>
+<p class="result-kicker">Connected result</p>
+<strong id="resultTitle">The Infinity system is ready.</strong>
+<p id="resultText">Enter a project, tool, or idea to search the complete repository index.</p>
+</div>
+<div class="hero-actions"><a class="button primary" href="good-bee/token-studio.html">Create token</a><a class="button secondary" href="good-bee/wallet-orchestrator.html">Open wallet</a><a class="button secondary" href="#projects">Browse projects</a></div>
 <div aria-live="polite" class="metrics">
 <article><strong id="repoCount">—</strong><span>Repositories</span></article>
 <article><strong id="categoryCount">—</strong><span>Categories</span></article>
@@ -93,6 +108,7 @@
 </section></details></main>
 <footer>Infinity root portal · Connected creation, economic system, and repository registry · <span id="year"></span></footer>
 <script defer="" src="app.js"></script>
+<script defer src="search.js"></script>
 
 <script defer src="https://www-infinity4.github.io/Mint-For-Infinity/unified-wallet.js?v=20260831-game-rewards1"></script>
 <script defer src="https://www-infinity4.github.io/Mint-For-Infinity/site-community.js?v=20260831-storage2" data-site-id="INFINITY" data-site-title="Infinity" data-share-url="https://www-infinity4.github.io/INFINITY/share.html"></script>
