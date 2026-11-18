@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infinity HI-FI · Research and Files</title>
+<meta name="description" content="Source-backed Infinity HI-FI, Wave Tech and Omni Gemini research and original open source prototype files.">
+<link rel="stylesheet" href="./studio.css">
+</head><body><main>
+<header class="hero">
+<p class="eyebrow">Infinity HI-FI · research desk</p><h1>Research and source files</h1>
+<p>Primary specifications, working source files and measurable engineering limits for the Wave Studio. This desk distinguishes implemented code from planned systems.</p>
+<p><a href="./">Back to Wave Studio</a> · <a href="../">Original Infinity HI-FI blueprint</a></p>
+</header>
+<section class="panel"><h2>01 · Research findings</h2>
+<h3>Waveform and frequency measurements</h3>
+<p>Browser AnalyserNode can provide time-domain PCM and frequency-domain bins. The studio measures RMS, sample peak and strongest FFT bin from a user-selected local audio file. These measurements do not identify a speaker, infer thoughts, or establish mood.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getFloatTimeDomainData" target="_blank" rel="noopener noreferrer">MDN: float time-domain data</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getFloatFrequencyData" target="_blank" rel="noopener noreferrer">MDN: frequency-domain bins</a></p>
+<h3>Audio processing and limits</h3>
+<p>The Web Audio API allows a local media element to feed a graph of gains, filters and dynamics compression. The prototype's original setting is a dry reference mix. Its optional speech, phone and night profiles use ordinary browser DSP nodes—not automatic speech separation, machine-generated sound, or guaranteed lossless restoration.</p>
+<p>Dynamics processors introduce processing latency. Professional programme loudness and true-peak measurement use methods such as ITU-R BS.1770, which this early RMS/sample-peak analyzer has not implemented.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaElementSource" target="_blank" rel="noopener noreferrer">MDN: media element audio graph</a> · <a href="https://www.w3.org/TR/webaudio/" target="_blank" rel="noopener noreferrer">W3C: Web Audio specification</a> · <a href="https://www.itu.int/rec/R-REC-BS.1770/en" target="_blank" rel="noopener noreferrer">ITU-R: loudness and true-peak standard</a></p>
+<h3>Google Wave precedent</h3>
+<p>The historical Google Wave and Apache Wave projects use editable conversation units called blips and describe collaboration, transformations and federation. Wave Studio implements a local parent-linked blip notebook only; it does not currently implement operational transformation, conflict-free replication, WebSocket rooms, federation or cross-device synchronization.</p>
+<p><a href="https://cwiki.apache.org/confluence/spaces/WAVE/pages/31823357/Protocol+Specifications" target="_blank" rel="noopener noreferrer">Apache Wave: protocol specifications</a> · <a href="https://svn.apache.org/repos/asf/incubator/wave/whitepapers/federation/wavespec.html" target="_blank" rel="noopener noreferrer">Apache Wave: federation specification</a></p>
+<h3>Omni Gemini and Solidify integration</h3>
+<p>Events and project candidates are local, validated JSON records for review. A candidate is <strong>not</strong> a validated release, a bot execution receipt, a signed permission grant, or an authorization to publish. Full agent orchestration remains in the existing Bubbles and Solidify systems.</p>
+<p><a href="../README.md">Existing Infinity HI-FI architecture and contracts</a> · <a href="https://github.com/www-infinity4/Solidify" target="_blank" rel="noopener noreferrer">Solidify project</a></p>
+</section>
+<section class="panel"><h2>02 · Download and inspect the source files</h2>
+<p>These are plain-text JavaScript modules, tests and the HTML/CSS for this prototype. Review their contents before making changes.</p>
+<div class="pipeline">
+<a href="signal-core.mjs" download>Signal analyzer</a>
+<a href="wave-core.mjs" download>Wave blip data model</a>
+<a href="studio.mjs" download>Browser controller</a>
+<a href="index.html" download>Studio HTML</a>
+<a href="studio.css" download>Studio CSS</a>
+</div>
+<p>Source tests and implementation notes:</p>
+<p><a href="https://github.com/www-infinity4/Infinity-HiFi/blob/a7f18e8687266dc9b619ff4ca31da9923d3b6eba/test/studio-core.test.mjs">Signal/Wave tests</a> · <a href="https://github.com/www-infinity4/Infinity-HiFi/blob/a7f18e8687266dc9b619ff4ca31da9923d3b6eba/test/studio-source.test.mjs">Privacy/source tests</a> · <a href="https://github.com/www-infinity4/Infinity-HiFi/blob/a7f18e8687266dc9b619ff4ca31da9923d3b6eba/IMPLEMENTATION.md">Implementation and verification notes</a> · <a href="https://github.com/www-infinity4/Infinity-HiFi/pull/3" target="_blank" rel="noopener noreferrer">Review PR and receipts</a></p>
+<p class="small">No private conversation archive or credentials are embedded in the source. Source availability is not evidence that a deployed site has passed hardware or Android tests.</p>
+</section>
+<section class="panel"><h2>03 · Separate scientific research lane</h2>
+<p>The atmospheric matter-assembly and gamma-ray ideas belong in a distinct, explicitly experimental research record. This public audio page does not reproduce confidential chamber layouts or give instructions for using radioactive materials. Current evidence for DNA amplification involves an existing template, primers, nucleotides and polymerase; the audio engine provides no biological manufacturing capability.</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/books/NBK535453/" target="_blank" rel="noopener noreferrer">NIH / NCBI: PCR fundamentals</a> · <a href="https://science.nasa.gov/ems/12_gammarays/" target="_blank" rel="noopener noreferrer">NASA: gamma rays</a></p>
+</section>
+<section class="panel"><h2>04 · Verification and deployment status</h2>
+<p><strong>Implemented and source-tested:</strong> local file playback graph, waveform/FFT metrics, four reversible profiles, bounded local Wave notes, JSON export and review-only Solidify candidate.</p>
+<p><strong>Not yet independently confirmed:</strong> live Android playback on an actual device, full browser interaction testing, external collaboration, authenticated Bubbles handoff, final deployment and live page readback. Check the linked pull request before treating any version as released.</p>
+</section>
+<footer>Infinity HI-FI research desk · Evidence linked to original publishers · No paid API · Research does not authorize remote actions</footer>
+</main></body></html>
