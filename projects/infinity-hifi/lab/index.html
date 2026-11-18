@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#102334">
+<title>Infinity HI-FI · Wave Studio</title>
+<meta name="description" content="Local browser audio analysis, reversible DSP profiles, and a private Wave blip notebook. No microphone, uploads, or paid services.">
+<link rel="stylesheet" href="./studio.css"></head>
+<body><main>
+<header class="hero"><p class="eyebrow">Infinity HI-FI · StarQuest / Omni Gemini</p><h1>Wave Studio</h1>
+<p>Measure a file you select, audition a reversible mix, and branch research notes as Wave blips. Everything stays inside this browser page until <em>you</em> export it.</p>
+<a href="../">Original Infinity HI-FI architecture</a> · <a href="./research.html">Research and source files</a></header>
+<section class="panel" aria-labelledby="signal-title"><h2 id="signal-title">01 · Google Wave Tech signal measurements</h2>
+<p class="small">Your audio file stays local. No microphone permission, provider connection, AI hearing, background scan or hidden upload.</p>
+<label class="field">Select your own audio file<input type="file" id="audioFile" accept="audio/*"></label>
+<audio id="player" controls preload="none" aria-label="Local audio player"></audio>
+<label class="field">Infinity HI-FI playback profile<select id="profile">
+<option value="original">Original · unprocessed</option>
+<option value="speech">Clear dialogue · high-pass, presence and compression</option>
+<option value="phone">Phone speaker · reduced bass and controlled dynamics</option>
+<option value="night">Quiet night · lower gain and controlled peaks</option></select></label>
+<p id="audioStatus" class="status" role="status" aria-live="polite">Choose a file, then press Play. Nothing is transmitting.</p>
+<canvas id="waveCanvas" width="640" height="150" role="img" aria-label="Measured waveform while local audio is playing"></canvas>
+<div class="metrics" aria-label="Observed signal measurements">
+<div><strong id="rms">—</strong><span>RMS level (dBFS)</span></div>
+<div><strong id="peak">—</strong><span>Sample peak (dBFS)</span></div>
+<div><strong id="frequency">—</strong><span>Strongest FFT bin (Hz)</span></div>
+<div><strong id="clip">—</strong><span>Near clipping</span></div></div>
+<p class="small">The FFT peak is a rough spectral measurement, not pitch recognition or a mental-state classification. Browser DSP is not automatically lossless, voice separation, noise cancellation or generative audio.</p>
+</section>
+<section class="panel" aria-labelledby="wave-title"><h2 id="wave-title">02 · Wave collaboration notebook</h2>
+<p class="small">Create time-linked notes and parent/child branches. This local prototype does not pretend to have live multiuser synchronization or agent execution.</p>
+<label class="field">Blip type<select id="blipType"><option value="text">Text idea</option><option value="audio-note">Audio observation</option><option value="annotation">Timeline annotation</option><option value="code-note">Code note</option><option value="decision">Review decision</option></select></label>
+<label class="field">Connect to an earlier blip (optional)<select id="parent"><option value="">New root branch</option></select></label>
+<label class="field">Content<textarea id="blipText" maxlength="8000" rows="4" placeholder="What did you notice or want to change?"></textarea></label>
+<button id="addBlip" type="button">Add local blip</button>
+<div id="blips" class="blips" aria-live="polite"><p class="small">No blips yet.</p></div>
+<div class="actions"><button type="button" id="exportBlips">Export Wave JSON</button><button type="button" id="exportCandidate">Prepare Solidify draft</button></div>
+<label class="field">Import earlier Wave JSON locally<input id="importBlips" type="file" accept="application/json,.json"></label>
+<p id="waveStatus" class="status" role="status" aria-live="polite">Not saved to a server. Export before leaving this page.</p>
+</section>
+<section class="panel" aria-labelledby="pipeline-title"><h2 id="pipeline-title">03 · Omni Gemini / Solidify handoff</h2>
+<div class="pipeline"><span>Local media</span><b>→</b><span>Web Audio measurements</span><b>→</b><span>Wave blips</span><b>→</b><span>Draft candidate</span><b>→</b><span>Independent review</span></div>
+<p>The output is an explicitly <strong>review-only candidate</strong>, not a signed job, executable GitHub webhook, authorized publication or deployed StarQuest audio profile. Approval and production stay with the existing Bubbles and Solidify infrastructure.</p>
+</section>
+<footer>Infinity HI-FI research prototype · Browser-only JavaScript · No recurring API fee · No automatic publication</footer>
+</main><script type="module" src="./studio.mjs"></script></body></html>

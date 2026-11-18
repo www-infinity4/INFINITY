@@ -1,0 +1,29 @@
+name: INFINITY Infinity HI-FI page mirror
+on:
+  pull_request:
+    paths:
+      - 'projects/infinity-hifi/**'
+      - 'test/infinity-hifi-mirror.test.mjs'
+      - '.github/workflows/infinity-hifi-mirror.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'projects/infinity-hifi/**'
+      - 'test/infinity-hifi-mirror.test.mjs'
+jobs:
+  static-mirror:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate mirrored browser modules
+        run: |
+          node --check projects/infinity-hifi/lab/studio.mjs
+          node --check projects/infinity-hifi/lab/signal-core.mjs
+          node --check projects/infinity-hifi/lab/wave-core.mjs
+      - name: Verify mirrored source pages
+        run: node --test test/infinity-hifi-mirror.test.mjs
